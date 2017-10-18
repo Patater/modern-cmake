@@ -14,6 +14,11 @@ Let's mention a bit of CMake syntax. The function name is case insensitive, so t
 This line is special! [^2] The version of CMake will also dictate the policies, which define behavior changes. So, if you set `minimum_required` to `VERSION 2.8`, you'll get the wrong linking behavior on macOS, for example, even in the newest CMake versions. A list of policies and versions is [here](https://cmake.org/cmake/help/v3.9/manual/cmake-policies.7.html).
 
 
+{% hint style='info' %}
+If you really need to set to a low value here, you can use [`cmake_policy`] to conditinally increase the policy level or set a specific policy. Please at least do this for your macOS users!
+{% endhint %}
+
+
 ## Setting a project
 
 Now, every top-level CMake file will have the next line:
@@ -105,3 +110,5 @@ target_link_libraries(calc PUBLIC calclib)
 [^2]: You will sometimes see `FATAL_ERROR` here, that was needed to support nice failures when running this in CMake <2.6, which should not be a problem anymore.
 
 [^3]: The `::` syntax was originally intended for `INTERFACE IMPORTED` libraries, which were explicitly supposed to be libraries defined outside the current project. But, because of this, most of the `target_*` commands don't work on `IMPORTED` libraries, making them hard to set up yourself. So don't use the `IMPORTED` keyword for now, and use an `ALIAS` target instead. There's a project in the works to fix this limitation for CMake 3.11.
+
+[`cmake_policy`]: https://cmake.org/cmake/help/v3.0/command/cmake_policy.html

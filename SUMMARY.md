@@ -1,7 +1,7 @@
 # Summary
 
 * [An Introduction to Modern CMake](README.md)
-* [Installing CMake](chapters/install.md)
+* [Installing CMake](chapters/installing.md)
 * [Running CMake](chapters/running.md)
 
 ## Making a CMakeLists
