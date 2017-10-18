@@ -68,5 +68,5 @@ And, since CMake will dumb itself down to the minimum required version in your C
 You should *at least* install it locally.
 It's easy (1-2 lines in many cases), and you'll find that 5 minutes of work will save you hundreds of lines and hours of CMakeLists.txt writing, and will be much easier to maintain in the long run.
 
-This book tries to solve the problem of the poor examples and best practices that you'll find proliferating the web.
+This book tries to solve the problem of the poor examples and best practices that you'll find proliferating the web. A nice, slighly dated post with a similar intent can be found [here](https://rix0r.nl/blog/2015/08/13/cmake-guide/). You might also find that helpful for a fast introduction.
 

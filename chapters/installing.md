@@ -1,6 +1,8 @@
 # Installing CMake
 
-> Your CMake version should be newer than your compiler. It should be newer than the libraries you are using (especially Boost). New versions work better for everyone.
+{% hint style='tip' %}
+Your CMake version should be newer than your compiler. It should be newer than the libraries you are using (especially Boost). New versions work better for everyone.
+{% endhint %}
 
 If you have a built in copy of CMake, it isn't special or customized for your system. You can easily install a new one instead, either on the system level or the user level. Feel free to instruct your users here if they complain about a CMake requirement being set too high. Especially if they want < 3.1 support. Maybe even if they want CMake < 3.8 support...
 
@@ -23,7 +25,8 @@ If you just want a local folder with CMake only:
 
 You'll obviously want to append to the PATH every time you start a new terminal, or add it to your `.bashrc` or to an [LMod] system.
 
-And, if you want a system install (I'm only brave enough to run this in Docker):
+And, if you want a system install, install to `/usr/local`. (I'm only brave enough to run this in Docker):
+
 
 You can also build CMake on any system, it's pretty easy, but binaries are faster.
 
@@ -40,11 +43,11 @@ And as long as a binary exists for your system, you'll be up-and-running almost 
 This has the benefit of respecting your current virtual environment, as well.
 
 {% hint style='info' %}
-Personally, on Linux, I put versions of CMake in folders, like `/opt/cmake39` or `~/opt/cmake39`, and then add them to [LMod]. See [`envmodule_setup`] for help setting up an LMod system on macOS or Linux. It's takes a bit to learn, but is a great way to manage package and compiler versions.
+Personally, on Linux, I put versions of CMake in folders, like `/opt/cmake39` or `~/opt/cmake39`, and then add them to [LMod]. See [`envmodule_setup`][envmodule_setup] for help setting up an LMod system on macOS or Linux. It's takes a bit to learn, but is a great way to manage package and compiler versions.
 {% endhint %}
 
 [^1]: If don't have a `.local` in your home directory, it's easy to start. Just make the folder, then add `export PATH="$HOME/.local/bin:$PATH"` to your `.bashrc` or `.bash_profile` or `.profile` file in your home directory. Now you can install any packages you build to `-DCMAKE_INSTALL_PREFIX=~/.local` instead of `/usr/local`!
 
 [cmake-download]: https://cmake.org/download/
 [LMod]: http://lmod.readthedocs.io/en/latest/
-[`envmodule_setup`]: https://github.com/CLIUtils/envmodule_setup
+[envmodule_setup]: https://github.com/CLIUtils/envmodule_setup
