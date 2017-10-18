@@ -26,6 +26,10 @@ project(MyProject VERSION 1.0
 
 Now we see even more syntax. Strings are quoted, white space doesn't matter [^3], and the name of the project is the first argument (positional). All the keyword arguments here are optional. The version sets a bunch of variables, like `MyProject_VERSION` and `PROJECT_VERSION`. The languages are C, CXX, FORTRAN, and CUDA (CMake 3.7+). `C CXX` is the default. Docs [here](https://cmake.org/cmake/help/v3.9/command/project.html). 
 
+{% hint style='danger' %}
+CMake doesn't care about white space, and you can add comments with the `#` character, but never put a comment inside the function call parenthesis.
+{% endhint %}
+
 There's really nothing special about the project name. No targets are added at this point.
 
 ## Making an executable
