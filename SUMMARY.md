@@ -1,9 +1,11 @@
 # Summary
-* [Introduction](README.md)
 
-## Making a CMakeLists
+* [An Introduction to Modern CMake](README.md)
 * [Installing CMake](chapters/install.md)
 * [Running CMake](chapters/running.md)
+
+## Making a CMakeLists
+
 * [Introduction to the basics](chapters/basics.md)
 * [Adding features (like C++11)](chapters/features.md)
 * [How to structure your project](chapters/structure.md)
@@ -15,7 +17,8 @@
 * [IDEs](chapters/IDEs.md)
 * [Debugging](chapters/IDEs.md)
 
-## Specific use cases
+## Specific packages
+
 * [CUDA](specifics/CUDA.md)
 * [OpenMP](specifics/OpenMP.md)
 * [Boost](specifics/Boost.md)

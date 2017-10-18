@@ -1,20 +1,20 @@
-![Build Status](https://gitlab.com/CLIUtils/modern-cmake/badges/master/build.svg)
+# An Introduction to Modern CMake
 
----
 
-An introduction to Modern CMake practices
-
----
 
 People love to hate build systems.
-Just watch the talks from CppCon17.
+Just watch the talks from CppCon17 to see examples of developers making the state of build systems the brunt of jokes.
 This raises the question: Why?
 Certainly there are no shortage of problems when building.
 But I think that, in 2017, we have a very good solution to quite a few of those problems.
 It's CMake. Not CMake 2.8 though; that was released before C++11 even existed!
 Nor the horible examples out there for CMake (even those posted on KitWare's own tutorials list).
-I'm talking about Modern CMake. CMake 3.1+, maybe even CMake 3.9!
+I'm talking about Modern CMake. CMake 3.1+, maybe even CMake 3.8+!
 It's clean, powerful, and elegant, so you can spend most of your time coding, not addding lines to an unreadable, unmaintainable Make (Or CMake 2) file.
+
+{% hint style='working' %}
+This document is a work in progress.
+{% endhint %}
 
 In short, here are the most likely questions in your mind if you are considering Modern CMake:
 
@@ -70,4 +70,3 @@ It's easy (1-2 lines in many cases), and you'll find that 5 minutes of work will
 
 This book tries to solve the problem of the poor examples and best practices that you'll find proliferating the web.
 
-This document is a work in progress.
