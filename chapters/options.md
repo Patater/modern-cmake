@@ -26,12 +26,16 @@ mark_as_advanced(MY_CACHE_VARIABLE)
 
 The first line will cause the value to be set no matter what, and the second line will keep the variable from showing up in the list of variables if you run `cmake -L ..` or use a GUI.
 
-Since `BOOL` is such a common variable type, you can set it more susinctly with the shortcut:
+Since `BOOL` is such a common variable type, you can set it more succinctly with the shortcut:
 
  ```cmake
  option(MY_OPTION "This is settable from the command line" OFF)
  ``` 
  
- For the BOOL datatype, there are several different workings for `ON` and `OFF`.
+ For the `BOOL` datatype, there are several different wordings for `ON` and `OFF`.
+ 
+## The Cache
+ 
+The cache is actually just a text file, `CMakeCache.txt`, that gets created in the build directory when you run CMake. This is how CMake remembers anything you set, so you don't have to re-list your options every time you rerun CMake. 
 
 [^1]: `if` statements are a bit odd in that they can take the variable with or without the surrounding syntax; this is there for historical reasons: `if` predates the `${}` syntax.

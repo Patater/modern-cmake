@@ -7,12 +7,11 @@
 ## Making a CMakeLists
 
 * [Introduction to the Basics](chapters/basics.md)
-* [~~Variables and the Options Cache~~](chapters/options)
+* [Variables and the Cache](chapters/options)
 * [C++11 and Beyond](chapters/cpp11.md)
 * [Adding Features](chapters/features.md)
 * [How to Structure Your Project](chapters/structure.md)
-* [~~Configuration Information~~](chapters/configure.md)
-* [~~Including Small Projects~~](chapters/smallinc.md)
+* [Including Small Projects](chapters/smallinc.md)
 * [~~Including Large Projects~~](chapters/largeinc.md)
 * [~~Running Other Programs~~](chapters/programs.md)
 * [~~Testing~~](chapters/testing.md)
