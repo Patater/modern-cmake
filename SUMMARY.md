@@ -12,17 +12,16 @@
 * [Adding Features](chapters/features.md)
 * [How to Structure Your Project](chapters/structure.md)
 * [Including Small Projects](chapters/smallinc.md)
-* ~~[Including Large Projects](chapters/largeinc.md)~~
-* ~~[Running Other Programs](chapters/programs.md)~~
-* ~~[Testing](chapters/testing.md)~~
-* ~~[Tidy and Format](chapters/tidy.md)~~
-* ~~[IDEs](chapters/IDEs.md)~~
-* ~~[Debugging](chapters/debug.md)~~
+* [Including Large Projects (X)](chapters/largeinc.md)
+* [Running Other Programs (X)](chapters/programs.md)
+* [Testing (INCOMPLETE)](chapters/testing.md)
+* [Tidy and Format (X)](chapters/tidy.md)
+* [IDEs (X)](chapters/IDEs.md)
+* [Debugging (X)](chapters/debug.md)
 
 ## Specific packages
-
-* ~~[CUDA](specifics/CUDA.md)~~
-* ~~[OpenMP](specifics/OpenMP.md)~~
-* ~~[Boost](specifics/Boost.md)~~
-* ~~[MPI](specifics/MPI.md)~~
-* ~~[ROOT](specifics/ROOT.md)~~
+* [CUDA (X)](specifics/CUDA.md)
+* [OpenMP (X)](specifics/OpenMP.md)
+* [Boost (X)](specifics/Boost.md)
+* [MPI (X)](specifics/MPI.md)
+* [ROOT (X)](specifics/ROOT.md)
