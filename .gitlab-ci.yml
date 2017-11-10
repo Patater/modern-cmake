@@ -1,5 +1,5 @@
-# requiring the environment of NodeJS 4.2.2
-image: node:4.2.2
+# requiring the environment of NodeJS 8 LTS series (carbon)
+image: node:carbon
 
 # add 'node_modules' to cache for speeding up builds
 cache:
