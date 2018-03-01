@@ -20,8 +20,8 @@
 * [Debugging (X)](chapters/debug.md)
 
 ## Specific packages
-* [CUDA (X)](specifics/CUDA.md)
-* [OpenMP (X)](specifics/OpenMP.md)
+* [CUDA](specifics/CUDA.md)
+* [OpenMP](specifics/OpenMP.md)
 * [Boost (X)](specifics/Boost.md)
-* [MPI (X)](specifics/MPI.md)
+* [MPI](specifics/MPI.md)
 * [ROOT (X)](specifics/ROOT.md)
