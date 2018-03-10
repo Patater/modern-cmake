@@ -104,8 +104,8 @@ Since we've made a `ConfigVersion` file, this is a good place to install it too.
 configure_file(MyLibConfig.cmake.in MyLibConfig.cmake @ONLY)
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/MyLibConfig.cmake"
               "${CMAKE_CURRENT_BINARY_DIR}/Minuit2ConfigVersion.cmake"
-         DESTINATION lib/cmake/MyLib
-         )
+        DESTINATION lib/cmake/MyLib
+        )
 ```
 
 That's it! Now once you install a package, there will be files in `lib/cmake/MyLib` that CMake will search for (specifically, `MyLibConfig.cmake` and `MyLibConfigVersion.cmake`), and the targets file that config uses should be there as well.

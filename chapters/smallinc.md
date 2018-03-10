@@ -67,3 +67,6 @@ execute_process(COMMAND ${GIT_EXECUTABLE} rev-parse --short HEAD
 There are several different methods to get CMake to download data, either at configure time or compile time. The latter is build directly into CMake with the x command. If you prefer configure time, see the [Crascit/DownloadProject](https://github.com/Crascit/DownloadProject) repository for a drop-in solution. Submodules work so well, though, that I've discontinued most of the downloads for things like GoogleTest and moved them to submodules. Auto downloads are harder to mimic if you
 don't have internet access, and they are often implemented in the build directory, wasting time and space if you have multiple build directories. 
 
+{% hint style='working' %}
+A new module in CMake 3.11, [FetchContent](https://cmake.org/cmake/help/v3.11/module/FetchContent.html) will build in this feature into CMake, stay tuned!
+{% endhint %}
