@@ -18,6 +18,7 @@
 * [Tidy and Format (X)](chapters/tidy.md)
 * [IDEs (X)](chapters/IDEs.md)
 * [Debugging (X)](chapters/debug.md)
+* [Exporting and Installing](chapters/exporting.md)
 
 ## Specific packages
 * [CUDA](specifics/CUDA.md)
