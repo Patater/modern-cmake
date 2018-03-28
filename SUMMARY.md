@@ -25,4 +25,4 @@
 * [OpenMP](specifics/OpenMP.md)
 * [Boost (X)](specifics/Boost.md)
 * [MPI](specifics/MPI.md)
-* [ROOT (X)](specifics/ROOT.md)
+* [ROOT (INCOMPLETE)](specifics/ROOT.md)
