@@ -7,9 +7,7 @@ ROOT is a C++ Toolkit for High Energy Physics. It is huge. There are really a lo
 
 ROOT supports config file discovery, so you can just do:
 
-```cmake
-find_package(ROOT CONFIG)
-```
+[import:'find_package', lang:'cmake'](../examples/root-example/CMakeLists.txt)
 
 to attempt to find ROOT. If you don't have your paths set up, you can pass `-DROOT_DIR=$ROOTSYS/cmake` to find ROOT. (But, really, you should source `thisroot.sh`)
 
@@ -21,16 +19,7 @@ ROOT provides a utility to set up a ROOT project, which you can activate using `
 
 ROOT does not correctly set up it's imported targets. To fix this error, you'll need something like:
 
-```cmake
-find_package(ROOT CONFIG REQUIRED)
-
-string(REPLACE " " ";" ROOT_CXX_FLAG_LIST "${ROOT_CXX_FLAGS}")
-
-set_target_properties(ROOT::Core PROPERTIES
-    INTERFACE_INCLUDE_DIRECTORIES "${ROOT_INCLUDE_DIRS}"
-    INTERFACE_COMPILE_OPTIONS "${ROOT_CXX_FLAG_LIST}"
-    )
-```
+[import:'setup_properties', lang:'cmake'](../examples/root-example/CMakeLists.txt)
 
 In CMake 3.11, you can replace that last function call with:
 
@@ -43,10 +32,7 @@ All the ROOT targets will require `ROOT::Core`, so this will be enough regardles
 
 To link, just pick the libraries you want to use:
 
-```cmake
-add_executable(MyExample MyExample.cxx)
-target_link_libraries(MyExample PUBLIC ROOT::Physics)
-```
+[import:'add_and_link', lang:'cmake'](../examples/root-example/CMakeLists.txt)
 
 ## Dictionary generation
 
@@ -72,9 +58,12 @@ To generate a file:
 root_generate_dictionary(G__MyExample MyExample.h LINKDEF SimpleLinkDef.h)
 ```
 
-Then include G__MyExample.cxx in your sources when you make the library.
+Then include `G__MyExample.cxx` in your sources when you make the library.
 
 ## Example: Minimal
 
 #### examples/root-example/CMakeLists.txt
-[include](../examples/root-example/CMakeLists.txt)
+[import:'main', lang:'cmake'](../examples/root-example/CMakeLists.txt)
+
+## Example: Dictionary
+[import:'main', lang:'cmake', title:"CMakeLists.txt"](../examples/root-example-dict/CMakeLists.txt)

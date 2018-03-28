@@ -1,3 +1,5 @@
+
+## [main]
 cmake_minimum_required(VERSION 3.1)
 
 project(RootExampleDict LANGUAGES CXX)
@@ -20,5 +22,6 @@ root_generate_dictionary(G__MyExample MyExample.h LINKDEF SimpleLinkDef.h)
 add_library(MyExample SHARED MyExample.cxx MyExample.h G__MyExample.cxx)
 target_link_libraries(MyExample PUBLIC ROOT::Core)
 
+## [main]
 #enable_testing()
 #add_test(NAME MyExample COMMAND )
