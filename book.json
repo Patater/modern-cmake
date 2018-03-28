@@ -2,5 +2,5 @@
     "title": "Modern CMake",
     "description": "A guide to writing simple, powerful, and clean CMake 3.1+ builds.",
     "author": "Henry Schreiner",
-    "plugins": ["hints","terminal@https://github.com/henryiii/gitbook-plugin-terminal.git"]
+    "plugins": ["hints","term"]
 }

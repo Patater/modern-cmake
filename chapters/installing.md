@@ -12,16 +12,16 @@ You can [download CMake from KitWare][cmake-download]. This is how you'll probab
 
 On Linux, there are binaries provided, but you'll need to pick an install location. If you already use `~/.local` for user-space packages, the following single line command will get CMake for you [^1]:
 
-{% terminal %}
+{% term %}
 ~ $ wget -qO- "https://cmake.org/files/v3.9/cmake-3.9.4-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C ~/.local
-{% endterminal %}
+{% endterm %}
 
 If you just want a local folder with CMake only:
 
-{% terminal %}
+{% term %}
 ~ $ mkdir -p cmake39 && wget -qO- "https://cmake.org/files/v3.9/cmake-3.9.4-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake39
 ~ $ export PATH=`pwd`/cmake39/bin:$PATH
-{% endterminal %}
+{% endterm %}
 
 You'll obviously want to append to the PATH every time you start a new terminal, or add it to your `.bashrc` or to an [LMod] system.
 

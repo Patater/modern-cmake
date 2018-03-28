@@ -9,8 +9,10 @@ Certainly there are no shortage of problems when building.
 But I think that, in 2017, we have a very good solution to quite a few of those problems.
 It's CMake. Not CMake 2.8 though; that was released before C++11 even existed!
 Nor the horrible examples out there for CMake (even those posted on KitWare's own tutorials list).
-I'm talking about Modern CMake. CMake 3.1+, maybe even CMake 3.8+!
+I'm talking about [Modern CMake]. CMake 3.1+, maybe even CMake 3.11+!
 It's clean, powerful, and elegant, so you can spend most of your time coding, not adding lines to an unreadable, unmaintainable Make (Or CMake 2) file.
+And CMake 3.11 is significantly faster, as well!
+
 
 {% hint style='working' %}
 This document is a work in progress.
@@ -68,5 +70,7 @@ And, since CMake will dumb itself down to the minimum required version in your C
 You should *at least* install it locally.
 It's easy (1-2 lines in many cases), and you'll find that 5 minutes of work will save you hundreds of lines and hours of CMakeLists.txt writing, and will be much easier to maintain in the long run.
 
-This book tries to solve the problem of the poor examples and best practices that you'll find proliferating the web. A nice, slighly dated post with a similar intent can be found [here](https://rix0r.nl/blog/2015/08/13/cmake-guide/). You might also find that helpful for a fast introduction.
+This book tries to solve the problem of the poor examples and best practices that you'll find proliferating the web. A nice, slightly dated post with a similar intent can be found [here](https://rix0r.nl/blog/2015/08/13/cmake-guide/). You might also find that helpful for a fast introduction.
+
+[Modern CMake]: https://steveire.wordpress.com/2017/11/05/embracing-modern-cmake/
 
