@@ -44,10 +44,10 @@ This has the benefit of respecting your current virtual environment, as well.
 
 {% hint style='info' %}
 Personally, on Linux, I put versions of CMake in folders, like `/opt/cmake39` or `~/opt/cmake39`, and then add them to [LMod]. See [`envmodule_setup`][envmodule_setup] for help setting up an LMod system on macOS or Linux. It's takes a bit to learn, but is a great way to manage package and compiler versions.
+[envmodule_setup]: https://github.com/CLIUtils/envmodule_setup
 {% endhint %}
 
 [^1]: If don't have a `.local` in your home directory, it's easy to start. Just make the folder, then add `export PATH="$HOME/.local/bin:$PATH"` to your `.bashrc` or `.bash_profile` or `.profile` file in your home directory. Now you can install any packages you build to `-DCMAKE_INSTALL_PREFIX=~/.local` instead of `/usr/local`!
 
 [cmake-download]: https://cmake.org/download/
 [LMod]: http://lmod.readthedocs.io/en/latest/
-[envmodule_setup]: https://github.com/CLIUtils/envmodule_setup

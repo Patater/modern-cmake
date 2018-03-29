@@ -32,10 +32,37 @@ Since `BOOL` is such a common variable type, you can set it more succinctly with
  option(MY_OPTION "This is settable from the command line" OFF)
  ``` 
  
- For the `BOOL` datatype, there are several different wordings for `ON` and `OFF`.
- 
+For the `BOOL` datatype, there are several different wordings for `ON` and `OFF`.
+
+See [cmake-variables] for a listing of known variables in CMake.
+
 ## The Cache
  
 The cache is actually just a text file, `CMakeCache.txt`, that gets created in the build directory when you run CMake. This is how CMake remembers anything you set, so you don't have to re-list your options every time you rerun CMake. 
 
+## Properties
+
+The other way CMake stores information is in properties. This is like a variable, but it is attached to some other item, like a directory or a target. A global property can be a useful uncached global variable. Many target properties are initialized from a matching variable with `CMAKE_` at the front. So setting `CMAKE_CXX_STANDARD`, for example, will mean that all new targets created will have `CXX_STANDARD` set to that when they are created. There are two
+ways to set properties:
+
+```cmake
+set_property(TARGET TargetName
+             PROPERTY CXX_STANDARD 11)
+
+set_target_properties(TargetName PROPERTIES
+                      CXX_STANDARD 11)
+```
+
+The first form is more general, and can set multiple targets/files/tests at once, and has useful options. The second is a shortcut for setting several properties on one target. And you can get targets similarly:
+
+```cmake
+get_property(ResultVariable TARGET TargetName PROPERTY CXX_STANDARD)
+```
+
+See [cmake-properties] for a listing of all known properties. You can also make your own in some cases.[^2]
+
+[cmake-properties]: https://cmake.org/cmake/help/latest/manual/cmake-properties.7.html
+[cmake-variables]: https://cmake.org/cmake/help/latest/manual/cmake-variables.7.html
+
 [^1]: `if` statements are a bit odd in that they can take the variable with or without the surrounding syntax; this is there for historical reasons: `if` predates the `${}` syntax.
+[^2]: Interface targets, for example, may have limits on custom properties that are allowed.

@@ -1,7 +1,5 @@
 # An Introduction to Modern CMake
 
-
-
 People love to hate build systems.
 Just watch the talks from CppCon17 to see examples of developers making the state of build systems the brunt of jokes.
 This raises the question: Why?
@@ -15,7 +13,7 @@ And CMake 3.11 is significantly faster, as well!
 
 
 {% hint style='working' %}
-This document is a work in progress.
+This document is a work in progress. You can raise an issue or put in a merge request on [GitLab](https://gitlab.com/CLIUtils/modern-cmake).
 {% endhint %}
 
 In short, here are the most likely questions in your mind if you are considering Modern CMake:
