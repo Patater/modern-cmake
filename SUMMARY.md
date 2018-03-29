@@ -4,6 +4,8 @@
 * [Installing CMake](chapters/installing.md)
 * [Running CMake](chapters/running.md)
 
+---
+
 ## Making a CMakeLists
 
 * [Introduction to the Basics](chapters/basics.md)
@@ -20,9 +22,14 @@
 * [Debugging (X)](chapters/debug.md)
 * [Exporting and Installing](chapters/exporting.md)
 
+---
+
 ## Specific packages
 * [CUDA](specifics/CUDA.md)
 * [OpenMP](specifics/OpenMP.md)
 * [Boost (X)](specifics/Boost.md)
 * [MPI](specifics/MPI.md)
-* [ROOT (INCOMPLETE)](specifics/ROOT.md)
+* [ROOT](specifics/ROOT.md)
+    * [Simple Example](examples/root-simple/README.md)
+    * [Simple Example CMake 3.11+](examples/root-simple-3.11/README.md)
+    * [Dictionary Example](examples/root-dict/README.md)

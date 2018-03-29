@@ -10,5 +10,4 @@ public:
     Double_t GetX() const;
 
     ClassDef(Simple,1)
-
 };

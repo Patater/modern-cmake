@@ -21,6 +21,7 @@ set_property(TARGET ROOT::Core APPEND PROPERTY
     INTERFACE_COMPILE_OPTIONS ${ROOT_CXX_FLAG_LIST})
 ## [setup_properties]
 
+# Adding an exectuable program and linking to needed ROOT libraries
 ## [add_and_link]
 add_executable(RootSimpleExample SimpleExample.cxx)
 target_link_libraries(RootSimpleExample PUBLIC ROOT::Physics)

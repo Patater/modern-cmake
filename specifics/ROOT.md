@@ -7,7 +7,7 @@ ROOT is a C++ Toolkit for High Energy Physics. It is huge. There are really a lo
 
 ROOT supports config file discovery, so you can just do:
 
-[import:'find_package', lang:'cmake'](../examples/root-example/CMakeLists.txt)
+[import:'find_package', lang:'cmake'](../examples/root-simple/CMakeLists.txt)
 
 to attempt to find ROOT. If you don't have your paths set up, you can pass `-DROOT_DIR=$ROOTSYS/cmake` to find ROOT. (But, really, you should source `thisroot.sh`)
 
@@ -19,20 +19,18 @@ ROOT provides a utility to set up a ROOT project, which you can activate using `
 
 ROOT does not correctly set up it's imported targets. To fix this error, you'll need something like:
 
-[import:'setup_properties', lang:'cmake'](../examples/root-example/CMakeLists.txt)
+[import:'setup_properties', lang:'cmake'](../examples/root-simple/CMakeLists.txt)
 
 In CMake 3.11, you can replace that last function call with:
 
-```cmake
-target_include_directories(ROOT::Core IMPORTED INTERFACE "${ROOT_INCLUDE_DIRS}")
-target_compile_options(ROOT::Core IMPORTED INTERFACE "${ROOT_CXX_FLAG_LIST}")
-```
+
+[import:'modern_fix', lang:'cmake'](../examples/root-simple-3.11/CMakeLists.txt)
 
 All the ROOT targets will require `ROOT::Core`, so this will be enough regardless of which ROOT targets you need.
 
 To link, just pick the libraries you want to use:
 
-[import:'add_and_link', lang:'cmake'](../examples/root-example/CMakeLists.txt)
+[import:'add_and_link', lang:'cmake'](../examples/root-simple/CMakeLists.txt)
 
 ## Dictionary generation
 
@@ -42,7 +40,7 @@ Dictionary generation is ROOT's way of working around the missing reflection fea
 * Your class implementation should have `ClassImp(MyClassName)` in it
 * You should have a file with a name that ends with `LinkDef.h`
 
-The `LinkDef.h` file follows a specific formula and tells ROOT what parts to generate dictionaries for.
+The `LinkDef.h` file follows a [specific formula][linkdef-root] and tells ROOT what parts to generate dictionaries for.
 
 To generate, you should include the following in your CMakeLists:
 
@@ -50,20 +48,22 @@ To generate, you should include the following in your CMakeLists:
 include("${ROOT_DIR}/modules/RootNewMacros.cmake")
 include_directories(ROOT_BUG)
 ```
+
 The second line is due to a bug in the NewMacros file that causes dictionary generation to fail if there is not at least one global include directory or a `inc` folder. Here I'm including a non-existent directory just to make it work. There is no `ROOT_BUG` directory.
 
 To generate a file:
 
 ```cmake
-root_generate_dictionary(G__MyExample MyExample.h LINKDEF SimpleLinkDef.h)
+root_generate_dictionary(G__Example Example.h LINKDEF ExampleLinkDef.h)
 ```
 
-Then include `G__MyExample.cxx` in your sources when you make the library.
+The final argument, listed after `LINKDEF`, must have a name that ends in `LinkDef.h`. This command will create three files. If you started output name with `G__`, that will be removed from the name, otherwise it will use the name given; this must match the final output library name you will soon be creating. Assuming this is `${NAME}`:
 
-## Example: Minimal
+* `${NAME}.cxx`: This file should be included in your sources when you make the library.
+* `lib{NAME}.rootmap` (`G__` prefix removed): The rootmap file in plain text
+* `lib{NAME}_rdict.pcm` (`G__` prefix removed): A ROOT file
 
-#### examples/root-example/CMakeLists.txt
-[import:'main', lang:'cmake'](../examples/root-example/CMakeLists.txt)
+The final two output files must sit next to the library output. This is done by checking `CMAKE_LIBRARY_OUTPUT_DIRECTORY` (it will not pick up local target settings). If you have a libdir set but you don't have (global) install locations set, you'll also need to set `ARG_NOINSTALL` to `TRUE`. 
 
-## Example: Dictionary
-[import:'main', lang:'cmake', title:"CMakeLists.txt"](../examples/root-example-dict/CMakeLists.txt)
+[linkdef-root]: https://root.cern.ch/selecting-dictionary-entries-linkdefh
+

@@ -1,3 +1,5 @@
+
+## [main]
 cmake_minimum_required(VERSION 3.11)
 
 project(RootSimpleExample311 LANGUAGES CXX)
@@ -14,6 +16,7 @@ target_compile_options(ROOT::Core INTERFACE "${ROOT_CXX_FLAG_LIST}")
 
 add_executable(RootSimpleExample311 SimpleExample.cxx)
 target_link_libraries(RootSimpleExample311 PUBLIC ROOT::Physics)
+## [main]
 
 enable_testing()
 add_test(NAME RootSimpleExample311 COMMAND RootSimpleExample311)
