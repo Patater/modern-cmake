@@ -14,24 +14,6 @@ target_link_libraries(MyTarget PUBLIC MPI::MPI_CXX)
 
 However, you can imitate this on CMake 3.1+ with:
 
-```cmake
-find_package(MPI REQUIRED)
-
-# For supporting CMake < 3.9:
-if(NOT TARGET MPI::MPI_CXX)
-    add_library(MPI_LIB_TARGET INTERFACE)
-    add_library(MPI::MPI_CXX ALIAS MPI_LIB_TARGET)
-
-    target_compile_options(MPI_LIB_TARGET INTERFACE "${MPI_CXX_COMPILE_FLAGS}")
-    target_include_directories(MPI_LIB_TARGET INTERFACE "${MPI_CXX_INCLUDE_PATH}")
-    target_link_libraries(MPI_LIB_TARGET INTERFACE ${MPI_CXX_LINK_FLAGS} ${MPI_CXX_LIBRARIES})
-endif()
-
-message(STATUS "Run: ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} ${MPIEXEC_MAX_NUMPROCS} ${MPIEXEC_PREFLAGS} EXECUTABLE ${MPIEXEC_POSTFLAGS} ARGS")
-target_link_libraries(MyTarget PUBLIC MPI::MPI_CXX)
-```
-
-Or,
 
 ```cmake
 find_package(MPI REQUIRED)

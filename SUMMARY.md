@@ -1,40 +1,34 @@
 # Summary
 
 * [An Introduction to Modern CMake](README.md)
-* [Installing CMake](chapters/installing.md)
-* [Running CMake](chapters/running.md)
-* [What's new in CMake](chapters/newcmake.md)
-
----
-
-## Making a CMakeLists
-
+    * [Installing CMake](chapters/installing.md)
+    * [Running CMake](chapters/running.md)
+    * [What's new in CMake](chapters/newcmake.md)
 * [Introduction to the Basics](chapters/basics.md)
-* [Variables and the Cache](chapters/options.md)
-* [C++11 and Beyond](chapters/cpp11.md)
+    * [Variables and the Cache](chapters/basics/variables.md)
+    * [How to Structure Your Project](chapters/structure.md)
+    * [Running Other Programs (X)](chapters/programs.md)
 * [Adding Features](chapters/features.md)
-* [How to Structure Your Project](chapters/structure.md)
+    * [C++11 and Beyond](chapters/cpp11.md)
+    * [Tidy and Format (X)](chapters/tidy.md)
+    * [IDEs (X)](chapters/IDEs.md)
+    * [Debugging (X)](chapters/debug.md)
 * [Including Projects](chapters/projects.md)
     * [Submodule](chapters/projects/submodule.md) 
     * [DownloadProject](chapters/projects/download.md) 
     * [Fetch (3.11)](chapters/projects/fetch.md) 
-* [Running Other Programs (X)](chapters/programs.md)
 * [Testing](chapters/testing.md)
     * [GoogleTest](chapters/testing/googletest.md)
     * [Catch](chapters/testing/catch.md)
-* [Tidy and Format (X)](chapters/tidy.md)
-* [IDEs (X)](chapters/IDEs.md)
-* [Debugging (X)](chapters/debug.md)
 * [Exporting and Installing](chapters/exporting.md)
+* [Built-in package discovery](chapters/builtin.md)
+    * [CUDA](specifics/CUDA.md)
+    * [OpenMP](specifics/OpenMP.md)
+    * [Boost (X)](specifics/Boost.md)
+    * [MPI](specifics/MPI.md)
+* [Other common packages](chapters/external.md)
+    * [ROOT](specifics/ROOT.md)
+        * [Simple Example](examples/root-simple/README.md)
+        * [Simple Example CMake 3.11+](examples/root-simple-3.11/README.md)
+        * [Dictionary Example](examples/root-dict/README.md)
 
----
-
-## Specific packages
-* [CUDA](specifics/CUDA.md)
-* [OpenMP](specifics/OpenMP.md)
-* [Boost (X)](specifics/Boost.md)
-* [MPI](specifics/MPI.md)
-* [ROOT](specifics/ROOT.md)
-    * [Simple Example](examples/root-simple/README.md)
-    * [Simple Example CMake 3.11+](examples/root-simple-3.11/README.md)
-    * [Dictionary Example](examples/root-dict/README.md)

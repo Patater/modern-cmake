@@ -12,23 +12,6 @@ endif()
 
 This not only is cleaner than the old method, it will also correctly set the library link line differently from the compile line if needed. However, if you need to support older CMake, the following works on CMake 3.1+:
 
-```cmake
-# For CMake < 3.9, we need to make the target ourselves
-if(NOT TARGET OpenMP::OpenMP_CXX)
-    add_library(OpenMP_TARGET INTERFACE)
-    add_library(OpenMP::OpenMP_CXX ALIAS OpenMP_TARGET)
-    target_compile_options(OpenMP_TARGET INTERFACE ${OpenMP_CXX_FLAGS})
-    # Only works if the same flag is passed to the linker; use CMake 3.9+ otherwise (Intel, AppleClang)
-    target_link_libraries(OpenMP_TARGET INTERFACE ${OpenMP_CXX_FLAGS})
-    find_package(Threads REQUIRED)
-    target_link_libraries(OpenMP_TARGET INTERFACE Threads::Threads)
-endif()
-target_link_libraries(MyTarget PUBLIC OpenMP::OpenMP_CXX)
-```
-
-
-or,
-
 
 ```cmake
 # For CMake < 3.9, we need to make the target ourselves
