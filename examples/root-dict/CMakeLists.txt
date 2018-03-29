@@ -2,7 +2,7 @@
 ## [main]
 cmake_minimum_required(VERSION 3.1)
 
-project(RootExampleDict LANGUAGES CXX)
+project(RootDictExample LANGUAGES CXX)
 
 find_package(ROOT CONFIG REQUIRED)
 include("${ROOT_DIR}/modules/RootNewMacros.cmake")
@@ -17,11 +17,14 @@ set_target_properties(ROOT::Core PROPERTIES
     )
 
 include_directories(ROOT_BUG)
-root_generate_dictionary(G__MyExample MyExample.h LINKDEF SimpleLinkDef.h)
+root_generate_dictionary(G__DictExample DictExample.h LINKDEF DictLinkDef.h)
 
-add_library(MyExample SHARED MyExample.cxx MyExample.h G__MyExample.cxx)
-target_link_libraries(MyExample PUBLIC ROOT::Core)
+add_library(DictExample SHARED DictExample.cxx DictExample.h G__DictExample.cxx)
+target_link_libraries(DictExample PUBLIC ROOT::Core)
 
 ## [main]
-#enable_testing()
-#add_test(NAME MyExample COMMAND )
+
+enable_testing()
+add_test(NAME RootDictExample
+    WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+    COMMAND "${ROOT_root_CMD}" -b -l -q "${CMAKE_CURRENT_SOURCE_DIR}/CheckLoad.C")

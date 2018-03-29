@@ -1,5 +1,5 @@
 {
-gSystem->Load("libMyExample");
+gSystem->Load("libDictExample");
 Simple s;
 cout << s.GetX() << endl;
 TFile *_file = TFile::Open("tmp.root", "RECREATE");

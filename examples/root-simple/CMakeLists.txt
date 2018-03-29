@@ -22,11 +22,11 @@ set_property(TARGET ROOT::Core APPEND PROPERTY
 ## [setup_properties]
 
 ## [add_and_link]
-add_executable(MyExample MyExample.cxx)
-target_link_libraries(MyExample PUBLIC ROOT::Physics)
+add_executable(RootSimpleExample SimpleExample.cxx)
+target_link_libraries(RootSimpleExample PUBLIC ROOT::Physics)
 ## [add_and_link]
 
 ## [main]
 
 enable_testing()
-add_test(NAME RootSimpleExample COMMAND MyExample)
+add_test(NAME RootSimpleExample COMMAND RootSimpleExample)
