@@ -9,11 +9,11 @@ include("${ROOT_DIR}/modules/RootNewMacros.cmake")
 
 message(STATUS "Found ROOT: ${ROOT_VERSION} at ${ROOT_DIR}")
 
-string(REPLACE " " ";" ROOT_CXX_FLAG_LIST "${ROOT_CXX_FLAGS}")
+separate_arguments(ROOT_CXX_FLAGS)
 
 set_target_properties(ROOT::Core PROPERTIES
     INTERFACE_INCLUDE_DIRECTORIES "${ROOT_INCLUDE_DIRS}"
-    INTERFACE_COMPILE_OPTIONS "${ROOT_CXX_FLAG_LIST}"
+    INTERFACE_COMPILE_OPTIONS "${ROOT_CXX_FLAGS}"
     )
 
 include_directories(ROOT_BUG)

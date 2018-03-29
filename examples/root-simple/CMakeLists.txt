@@ -13,12 +13,12 @@ message(STATUS "Found ROOT: ${ROOT_VERSION} at ${ROOT_DIR}")
 # ROOT targets are missing includes and flags
 ## [setup_properties]
 # Fix for ROOT_CXX_FLAGS not actually being a CMake list
-string(REPLACE " " ";" ROOT_CXX_FLAG_LIST "${ROOT_CXX_FLAGS}")
+separate_arguments(ROOT_CXX_FLAGS)
 
 set_property(TARGET ROOT::Core PROPERTY
     INTERFACE_INCLUDE_DIRECTORIES "${ROOT_INCLUDE_DIRS}")
 set_property(TARGET ROOT::Core APPEND PROPERTY
-    INTERFACE_COMPILE_OPTIONS ${ROOT_CXX_FLAG_LIST})
+    INTERFACE_COMPILE_OPTIONS ${ROOT_CXX_FLAGS})
 ## [setup_properties]
 
 # Adding an exectuable program and linking to needed ROOT libraries
