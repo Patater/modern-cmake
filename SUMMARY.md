@@ -3,6 +3,7 @@
 * [An Introduction to Modern CMake](README.md)
 * [Installing CMake](chapters/installing.md)
 * [Running CMake](chapters/running.md)
+* [What's new in CMake](chapters/newcmake.md)
 
 ---
 
