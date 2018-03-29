@@ -15,7 +15,7 @@ This line is special! [^2] The version of CMake will also dictate the policies, 
 
 
 {% hint style='info' %}
-If you really need to set to a low value here, you can use [`cmake_policy`] to conditinally increase the policy level or set a specific policy. Please at least do this for your macOS users!
+If you really need to set to a low value here, you can use [`cmake_policy`](https://cmake.org/cmake/help/v3.0/command/cmake_policy.html) to conditionally increase the policy level or set a specific policy. Please at least do this for your macOS users!
 {% endhint %}
 
 
@@ -111,4 +111,3 @@ target_link_libraries(calc PUBLIC calclib)
 
 [^3]: The `::` syntax was originally intended for `INTERFACE IMPORTED` libraries, which were explicitly supposed to be libraries defined outside the current project. But, because of this, most of the `target_*` commands don't work on `IMPORTED` libraries, making them hard to set up yourself. So don't use the `IMPORTED` keyword for now, and use an `ALIAS` target instead. There's a project in the works to fix this limitation for CMake 3.11.
 
-[`cmake_policy`]: https://cmake.org/cmake/help/v3.0/command/cmake_policy.html
