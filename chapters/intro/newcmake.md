@@ -84,7 +84,7 @@ You can now cross-compile to Android. Useful new if statement options really hel
 * CMake Server added
 
 
-## [CMake 3.8] : C# and CUDA
+## [CMake 3.8] : C# & CUDA
 
 This adds CUDA as a language, as well as `cxx_std_11` as a compiler meta-feature. The new generator expression could be really useful if you can require CMake 3.8+! 
 
@@ -126,7 +126,7 @@ CMake now is built with C++11 compilers. Lots of useful improvements help write 
 * FindOpenMP improved
 * Dynamic test discovery for `GoogleTest`
 
-## [CMake 3.11] : Faster
+## [CMake 3.11] : Faster & IMPORTED INTERFACE
 
 This release is [supposed to be][fastercmake] much faster. You can also finally directly add INTERFACE targets
 to IMPORTED libraries (the internal `Find*.cmake` scripts should become much cleaner eventually).
@@ -136,6 +136,18 @@ to IMPORTED libraries (the internal `Find*.cmake` scripts should become much cle
 * You can now add INTERFACE targets directly to IMPORTED INTERFACE libraries (Wow!)
 * Source file properties have been expanded
 * `FetchContent` module now allows downloads to happen at configure time (Wow)
+
+## CMake 3.12 : In progress
+
+Potential, possible new features:
+
+* Support for OpenMP on macOS
+* C++20 support
+* Support for `cmake_minimum_required` ranges (backward compatible)
+* Support for `$<SHELL:` shell strings (not deduplicated)
+* New FindPython module
+* `string(JOIN`
+* `file(TOUCH`
 
 
 [Releases]: https://cmake.org/cmake/help/latest/release/index.html
