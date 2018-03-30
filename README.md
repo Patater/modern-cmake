@@ -4,7 +4,7 @@ People love to hate build systems.
 Just watch the talks from CppCon17 to see examples of developers making the state of build systems the brunt of jokes.
 This raises the question: Why?
 Certainly there are no shortage of problems when building.
-But I think that, in 2017, we have a very good solution to quite a few of those problems.
+But I think that, in 2018, we have a very good solution to quite a few of those problems.
 It's CMake. Not CMake 2.8 though; that was released before C++11 even existed!
 Nor the horrible examples out there for CMake (even those posted on KitWare's own tutorials list).
 I'm talking about [Modern CMake]. CMake 3.1+, maybe even CMake 3.11+!
@@ -59,7 +59,7 @@ But it had a 3.
 And it followed 2.
 And it was a hard, ugly, transition that is still ongoing in some places, even today.
 
-I believe that CMake 3 had the bad luck to follow Python 3.
+I believe that CMake 3 had the bad luck to follow Python 3.[^1]
 Even though every version of CMake is insanely backward compatible, the 3 series was treated as if it was something new.
 And so, you'll find OS's like CentOS7 with GCC 4.8, with almost-complete C++14 support, and CMake 2.8, which came out before C++11.
 
@@ -69,6 +69,14 @@ You should *at least* install it locally.
 It's easy (1-2 lines in many cases), and you'll find that 5 minutes of work will save you hundreds of lines and hours of CMakeLists.txt writing, and will be much easier to maintain in the long run.
 
 This book tries to solve the problem of the poor examples and best practices that you'll find proliferating the web. A nice, slightly dated post with a similar intent can be found [here](https://rix0r.nl/blog/2015/08/13/cmake-guide/). You might also find that helpful for a fast introduction.
+
+## Other sources:
+
+* [Effective Modern CMake](https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1): A great list of do's and don'ts.
+* [Embracing Modern CMake][Modern CMake]: A post with good description of the term
+
+[^1]: CMake 3.0 also removed several long deprecated features from very old versions of CMake and make one very tiny backwards incompatible change to syntax related to square brackets, so this is not entirely fair; there might be some very, very old CMake files that would stop working with 3. I've never seen one, though.
+
 
 [Modern CMake]: https://steveire.wordpress.com/2017/11/05/embracing-modern-cmake/
 

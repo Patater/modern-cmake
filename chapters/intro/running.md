@@ -38,7 +38,7 @@ And you can pick a tool with `-G"My Tool"` (quotes only needed if spaces are in 
 
 ## Setting options
 
-You set options in CMake with `-D`. You can see a list of options with `-L`, or a list with human-readable help with `-LH`.
+You set options in CMake with `-D`. You can see a list of options with `-L`, or a list with human-readable help with `-LH`. If you don't list the source/build directory, the listing will not rerun CMake (`cmake -L` instead of `cmake -L .`).
 
 ## Verbose and partial builds
 
