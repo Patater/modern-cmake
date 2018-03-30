@@ -19,8 +19,8 @@ On Linux, there are binaries provided, but you'll need to pick an install locati
 If you just want a local folder with CMake only:
 
 {% term %}
-~ $ mkdir -p cmake39 && wget -qO- "https://cmake.org/files/v3.11/cmake-3.11.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake39
-~ $ export PATH=`pwd`/cmake39/bin:$PATH
+~ $ mkdir -p cmake-3.11 && wget -qO- "https://cmake.org/files/v3.11/cmake-3.11.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake39
+~ $ export PATH=`pwd`/cmake-3.11/bin:$PATH
 {% endterm %}
 
 You'll obviously want to append to the PATH every time you start a new terminal, or add it to your `.bashrc` or to an [LMod] system.
