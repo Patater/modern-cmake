@@ -84,6 +84,25 @@ add_gtest(SimpleTest)
 > add_test(SimpleTest SimpleTest)
 > ```
 
+## FetchContent: CMake 3.11
+
+The example for the FetchContent module is GoogleTest:
+
+```cmake
+include(FetchContent)
+
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG        release-1.8.0
+)
+
+FetchContent_GetProperties(googletest)
+if(NOT googletest_POPULATED)
+  FetchContent_Populate(googletest)
+  add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})
+endif()
+```
 
 [^1]: Here I've assumed that you are working on a GitHub repository by using the relative path to googletest.
 

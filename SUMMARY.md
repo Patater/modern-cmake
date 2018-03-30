@@ -20,7 +20,7 @@
 * [Including Projects](chapters/projects.md)
     * [Submodule](chapters/projects/submodule.md) 
     * [DownloadProject](chapters/projects/download.md) 
-    * [Fetch (CMake 3.11) (X)](chapters/projects/fetch.md) 
+    * [Fetch (CMake 3.11)](chapters/projects/fetch.md) 
 * [Testing](chapters/testing.md)
     * [GoogleTest](chapters/testing/googletest.md)
     * [Catch](chapters/testing/catch.md)
