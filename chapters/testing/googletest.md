@@ -18,13 +18,13 @@ if(PACKAGE_TESTS)
 endif()
 ```
 
-As mentioned before, you have to do the `enable_testing` in your main CMakeLists. Now, in your tests directory:
+I would recommend using something like `PROJECT_NAME STREQUAL CMAKE_PROJECT_NAME` to set the default for the option, since this should only build by default if this is the current project. As mentioned before, you have to do the `enable_testing` in your main CMakeLists. Now, in your tests directory:
 
 ```cmake
 add_subdirectory("${PROJECT_SOURCE_DIR}/extern/googletest" "extern/googletest")
 ```
 
-If you did this in your main CMakeLists, you could use a normal add_subdirectory; the extra path here is needed to correct the build path because we are calling it from a subdirectory.
+If you did this in your main CMakeLists, you could use a normal `add_subdirectory`; the extra path here is needed to correct the build path because we are calling it from a subdirectory.
 
 The next line is optional, but keeps your `CACHE` cleaner:
 
@@ -83,7 +83,6 @@ add_gtest(SimpleTest)
 > target_link_libraries(SimpleTest gtest gmock gtest_main)
 > add_test(SimpleTest SimpleTest)
 > ```
-
 
 
 [^1]: Here I've assumed that you are working on a GitHub repository by using the relative path to googletest.
