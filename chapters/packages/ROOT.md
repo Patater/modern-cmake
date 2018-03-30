@@ -7,7 +7,7 @@ ROOT is a C++ Toolkit for High Energy Physics. It is huge. There are really a lo
 
 ROOT supports config file discovery, so you can just do:
 
-[import:'find_package', lang:'cmake'](../examples/root-simple/CMakeLists.txt)
+[import:'find_package', lang:'cmake'](../../examples/root-simple/CMakeLists.txt)
 
 to attempt to find ROOT. If you don't have your paths set up, you can pass `-DROOT_DIR=$ROOTSYS/cmake` to find ROOT. (But, really, you should source `thisroot.sh`)
 
@@ -19,18 +19,18 @@ ROOT provides a utility to set up a ROOT project, which you can activate using `
 
 ROOT does not correctly set up it's imported targets. To fix this error, you'll need something like:
 
-[import:'setup_properties', lang:'cmake'](../examples/root-simple/CMakeLists.txt)
+[import:'setup_properties', lang:'cmake'](../../examples/root-simple/CMakeLists.txt)
 
 In CMake 3.11, you can replace that last function call with:
 
 
-[import:'modern_fix', lang:'cmake'](../examples/root-simple-3.11/CMakeLists.txt)
+[import:'modern_fix', lang:'cmake'](../../examples/root-simple-3.11/CMakeLists.txt)
 
 All the ROOT targets will require `ROOT::Core`, so this will be enough regardless of which ROOT targets you need.
 
 To link, just pick the libraries you want to use:
 
-[import:'add_and_link', lang:'cmake'](../examples/root-simple/CMakeLists.txt)
+[import:'add_and_link', lang:'cmake'](../../examples/root-simple/CMakeLists.txt)
 
 ## Dictionary generation
 
