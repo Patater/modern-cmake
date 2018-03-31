@@ -36,6 +36,7 @@ The next two lists are heavily based on the excellent gist [Effective Modern CMa
 * **Write a Config.cmake file**: This is what a library author should do to support clients.
 * **Make ALIAS targets to keep usage consistent**: Using `add_subdirectory` and `find_package` should provide the same targets and namespaces.
 * **Combine common functionality into clearly documented functions or macros**: Functions are better usually.
+* **Use lowercase function names**: CMake functions and macros can be called lower or upper case. Always user lower case. Upper case is for variables.
 
 
 
