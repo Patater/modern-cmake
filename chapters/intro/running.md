@@ -59,3 +59,14 @@ These are common CMake options to most packages:
 * `-DCMAKE_BUILD_TYPE=` Pick from Release, RelWithDebInfo, Debug, or sometimes more.
 * `-DCMAKE_INSTALL_PREFIX=` The location to install to. System install on UNIX would often be `/usr/local` (the default), user directories are often `~/.local`, or you can pick a folder.
 * `-D BUILD_SHARED_LIBS=` You can set this `ON` or `OFF` to control the default for shared libraries (the author can pick one vs. the other explicitly instead of using the default, though)
+
+## Special commands for CMake
+
+We've already mentioned several special commands, like `-G` for generator, but here is a listing of some other useful flags:
+
+| Flag | Description |
+|-----:|:------------|
+| `-G"Generator"` | Select a generator |
+| `--trace` | Print every line of CMake that is run. Very verbose. |
+| `--trace-source="filename"` | Print out every line of a CMake file when it runs. Very useful. |
+

@@ -105,7 +105,7 @@ Even more modules provide imported targets, including MPI.
 * CUDA supported for Windows
 * Better object library support in several situations
 * `DESCRIPTION` added to `project`
-* `seperate_arguments` gets `NATIVE_COMMAND`
+* `separate_arguments` gets `NATIVE_COMMAND`
 * `INTERPROCEDURAL_OPTIMIZATION` enforced (and `CMAKE_*` initializer added, CheckIPOSupported added, Clang and GCC support)
 * New `GoogleTest` module
 * `FindDoxygen` drastically improved

@@ -19,13 +19,15 @@ On Linux, there are binaries provided, but you'll need to pick an install locati
 If you just want a local folder with CMake only:
 
 {% term %}
-~ $ mkdir -p cmake-3.11 && wget -qO- "https://cmake.org/files/v3.11/cmake-3.11.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake39
+~ $ mkdir -p cmake-3.11 && wget -qO- "https://cmake.org/files/v3.11/cmake-3.11.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake-3.11
 ~ $ export PATH=`pwd`/cmake-3.11/bin:$PATH
 {% endterm %}
 
 You'll obviously want to append to the PATH every time you start a new terminal, or add it to your `.bashrc` or to an [LMod] system.
 
-And, if you want a system install, install to `/usr/local`. (I'm only brave enough to do this in Docker).
+And, if you want a system install, install to `/usr/local`; this is an excellent choice in a Docker container, for example on GitLab CI. I don't think I'd try it on a non-containerized system.
+
+If you are on a system without wget, replace `wget -qO-` with `curl -s`.
 
 You can also build CMake on any system, it's pretty easy, but binaries are faster.
 

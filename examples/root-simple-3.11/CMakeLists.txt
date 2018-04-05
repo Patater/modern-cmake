@@ -7,7 +7,7 @@ project(RootSimpleExample311 LANGUAGES CXX)
 find_package(ROOT CONFIG REQUIRED)
 message(STATUS "Found ROOT: ${ROOT_VERSION} at ${ROOT_DIR}")
 
-seperate_arguments(ROOT_CXX_FLAGS)
+separate_arguments(ROOT_CXX_FLAGS)
 
 ## [modern_fix]
 target_include_directories(ROOT::Core INTERFACE "${ROOT_INCLUDE_DIRS}")

@@ -1,28 +1,35 @@
-# requiring the environment of NodeJS 8 LTS series (carbon)
-image: node:carbon
 
-# add 'node_modules' to cache for speeding up builds
-cache:
-  paths:
-    - node_modules/ # Node modules and dependencies
-
-before_script:
-  - npm install gitbook-cli -g # install gitbook
-  - gitbook fetch latest # fetch latest stable version
-  - gitbook install # add any requested plugins in book.json
-  #- gitbook fetch pre # fetch latest pre-release version
-  #- gitbook fetch 2.6.7 # fetch specific version
-
-    
-# the 'pages' job will deploy and build your site to the 'public' path
-pages:
-  stage: deploy
+test_code:
+  image: rootproject/root-ubuntu16:6.12
+  stage: test
+  before_script:
+    - mkdir -p $HOME/.local
+    - curl -s "https://cmake.org/files/v3.11/cmake-3.11.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C $HOME/.local
+    - export PATH=$HOME/.local/bin:$PATH
   script:
-    - gitbook build . public # build to public path
+    - mkdir -p build
+    - cd build
+    - cmake ../examples
+    - cmake --build .
+    - ctest
+    - cd ..
+
+pages:
+  image: node:carbon
+  stage: deploy
+  only:
+    - master
+  cache:
+    paths:
+      - node_modules/
+  before_script:
+    - npm install gitbook-cli -g #
+    - gitbook fetch latest
+    - gitbook install
+  script:
+    - gitbook build . public
   artifacts:
     paths:
       - public
     expire_in: 1 week
-  only:
-    - master # this job will affect only the 'master' branch
 
