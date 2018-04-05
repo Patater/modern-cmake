@@ -32,6 +32,10 @@ To link, just pick the libraries you want to use:
 
 [import:'add_and_link', lang:'cmake'](../../examples/root-simple/CMakeLists.txt)
 
+## Components
+
+Find ROOT allows you to specify components. It will add anything you list to ${ROOT_LIBRARIES}, so you might want to build your own target using that to avoid listing the components twice.
+
 ## Dictionary generation
 
 Dictionary generation is ROOT's way of working around the missing reflection feature in C++. It allows ROOT to learn the details of your class so it can save it, show methods in the Cling interpreter, etc. You'll need three things in your source code to make it work for classes:

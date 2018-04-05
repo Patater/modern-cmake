@@ -26,6 +26,12 @@ if(NOT BUILD_TESTS_DEFAULT)
     mark_as_advanced(BUILD_TESTS)
 endif()
 ```
+## [CMakePrintHelpers]
+
+
+This module has a couple of handy output functions. `cmake_print_properties` lets you easily print properties.
+And `cmake_print_variables` will print the names and values of any variables you give it.
+
 
 ## [CheckCXXCompilerFlag]
 
@@ -86,3 +92,4 @@ There are lots of options you can add, like `COMPILE_DEFINITIONS`. In CMake 3.8+
 [CMakeDependentOption]: https://cmake.org/cmake/help/latest/module/CMakeDependentOption.html
 [CheckCXXCompilerFlag]: https://cmake.org/cmake/help/latest/module/CheckCXXCompilerFlag.html
 [WriteCompilerDetectionHeader]: https://cmake.org/cmake/help/latest/module/WriteCompilerDetectionHeader.html
+[CMakePrintHelpers]: https://cmake.org/cmake/help/latest/module/CMakePrintHelpers.html
