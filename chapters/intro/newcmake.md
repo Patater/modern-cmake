@@ -82,6 +82,7 @@ You can now cross-compile to Android. Useful new if statement options really hel
 * `LINK_WHAT_YOU_USE` added
 * Lots of custom properties related to files and directories
 * CMake Server added
+* Added `--trace-source="filename"` to monitor certain files only
 
 
 ## [CMake 3.8] : C# & CUDA

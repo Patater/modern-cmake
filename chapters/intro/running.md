@@ -60,13 +60,7 @@ These are common CMake options to most packages:
 * `-DCMAKE_INSTALL_PREFIX=` The location to install to. System install on UNIX would often be `/usr/local` (the default), user directories are often `~/.local`, or you can pick a folder.
 * `-D BUILD_SHARED_LIBS=` You can set this `ON` or `OFF` to control the default for shared libraries (the author can pick one vs. the other explicitly instead of using the default, though)
 
-## Special commands for CMake
+## Debugging your CMake files
 
-We've already mentioned several special commands, like `-G` for generator, but here is a listing of some other useful flags:
-
-| Flag | Description |
-|-----:|:------------|
-| `-G"Generator"` | Select a generator |
-| `--trace` | Print every line of CMake that is run. Very verbose. |
-| `--trace-source="filename"` | Print out every line of a CMake file when it runs. Very useful. |
+We've already mentioned verbose output for the build, but you can also see verbose CMake configure output too. The `--trace` option will print every line of CMake that is run. Since this is very verbose, CMake 3.7 added `--trace-source="filename"`, which will print out every executed line of just the file you are interested in when it runs. If you select the name of the file you are interested in debugging (usually with a parent directory if you are debugging a CMakeLists.txt, since all of those have the same name), you can just see the lines that run in that file. Very useful!
 
