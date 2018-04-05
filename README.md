@@ -13,7 +13,7 @@ And CMake 3.11 is significantly faster, as well!
 
 
 {% hint style='working' %}
-This document is a work in progress. You can raise an issue or put in a merge request on [GitLab](https://gitlab.com/CLIUtils/modern-cmake).
+This book is meant to be a living document. You can raise an issue or put in a merge request on [GitLab](https://gitlab.com/CLIUtils/modern-cmake).
 {% endhint %}
 
 In short, here are the most likely questions in your mind if you are considering Modern CMake:
