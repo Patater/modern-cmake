@@ -8,9 +8,21 @@ The [FetchContent] module has excellent documentation that I won't try to repeat
 * Use `FetchContent_GetProperties(MyName)` on the name you picked in the first step to get `MyName_*` variables.
 * Check `MyName_POPULATED`, and if not populated, use `FetchContent_Populate(MyName)` (and if a package, `add_subdirectory("${MyName_SOURCE_DIR}" "${MyName_SOURCE_DIR}")`) 
 
+For example, to download Catch2:
+
+```cmake
+FetchContent_Declare(
+  catch
+  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+  GIT_TAG        v2.2.1
+)
+
+FetchContent_GetProperties(catch)
+if(NOT catch_POPULATED)
+  FetchContent_Populate(catch)
+  add_subdirectory(${catch_SOURCE_DIR} ${catch_BINARY_DIR})
+endif()
+```
+
 [FetchContent]: https://cmake.org/cmake/help/latest/module/FetchContent.html
 
-{% hint style='working' %}
-This document is a work in progress. You can raise an issue or put in a merge request on [GitLab](https://gitlab.com/CLIUtils/modern-cmake).
-{% endhint %}
- ~
