@@ -10,7 +10,7 @@ If you have a built in copy of CMake, it isn't special or customized for your sy
 
 You can [download CMake from KitWare][cmake-download]. This is how you'll probably get CMake if you are on Windows. It's not a bad way to get it on macOS either, but using `brew install cmake` is much nicer if you use [Homebrew](https://brew.sh) (and you should).
 
-On Linux, there are binaries provided, but you'll need to pick an install location. If you already use `~/.local` for user-space packages, the following single line command will get CMake for you [^1]:
+On Linux, there are binaries provided, but you'll need to pick an install location. If you already use `~/.local` for user-space packages, the following single line command[^1] will get CMake for you [^2]:
 
 {% term %}
 ~ $ wget -qO- "https://cmake.org/files/v3.11/cmake-3.11.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C ~/.local
@@ -44,11 +44,12 @@ And as long as a binary exists for your system, you'll be up-and-running almost 
 This has the benefit of respecting your current virtual environment, as well.
 
 {% hint style='info' %}
-Personally, on Linux, I put versions of CMake in folders, like `/opt/cmake311` or `~/opt/cmake311`, and then add them to [LMod]. See [`envmodule_setup`][envmodule_setup] for help setting up an LMod system on macOS or Linux. It's takes a bit to learn, but is a great way to manage package and compiler versions.
+Personally, on Linux, I put versions of CMake in folders, like `/opt/cmake311` or `~/opt/cmake311`, and then add them to [LMod]. See [`envmodule_setup`][envmodule_setup] for help setting up an LMod system on macOS or Linux. It takes a bit to learn, but is a great way to manage package and compiler versions.
 [envmodule_setup]: https://github.com/CLIUtils/envmodule_setup
 {% endhint %}
 
-[^1]: If don't have a `.local` in your home directory, it's easy to start. Just make the folder, then add `export PATH="$HOME/.local/bin:$PATH"` to your `.bashrc` or `.bash_profile` or `.profile` file in your home directory. Now you can install any packages you build to `-DCMAKE_INSTALL_PREFIX=~/.local` instead of `/usr/local`!
+[^1]: I assume this is obvious, but you are downloading and running code, which exposes you to a man in the middle attack. If you are in a critical environment, you should download the file and check the checksum. (And, no, simply doing this in two steps does not make you any safer, only a checksum is safer).
+[^2]: If don't have a `.local` in your home directory, it's easy to start. Just make the folder, then add `export PATH="$HOME/.local/bin:$PATH"` to your `.bashrc` or `.bash_profile` or `.profile` file in your home directory. Now you can install any packages you build to `-DCMAKE_INSTALL_PREFIX=~/.local` instead of `/usr/local`!
 
 [cmake-download]: https://cmake.org/download/
 [LMod]: http://lmod.readthedocs.io/en/latest/

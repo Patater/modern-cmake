@@ -13,6 +13,9 @@ Let's mention a bit of CMake syntax. The function name is case insensitive, so t
 
 This line is special! [^2] The version of CMake will also dictate the policies, which define behavior changes. So, if you set `minimum_required` to `VERSION 2.8`, you'll get the wrong linking behavior on macOS, for example, even in the newest CMake versions. A list of policies and versions is [here](https://cmake.org/cmake/help/latest/manual/cmake-policies.7.html).
 
+In the upcoming CMake 3.12, this will support a range, such as `VERSION 3.1...3.12`; this means you support as low as 3.1 but have also tested it with the new policy settings up to 3.12. This is much nicer on users that need the better settings, and due to a trick in the syntax, it's backward compatible with older versions of CMake (though 3.2-3.11 will still set the 3.1 version of the policies). New versions of policies tend to be most important for macOS and Windows users, who also
+usually have a very recent version of CMake.
+
 
 {% hint style='info' %}
 If you really need to set to a low value here, you can use [`cmake_policy`](https://cmake.org/cmake/help/latest/command/cmake_policy.html) to conditionally increase the policy level or set a specific policy. Please at least do this for your macOS users!
