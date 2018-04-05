@@ -6,7 +6,7 @@ The first and most common feature was C++ standards support, which got it's own 
 
 ## Platform independent code
 
-[This](https://cmake.org/cmake/help/v3.9/variable/CMAKE_POSITION_INDEPENDENT_CODE.html) is best known as the `-fPIC` flag. Much of the time, you don't need to do anything. CMake will include the flag for `SHARED` or `MODULE` libraries. If you do explicitly need it:
+[This](https://cmake.org/cmake/help/latest/variable/CMAKE_POSITION_INDEPENDENT_CODE.html) is best known as the `-fPIC` flag. Much of the time, you don't need to do anything. CMake will include the flag for `SHARED` or `MODULE` libraries. If you do explicitly need it:
 
 ```cmake
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -22,9 +22,9 @@ to explicitly turn it `ON` (or `OFF`) for a target.
 
 ## Little libraries
 
-If you need to link to the `dl` library, with `-ldl` on Linux, just use the built-in CMake variable [`${CMAKE_DL_LIBS}`](https://cmake.org/cmake/help/v3.9/variable/CMAKE_DL_LIBS.html) in a `target_link_libraries` command. No module or `find_package` needed. (This adds whatever is needed to get `dlopen` and `dlclose`)
+If you need to link to the `dl` library, with `-ldl` on Linux, just use the built-in CMake variable [`${CMAKE_DL_LIBS}`](https://cmake.org/cmake/help/latest/variable/CMAKE_DL_LIBS.html) in a `target_link_libraries` command. No module or `find_package` needed. (This adds whatever is needed to get `dlopen` and `dlclose`)
 
-Unfortunately, the math library is not so lucky. If you need to explicitly link to it, you can always do `target_link_libraries(MyTarget PUBLIC m)`, but it might be better to use CMake's generic [`find_library`](https://cmake.org/cmake/help/v3.9/command/find_library.html):
+Unfortunately, the math library is not so lucky. If you need to explicitly link to it, you can always do `target_link_libraries(MyTarget PUBLIC m)`, but it might be better to use CMake's generic [`find_library`](https://cmake.org/cmake/help/latest/command/find_library.html):
 
 ```cmake
 find_library(MATH_LIBRARY m)
@@ -39,7 +39,7 @@ You can pretty easily find `Find*.cmake`'s for this and other libraries that you
 
 ## Interprocedural optimization
 
-[This](https://cmake.org/cmake/help/v3.9/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION.html) is available on very recent versions of CMake. You can turn this on with `CMAKE_INTERPROCEDURAL_OPTIMIZATION` (CMake 3.9 only) or the `INTERPROCEDURAL_OPTIMIZATION` property on targets. Support for GCC and Clang was added in CMake 3.8. In `cmake_minimum_required(VERSION 3.9)`, setting this to `ON` on a target is an error if the compiler doesn't support it. You can use [`check_ipo_supported()`](https://cmake.org/cmake/help/v3.9/module/CheckIPOSupported.html), from the built-in `CheckIPOSupported` module, to see if support is available before hand. An example of 3.9 style usage:
+[This](https://cmake.org/cmake/help/latest/variable/CMAKE_INTERPROCEDURAL_OPTIMIZATION.html) is available on very recent versions of CMake. You can turn this on with `CMAKE_INTERPROCEDURAL_OPTIMIZATION` (CMake 3.9+ only) or the `INTERPROCEDURAL_OPTIMIZATION` property on targets. Support for GCC and Clang was added in CMake 3.8. In `cmake_minimum_required(VERSION 3.9)`, setting this to `ON` on a target is an error if the compiler doesn't support it. You can use [`check_ipo_supported()`](https://cmake.org/cmake/help/latest/module/CheckIPOSupported.html), from the built-in `CheckIPOSupported` module, to see if support is available before hand. An example of 3.9 style usage:
 
 ```cmake
 include(CheckIPOSupported)

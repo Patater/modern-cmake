@@ -9,13 +9,13 @@ Here's the first line of every CMakeLists.txt, which is the required name of the
 cmake_minimum_required(VERSION 3.1)
 ```
 
-Let's mention a bit of CMake syntax. The function name is case insensitive, so the common practice is to use lower case. [^1] The `VERSION` is a special keyword for this function. And the value of the version follows the keyword. See the excellent documentation [here](https://cmake.org/cmake/help/v3.9/command/cmake_minimum_required.html), and use the dropdown to switch documentation between CMake versions.
+Let's mention a bit of CMake syntax. The function name is case insensitive, so the common practice is to use lower case. [^1] The `VERSION` is a special keyword for this function. And the value of the version follows the keyword. See the excellent documentation [here](https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html), and use the dropdown to switch documentation between CMake versions.
 
-This line is special! [^2] The version of CMake will also dictate the policies, which define behavior changes. So, if you set `minimum_required` to `VERSION 2.8`, you'll get the wrong linking behavior on macOS, for example, even in the newest CMake versions. A list of policies and versions is [here](https://cmake.org/cmake/help/v3.9/manual/cmake-policies.7.html).
+This line is special! [^2] The version of CMake will also dictate the policies, which define behavior changes. So, if you set `minimum_required` to `VERSION 2.8`, you'll get the wrong linking behavior on macOS, for example, even in the newest CMake versions. A list of policies and versions is [here](https://cmake.org/cmake/help/latest/manual/cmake-policies.7.html).
 
 
 {% hint style='info' %}
-If you really need to set to a low value here, you can use [`cmake_policy`](https://cmake.org/cmake/help/v3.0/command/cmake_policy.html) to conditionally increase the policy level or set a specific policy. Please at least do this for your macOS users!
+If you really need to set to a low value here, you can use [`cmake_policy`](https://cmake.org/cmake/help/latest/command/cmake_policy.html) to conditionally increase the policy level or set a specific policy. Please at least do this for your macOS users!
 {% endhint %}
 
 
@@ -29,7 +29,7 @@ project(MyProject VERSION 1.0
                   LANGUAGES CXX)
 ```
 
-Now we see even more syntax. Strings are quoted, white space doesn't matter [^3], and the name of the project is the first argument (positional). All the keyword arguments here are optional. The version sets a bunch of variables, like `MyProject_VERSION` and `PROJECT_VERSION`. The languages are C, CXX, FORTRAN, and CUDA (CMake 3.7+). `C CXX` is the default. Docs [here](https://cmake.org/cmake/help/v3.9/command/project.html). 
+Now we see even more syntax. Strings are quoted, white space doesn't matter [^3], and the name of the project is the first argument (positional). All the keyword arguments here are optional. The version sets a bunch of variables, like `MyProject_VERSION` and `PROJECT_VERSION`. The languages are C, CXX, FORTRAN, and CUDA (CMake 3.7+). `C CXX` is the default. Docs [here](https://cmake.org/cmake/help/latest/command/project.html). 
 
 {% hint style='danger' %}
 CMake doesn't care about white space, and you can add comments with the `#` character, but never put a comment inside the function call parenthesis.
@@ -45,12 +45,12 @@ Although libraries are much more interesting, and we'll spend most of our time w
 add_executable(one two.cpp three.h)
 ```
 
-There are several things to unpack here. `one` is both the name of the executable file generated, and the name of the CMake target created (you'll hear a lot more about targets soon, I promise). The source file list comes next, and you can list as many as you'd like. CMake is smart, and will only compile source file extensions. The headers will be, for most intents and purposes, ignored; the only reason to list them is to get them to show up in IDEs. Targets show up as folders in many IDEs. More about the general build system and targets is [here](https://cmake.org/cmake/help/v3.9/manual/cmake-buildsystem.7.html).
+There are several things to unpack here. `one` is both the name of the executable file generated, and the name of the CMake target created (you'll hear a lot more about targets soon, I promise). The source file list comes next, and you can list as many as you'd like. CMake is smart, and will only compile source file extensions. The headers will be, for most intents and purposes, ignored; the only reason to list them is to get them to show up in IDEs. Targets show up as folders in many IDEs. More about the general build system and targets is [here](https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html).
 
 
 ## Making a library
 
-[Making a library](https://cmake.org/cmake/help/v3.9/command/add_library.html?highlight=add_library) that compiles is just about as simple:
+[Making a library](https://cmake.org/cmake/help/latest/command/add_library.html) that compiles is just about as simple:
 
 ```cmake
 add_LIBRARY(one STATIC two.cpp three.h)
@@ -70,7 +70,7 @@ Now we've specified a target, how do we add information about it? For example, m
 target_include_directories(one PUBLIC include)
 ```
 
-This [command](https://cmake.org/cmake/help/v3.9/command/target_include_directories.html?highlight=include_directories#command:target_include_directories) adds an include directory to a target. `PUBLIC` doesn't mean much for an executable; for a library it lets CMake know that any targets that link to this target must also need that include directory. Other options are `PRIVATE` (only affect the current target, not dependencies), and `INTERFACE` (only needed for dependencies).
+This [command](https://cmake.org/cmake/help/latest/command/target_include_directories.html) adds an include directory to a target. `PUBLIC` doesn't mean much for an executable; for a library it lets CMake know that any targets that link to this target must also need that include directory. Other options are `PRIVATE` (only affect the current target, not dependencies), and `INTERFACE` (only needed for dependencies).
 
 We can then chain targets:
 
@@ -79,7 +79,7 @@ add_library(another STATIC another.cpp another.h)
 target_link_libraries(another PUBLIC one)
 ```
 
-[This](https://cmake.org/cmake/help/v3.9/command/target_link_libraries.html#command:target_link_libraries) is probably the most useful and confusing command in CMake. It takes a target (`another`) and adds a dependency if a target is given. If no target of that name (`one`) exists, then it adds a link to a library called `one` on your path (hence the name of the command). Or you can give it a full path to a library. Or a linker flag. Just to add a final bit of confusion, classic CMake allowed you to skip the keyword selection of `PUBLIC`, etc. If this was done on a target, you'll get an error if you try to mix styles further down the chain.
+[This](https://cmake.org/cmake/help/latest/command/target_link_libraries.html) is probably the most useful and confusing command in CMake. It takes a target (`another`) and adds a dependency if a target is given. If no target of that name (`one`) exists, then it adds a link to a library called `one` on your path (hence the name of the command). Or you can give it a full path to a library. Or a linker flag. Just to add a final bit of confusion, classic CMake allowed you to skip the keyword selection of `PUBLIC`, etc. If this was done on a target, you'll get an error if you try to mix styles further down the chain.
 
 Focus on using targets everywhere, and keywords everywhere, and you'll be fine.
 
@@ -109,5 +109,5 @@ target_link_libraries(calc PUBLIC calclib)
 
 [^2]: You will sometimes see `FATAL_ERROR` here, that was needed to support nice failures when running this in CMake <2.6, which should not be a problem anymore.
 
-[^3]: The `::` syntax was originally intended for `INTERFACE IMPORTED` libraries, which were explicitly supposed to be libraries defined outside the current project. But, because of this, most of the `target_*` commands don't work on `IMPORTED` libraries, making them hard to set up yourself. So don't use the `IMPORTED` keyword for now, and use an `ALIAS` target instead. There's a project in the works to fix this limitation for CMake 3.11.
+[^3]: The `::` syntax was originally intended for `INTERFACE IMPORTED` libraries, which were explicitly supposed to be libraries defined outside the current project. But, because of this, most of the `target_*` commands don't work on `IMPORTED` libraries, making them hard to set up yourself. So don't use the `IMPORTED` keyword for now, and use an `ALIAS` target instead; it will be fine until you start exporting targets. This limitation was fixed in CMake 3.11.
 

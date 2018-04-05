@@ -39,5 +39,5 @@ target_link_libraries(MyExeOrLibrary PUBLIC Boost::filesystem)
 
 
 
-[FindBoost]: https://cmake.org/cmake/help/v3.11/module/FindBoost.html
+[FindBoost]: https://cmake.org/cmake/help/latest/module/FindBoost.html
 [MROldBoost]: https://gitlab.kitware.com/cmake/cmake/merge_requests/1172
