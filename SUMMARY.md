@@ -15,6 +15,7 @@
     * [C++11 and Beyond](chapters/features/cpp11.md)
     * [Small but common needs](chapters/features/small.md)
     * [Utilities](chapters/features/utilities.md)
+    * [Useful modules](chapters/features/modules.md)
     * [IDEs](chapters/features/ides.md)
     * [Debugging](chapters/features/debug.md)
 * [Including Projects](chapters/projects.md)

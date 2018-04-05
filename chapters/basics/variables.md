@@ -9,6 +9,23 @@ set(MY_VARIABLE "value")
 
 The names of variables are usually all caps, and the value follows. You access a variable by using `${}`, such as `${MY_VARIABLE}`.[^1]  CMake has the concept of scope; you can access the value of the variable after you set it as long as you are in the same scope. If you leave a function or a file in a sub directory, the variable will no longer be defined. You can set a variable in the scope immediately above your current one with `PARENT_SCOPE` at the end.
 
+Lists are simply a series of values when you set them:
+
+```cmake
+set(MY_LIST "one" "two")
+```
+
+which internally become `;` separated values. So this is an identical statement:
+
+```cmake
+set(MY_LIST "one;two")
+```
+
+The `list(` command has utilities for working with lists, and `separate_arguments` will turn a space separated string into a list (inplace). Note that an unquoted value in CMake is the same as a quoted one if there are no spaces in it; this allows you to skip the quotes most of the time when working with value that you know could not contain spaces.
+
+When a variable is expanded using `${}` syntax, all the same rules about spaces apply. Be especially careful with paths; paths may contain a space at any time and should always be quoted when they are a variable (never write `${MY_PATH}`, always should
+be `"${MY_PATH}"`).
+
 ## Cache Variables
 
 If you want to set a variable from the command line, CMake offers a variable cache. Some variables are already here, like `CMAKE_BUILD_TYPE`. The syntax for declaring a variable and setting it if it is not already set is:
@@ -24,7 +41,11 @@ set(MY_CACHE_VARIABLE "VALUE" CACHE STRING "" FORCE)
 mark_as_advanced(MY_CACHE_VARIABLE)
 ```
 
-The first line will cause the value to be set no matter what, and the second line will keep the variable from showing up in the list of variables if you run `cmake -L ..` or use a GUI.
+The first line will cause the value to be set no matter what, and the second line will keep the variable from showing up in the list of variables if you run `cmake -L ..` or use a GUI. This is so common, you can also use the `INTERNAL` type to do the same thing (though technically it forces the STRING type, this won't affect any CMake code that depends on the variable):
+
+```cmake
+set(MY_CACHE_VARIABLE "VALUE" CACHE INTERNAL "")
+```
 
 Since `BOOL` is such a common variable type, you can set it more succinctly with the shortcut:
 
@@ -35,6 +56,10 @@ Since `BOOL` is such a common variable type, you can set it more succinctly with
 For the `BOOL` datatype, there are several different wordings for `ON` and `OFF`.
 
 See [cmake-variables] for a listing of known variables in CMake.
+
+## Environment variables
+
+You can also `set(ENV{variable_name} value)` and get `$ENV{variable_name}` environment variables, though it is generally a very good idea to avoid them.
 
 ## The Cache
  
