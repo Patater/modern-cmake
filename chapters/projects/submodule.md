@@ -2,8 +2,8 @@
 
 If you want to add a Git repository on the same service (GitHub, GitLab, BitBucket, etc), the following is the correct Git command to set that up as a submodule in the `extern` directory:
 
-```bash
-git submodule add ../../owner/repo.git extern/repo
+```term
+gitbook $ git submodule add ../../owner/repo.git extern/repo
 ```
 
 The relative path to the repo is important; it allows you to keep the same access method (ssh or https) as the parent repository. This works very well in most ways. When you are inside the submodule, you can treat it just like a normal repo, and when you are in the parent repository, you can "add" to change the current commit pointer.

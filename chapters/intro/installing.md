@@ -35,8 +35,8 @@ You can also build CMake on any system, it's pretty easy, but binaries are faste
 
 This is also provide as an official package, maintained by the authors of CMake at KitWare. It's a rather new method, and might fail on some systems (Alpine isn't supported last I checked, but that has CMake 3.8), but works really well when it works (like on Travis CI). If you have pip (Python's package installer), you can do:
 
-```bash
-pip install cmake
+```term
+gitbook $ pip install cmake
 ```
 
 And as long as a binary exists for your system, you'll be up-and-running almost immediately. If a binary doesn't exist, it will try to use KitWare's `scikit-build` package to build, which currently can't be listed as a dependency in the packaging system, and might even require (an older) copy of CMake to build. So only use this system if binaries exist, which is most of the time.

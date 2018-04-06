@@ -27,6 +27,8 @@ Set the following properties or `CMAKE_*` initializer variables to the command l
 * `<LANG>_CPPLINT`
 * `<LANG>_INCLUDE_WHAT_YOU_USE`
 
+## Clang tidy
+
 Here is a simple example of using Clang-Tidy:
 
 ```cmake
@@ -53,6 +55,27 @@ The `-fix` part is optional, and will modify your source files to try to fix the
 
 If you want to explicitly use the target form to ensure you only call this on your local targets, you can set a variable (I usually chose `DO_CLANG_TIDY`) instead of the `CMAKE_CXX_CLANG_TIDY` variable, then add it to your target properties as you create them.
 
+## Include what you use
+
+This is an example for using include what you use. First, you'll need to have the tool, such as in a docker container:
+
+```term
+gitbook $ docker run --rm -it tuxity/include-what-you-use:clang_4.0
+```
+
+Then, you can pass this into your build without modifying the source:
+
+```term
+build # cmake .. -DCMAKE_CXX_INCLUDE_WHAT_YOU_USE=include-what-you-use
+```
+
+Finally, you can collect the output and apply the fixes:
+
+```term
+build # make 2> iwyu.out
+build # fix_includes.py < iwyu.out
+```
+
 ## Link what you use
 
 There is a boolean target property, `LINK_WHAT_YOU_USE`, that will check for extraneous files when linking.
@@ -63,7 +86,7 @@ Clang-format doesn't really have an integration with CMake, unfortunately. You c
 
 The following two line would do that in a git repository in bash (assuming you have a `.clang-format` file):
 
-```bash
-git ls-files -- '*.cpp' '*.h' | xargs clang-format -i -style=file
-git diff --exit-code --color
+```term
+gitbook $ git ls-files -- '*.cpp' '*.h' | xargs clang-format -i -style=file
+gitbook $ git diff --exit-code --color
 ```
