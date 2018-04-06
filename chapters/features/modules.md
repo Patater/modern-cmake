@@ -1,8 +1,8 @@
 # Useful Modules
 
-There are a ton of [modules] in CMake; but some of them are more useful than others. Here are a few highlights.
+There are a ton of useful modules in CMake's «cmake:module» collection; but some of them are more useful than others. Here are a few highlights.
 
-## [CMakeDependentOption]
+## «module:CMakeDependentOption»
 
 This adds a command `cmake_dependent_option` that sets an option based on another set of variables being true. It looks like this:
 
@@ -26,14 +26,14 @@ if(NOT BUILD_TESTS_DEFAULT)
     mark_as_advanced(BUILD_TESTS)
 endif()
 ```
-## [CMakePrintHelpers]
+## «module:CMakePrintHelpers»
 
 
 This module has a couple of handy output functions. `cmake_print_properties` lets you easily print properties.
 And `cmake_print_variables` will print the names and values of any variables you give it.
 
 
-## [CheckCXXCompilerFlag]
+## «module:CheckCXXCompilerFlag»
 
 This checks to see if a flag is supported. For example:
 
@@ -47,7 +47,7 @@ Note that `OUTPUT_VARIABLE` will also appear in the configuration printout, so c
 This is just one of many similar modules, such as `CheckIncludeFileCXX`, `CheckStructHasMember`, `TestBigEndian`, and `CheckTypeSize` that allow you
 to check for information about the system (and you can communicate that to your source code).
 
-## [WriteCompilerDetectionHeader]
+## «module:WriteCompilerDetectionHeader»
 
 This is an amazing module similar to the ones listed above, but special enough to deserve its own section. It allows you
 to look for a list of features that some compilers support, and write out a C++ header file that lets you know whether that
@@ -71,7 +71,7 @@ files using `OUTPUT_FILES_DIR
 The downside is that you do have to list the compilers you expect to support. If you use the `ALLOW_UNKNOWN_COMPILERS` flag(s),
 you can keep this from erroring on unknown compilers, but it will still leave all features empty.
 
-## [try_compile](https://cmake.org/cmake/help/latest/command/try_compile.html)/[try_run](https://cmake.org/cmake/help/latest/command/try_run.html)
+## «command:`try_compile`»/«command:`try_run`»
 
 This is not exactly a module, but is crutial to many of the modules listed above. You can attept to compile (and possibly run) a bit of code at configure time. This can allow you to get information about the capabilities of your system. The basic syntax is:
 
@@ -86,10 +86,37 @@ try_compile(
 
 There are lots of options you can add, like `COMPILE_DEFINITIONS`. In CMake 3.8+, this will honor the CMake C/C++/CUDA standard settings. If you use `try_run` instead, it will run the resulting program and give you the output in `RUN_OUTPUT_VARIABLE`.
 
+## «module:FeatureSummary»
 
+This is a fairly useful but rather odd module. It allows you to print out a list of packages what were searched for, as well as any options you explicity mark. It's partially but not completely tied into «command:`find_package`». You first include the module, as always:
 
-[modules]: https://cmake.org/cmake/help/latest/manual/cmake-modules.7.html
-[CMakeDependentOption]: https://cmake.org/cmake/help/latest/module/CMakeDependentOption.html
-[CheckCXXCompilerFlag]: https://cmake.org/cmake/help/latest/module/CheckCXXCompilerFlag.html
-[WriteCompilerDetectionHeader]: https://cmake.org/cmake/help/latest/module/WriteCompilerDetectionHeader.html
-[CMakePrintHelpers]: https://cmake.org/cmake/help/latest/module/CMakePrintHelpers.html
+```cmake
+include(FeatureSummary)
+```
+
+Then, for any find packages you have run or will run, you can extend the default information:
+
+```cmake
+set_package_properties(OpenMP PROPERTIES
+    URL "http://www.openmp.org"
+    DESCRIPTION "Parallel compiler directives"
+    PURPOSE "This is what it does in my package")
+```
+
+You can also set the `TYPE` of a package to `RUNTIME`, `OPTIONAL`, `RECOMMENDED`, or `REQUIRED`; you can't, however, lower the type of a package; if you have already added a `REQUIRED` package through «command:`find_package`» based on an option, you'll see it listed as `REQUIRED`.
+
+And, you can mark any options as part of the feature summary:
+
+```cmake
+```
+
+Then, you can print out the summary of features, either to the screen or a log file:
+
+```cmake
+if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+    feature_summary(WHAT ENABLED_FEATURES DISABLED_FEATURES PACKAGES_FOUND)
+    feature_summary(FILENAME ${CMAKE_CURRENT_BINARY_DIR}/features.log WHAT ALL)
+endif()
+```
+
+You can build any collection of `WHAT` items that you like, or just use `ALL`.
