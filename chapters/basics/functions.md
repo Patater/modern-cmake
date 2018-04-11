@@ -83,7 +83,7 @@ simple(This)
 message("Output: ${This}")
 ```
 
-If you want positional arguments, they are listed explicitly, and all other arguments are collected in `ARGV`. You have to work around the fact that CMake does not have return values by setting variables. In the example above, you can explicitly give a variable name to set.
+If you want positional arguments, they are listed explicitly, and all other arguments are collected in `ARGN` (`ARGV` holds all arguments, even the ones you list). You have to work around the fact that CMake does not have return values by setting variables. In the example above, you can explicitly give a variable name to set.
 
 ## Arguments
 
@@ -96,6 +96,7 @@ cmake_parse_arguments(
     "SINGLE;ANOTHER"
     "ONE_VALUE;ALSO_ONE_VALUE"
     "MULTI_VALUES"
+    ${ARGN}
 )
 
 endfunction()
