@@ -66,7 +66,7 @@ write_compiler_detection_header(
 
 This supports compiler features (defined to 0 or 1), symbols (defined to empty or the symbol), and macros that
 support different names. They will be prefixed with the PREFIX you provide. You can separate compilers into different
-files using `OUTPUT_FILES_DIR
+files using `OUTPUT_FILES_DIR`.
 
 The downside is that you do have to list the compilers you expect to support. If you use the `ALLOW_UNKNOWN_COMPILERS` flag(s),
 you can keep this from erroring on unknown compilers, but it will still leave all features empty.
