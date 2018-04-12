@@ -105,9 +105,10 @@ set_package_properties(OpenMP PROPERTIES
 
 You can also set the `TYPE` of a package to `RUNTIME`, `OPTIONAL`, `RECOMMENDED`, or `REQUIRED`; you can't, however, lower the type of a package; if you have already added a `REQUIRED` package through «command:`find_package`» based on an option, you'll see it listed as `REQUIRED`.
 
-And, you can mark any options as part of the feature summary:
+And, you can mark any options as part of the feature summary. If you choose the same name as a package, the two interact with each other.
 
 ```cmake
+add_feature_info(WITH_OPENMP OpenMP_CXX_FOUND "OpenMP (Thread safe FCNs only)")
 ```
 
 Then, you can print out the summary of features, either to the screen or a log file:
