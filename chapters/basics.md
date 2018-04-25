@@ -11,10 +11,22 @@ cmake_minimum_required(VERSION 3.1)
 
 Let's mention a bit of CMake syntax. The command name «command:`cmake_minimum_required`» is case insensitive, so the common practice is to use lower case. [^1] The `VERSION` is a special keyword for this function. And the value of the version follows the keyword. Like everywhere in this book, just click on the command name to see the official documentation, and use the dropdown to switch documentation between CMake versions.
 
-This line is special! [^2] The version of CMake will also dictate the policies, which define behavior changes. So, if you set `minimum_required` to `VERSION 2.8`, you'll get the wrong linking behavior on macOS, for example, even in the newest CMake versions. A list of policies and versions is available at «cmake:policies».
+This line is special! [^2] The version of CMake will also dictate the policies, which define behavior changes. So, if you set `minimum_required` to `VERSION 2.8`, you'll get the wrong linking behavior on macOS, for example, even in the newest CMake versions. If you set it to 3.3 or less, you'll get the wrong hidden symbols behaviour, etc. A list of policies and versions is available at «cmake:policies».
 
-In the upcoming CMake 3.12, this will support a range, such as `VERSION 3.1...3.12`; this means you support as low as 3.1 but have also tested it with the new policy settings up to 3.12. This is much nicer on users that need the better settings, and due to a trick in the syntax, it's backward compatible with older versions of CMake (though 3.2-3.11 will still set the 3.1 version of the policies). New versions of policies tend to be most important for macOS and Windows users, who also
+In the upcoming CMake 3.12, this will support a range, such as `VERSION 3.1...3.12`; this means you support as low as 3.1 but have also tested it with the new policy settings up to 3.12. This is much nicer on users that need the better settings, and due to a trick in the syntax, it's backward compatible with older versions of CMake (though actually running CMake 3.2-3.11 will only set the 3.1 version of the policies in this example). New versions of policies tend to be most important for macOS and Windows users, who also
 usually have a very recent version of CMake.
+
+This is what new projects should do:
+
+```cmake
+cmake_minimum_required(VERSION 3.1...3.11)
+
+if(${CMAKE_VERSION} VERSION_LESS 3.12)
+    cmake_policy(VERSION ${CMAKE_VERSION})
+endif()
+```
+
+If CMake version is less than 3.12, the if block will be true, and the policy will be set to the current CMake version. If CMake is 3.12 or higher, the if block will be false, but the new syntax in `cmake_minimum_required` will be respected and this will continue to work properly!
 
 
 {% hint style='info' %}

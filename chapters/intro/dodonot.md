@@ -37,6 +37,7 @@ The next two lists are heavily based on the excellent gist [Effective Modern CMa
 * **Make ALIAS targets to keep usage consistent**: Using `add_subdirectory` and `find_package` should provide the same targets and namespaces.
 * **Combine common functionality into clearly documented functions or macros**: Functions are better usually.
 * **Use lowercase function names**: CMake functions and macros can be called lower or upper case. Always user lower case. Upper case is for variables.
+* **Use `cmake_policy` and/or range of versions**: Policies change for a reason. Only piecemeal set OLD policies if you have to.
 
 
 

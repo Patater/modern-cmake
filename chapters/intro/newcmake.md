@@ -149,6 +149,7 @@ Potential, possible new features:
 * New FindPython module
 * `string(JOIN`
 * `file(TOUCH`
+* CUDA as a language improvements: CUDA < 7.5 supported
 
 
 [Releases]: https://cmake.org/cmake/help/latest/release/index.html
