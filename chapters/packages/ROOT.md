@@ -11,9 +11,9 @@ ROOT supports config file discovery, so you can just do:
 
 to attempt to find ROOT. If you don't have your paths set up, you can pass `-DROOT_DIR=$ROOTSYS/cmake` to find ROOT. (But, really, you should source `thisroot.sh`)
 
-## The simple but wrong way
+## The too-simple way
 
-ROOT provides a utility to set up a ROOT project, which you can activate using `include(${ROOT_USE_FILE})`. This will automatically make ugly global variables for you. It will save you a little time setting up, and will waste massive amounts of time later if you try to do anything tricky. As long as you aren't making a library, it's probably fine for simple scripts. Includes and flags are set globally, but you'll still need to link to `${ROOT_LIBRARIES}` yourself.
+ROOT [provaides a utility](https://root.cern.ch/how/integrate-root-my-project-cmake) to set up a ROOT project, which you can activate using `include(${ROOT_USE_FILE})`. This will automatically make ugly global variables for you. It will save you a little time setting up, and will waste massive amounts of time later if you try to do anything tricky. As long as you aren't making a library, it's probably fine for simple scripts. Includes and flags are set globally, but you'll still need to link to `${ROOT_LIBRARIES}` yourself.
 
 Here's what it would look like:
 
