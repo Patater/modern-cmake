@@ -10,7 +10,7 @@ test_code:
     - mkdir -p build
     - cd build
     - cmake ../examples
-    - cmake --build .
+    - VERBOSE=1 cmake --build .
     - ctest
     - cd ..
 

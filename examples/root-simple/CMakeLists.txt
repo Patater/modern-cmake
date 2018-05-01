@@ -11,20 +11,34 @@ find_package(ROOT CONFIG REQUIRED)
 message(STATUS "Found ROOT: ${ROOT_VERSION} at ${ROOT_DIR}")
 
 # ROOT targets are missing includes and flags
-## [setup_properties]
-# Fix for ROOT_CXX_FLAGS not actually being a CMake list
-separate_arguments(ROOT_CXX_FLAGS)
-
+## [setup_includes]
 set_property(TARGET ROOT::Core PROPERTY
     INTERFACE_INCLUDE_DIRECTORIES "${ROOT_INCLUDE_DIRS}")
-set_property(TARGET ROOT::Core APPEND PROPERTY
+## [setup_includes]
+
+## [setup_flags]
+# Fix for ROOT_CXX_FLAGS not actually being a CMake list
+separate_arguments(ROOT_CXX_FLAGS)
+separate_arguments(ROOT_DEFINITIONS)
+
+# This is required on if there is more than one flag (like on macOS)
+# and this also fixes a bug in the linker flags
+string(REPLACE "-L " "-L" ROOT_EXE_LINKER_FLAGS "${ROOT_EXE_LINKER_FLAGS}")
+separate_arguments(ROOT_EXE_LINKER_FLAGS)
+
+add_library(ROOT::Flags_CXX IMPORTED INTERFACE)
+set_property(TARGET ROOT::Flags_CXX APPEND PROPERTY
     INTERFACE_COMPILE_OPTIONS ${ROOT_CXX_FLAGS})
-## [setup_properties]
+set_property(TARGET ROOT::Flags_CXX APPEND PROPERTY
+    INTERFACE_COMPILE_DEFINITIONS ${ROOT_DEFINITIONS})
+set_property(TARGET ROOT::Flags_CXX APPEND PROPERTY
+    INTERFACE_LINK_LIBRARIES ${ROOT_EXE_LINKER_FLAGS})
+## [setup_flags]
 
 # Adding an exectuable program and linking to needed ROOT libraries
 ## [add_and_link]
 add_executable(RootSimpleExample SimpleExample.cxx)
-target_link_libraries(RootSimpleExample PUBLIC ROOT::Physics)
+target_link_libraries(RootSimpleExample PUBLIC ROOT::Physics ROOT::Flags_CXX)
 ## [add_and_link]
 
 ## [main]

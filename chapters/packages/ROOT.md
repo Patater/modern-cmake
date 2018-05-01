@@ -13,30 +13,23 @@ to attempt to find ROOT. If you don't have your paths set up, you can pass `-DRO
 
 ## The too-simple way
 
-ROOT [provaides a utility](https://root.cern.ch/how/integrate-root-my-project-cmake) to set up a ROOT project, which you can activate using `include(${ROOT_USE_FILE})`. This will automatically make ugly global variables for you. It will save you a little time setting up, and will waste massive amounts of time later if you try to do anything tricky. As long as you aren't making a library, it's probably fine for simple scripts. Includes and flags are set globally, but you'll still need to link to `${ROOT_LIBRARIES}` yourself.
+ROOT [provaides a utility](https://root.cern.ch/how/integrate-root-my-project-cmake) to set up a ROOT project, which you can activate using `include("${ROOT_USE_FILE}")`. This will automatically make ugly directory level and global variables for you. It will save you a little time setting up, and will waste massive amounts of time later if you try to do anything tricky. As long as you aren't making a library, it's probably fine for simple scripts. Includes and flags are set globally, but you'll still need to link to `${ROOT_LIBRARIES}` yourself, along with possibly `ROOT_EXE_LINKER_FLAGS` (You will have to `separate_arguments` first before linking or you will get an error if there are multiple flags, like on macOS).
 
 Here's what it would look like:
 
-```cmake
-cmake_minimum_required(VERSION 3.11)
-
-project(Simple LANGUAGES CXX)
-
-find_package(ROOT CONFIG REQUIRED COMPONENTS Minuit)
-include("${ROOT_USE_FILE}")
-
-add_executable(simple simple.cxx simple.h)
-target_link_libraries(simple ${ROOT_LIBRARIES})
-```
+[import:'main', lang:'cmake'](../../examples/root-usefile/CMakeLists.txt)
 
 ## The right way (Targets)
 
-ROOT does not correctly set up it's imported targets. To fix this error, you'll need something like:
+ROOT 6.12 and earlier do not add the include directory for imported targets. The latest git master has corrected this error. To fix this error for older ROOT versions, you'll need something like:
 
-[import:'setup_properties', lang:'cmake'](../../examples/root-simple/CMakeLists.txt)
+[import:'setup_includes', lang:'cmake'](../../examples/root-simple/CMakeLists.txt)
+
+You will also often want the compile flags and definitions:
+
+[import:'setup_flags', lang:'cmake'](../../examples/root-simple/CMakeLists.txt)
 
 In CMake 3.11, you can replace that last function call with:
-
 
 [import:'modern_fix', lang:'cmake'](../../examples/root-simple-3.11/CMakeLists.txt)
 
@@ -48,7 +41,7 @@ To link, just pick the libraries you want to use:
 
 ## Components
 
-Find ROOT allows you to specify components. It will add anything you list to ${ROOT_LIBRARIES}, so you might want to build your own target using that to avoid listing the components twice.
+Find ROOT allows you to specify components. It will add anything you list to ${ROOT_LIBRARIES}, so you might want to build your own target using that to avoid listing the components twice. This does not solve dependencies though; so it is an error to list `RooFit` but not `RooFitCore`. If you link to `ROOT::RooFit` instead of `${ROOT_LIBRARIES}`, then `RooFitCore` is not required.
 
 ## Dictionary generation
 
