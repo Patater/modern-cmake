@@ -1,6 +1,8 @@
 # Dictionary Example
 
-This is an example of building a module that includes a dictionary in CMake.
+This is an example of building a module that includes a dictionary in CMake. Instead of using the
+ROOT suggested flags, we will manually add threading via `find_package`, which is the only
+important flag in the list on most systems.
 
 #### examples/root-dict/CMakeLists.txt
 [import:'main', lang:'cmake'](CMakeLists.txt)

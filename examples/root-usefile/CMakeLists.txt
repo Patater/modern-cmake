@@ -5,7 +5,6 @@ cmake_minimum_required(VERSION 3.1)
 project(RootUseFileExample LANGUAGES CXX)
 
 find_package(ROOT CONFIG REQUIRED)
-message(STATUS "Found ROOT: ${ROOT_VERSION} at ${ROOT_DIR}")
 
 include("${ROOT_USE_FILE}")
 

@@ -8,8 +8,6 @@ project(RootSimpleExample LANGUAGES CXX)
 find_package(ROOT CONFIG REQUIRED)
 ## [find_package]
 
-message(STATUS "Found ROOT: ${ROOT_VERSION} at ${ROOT_DIR}")
-
 # ROOT targets are missing includes and flags
 ## [setup_includes]
 set_property(TARGET ROOT::Core PROPERTY
@@ -17,20 +15,24 @@ set_property(TARGET ROOT::Core PROPERTY
 ## [setup_includes]
 
 ## [setup_flags]
+add_library(ROOT::Flags_CXX IMPORTED INTERFACE)
+
 # Fix for ROOT_CXX_FLAGS not actually being a CMake list
 separate_arguments(ROOT_CXX_FLAGS)
-separate_arguments(ROOT_DEFINITIONS)
-
-# This is required on if there is more than one flag (like on macOS)
-# and this also fixes a bug in the linker flags
-string(REPLACE "-L " "-L" ROOT_EXE_LINKER_FLAGS "${ROOT_EXE_LINKER_FLAGS}")
-separate_arguments(ROOT_EXE_LINKER_FLAGS)
-
-add_library(ROOT::Flags_CXX IMPORTED INTERFACE)
 set_property(TARGET ROOT::Flags_CXX APPEND PROPERTY
     INTERFACE_COMPILE_OPTIONS ${ROOT_CXX_FLAGS})
-set_property(TARGET ROOT::Flags_CXX APPEND PROPERTY
-    INTERFACE_COMPILE_DEFINITIONS ${ROOT_DEFINITIONS})
+
+# Add definitions
+separate_arguments(ROOT_DEFINITIONS)
+foreach(_flag ${ROOT_EXE_LINKER_FLAG_LIST})
+    # Remove -D or /D if present
+    string(REGEX REPLACE [=[^[-//]D]=] "" _flag ${_flag})
+    set_property(TARGET ROOT::Flags APPEND PROPERTY INTERFACE_LINK_LIBRARIES ${_flag})
+endforeach()
+
+# This also fixes a bug in the linker flags
+string(REPLACE "-L " "-L" ROOT_EXE_LINKER_FLAGS "${ROOT_EXE_LINKER_FLAGS}")
+separate_arguments(ROOT_EXE_LINKER_FLAGS)
 set_property(TARGET ROOT::Flags_CXX APPEND PROPERTY
     INTERFACE_LINK_LIBRARIES ${ROOT_EXE_LINKER_FLAGS})
 ## [setup_flags]
