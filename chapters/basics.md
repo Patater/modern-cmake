@@ -22,11 +22,23 @@ This is what new projects should do:
 cmake_minimum_required(VERSION 3.1...3.11)
 
 if(${CMAKE_VERSION} VERSION_LESS 3.12)
-    cmake_policy(VERSION ${CMAKE_VERSION})
+    cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 endif()
 ```
 
 If CMake version is less than 3.12, the if block will be true, and the policy will be set to the current CMake version. If CMake is 3.12 or higher, the if block will be false, but the new syntax in `cmake_minimum_required` will be respected and this will continue to work properly!
+
+WARNING: MSVC's CMake [seems to have a bug](https://github.com/fmtlib/fmt/issues/809) in reading this format, so if you need to support non-command line Windows builds, you will want to do this instead:
+
+```cmake
+cmake_minimum_required(VERSION 3.1)
+
+if(${CMAKE_VERSION} VERSION_LESS 3.11)
+    cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
+else()
+    cmake_policy(VERSION 3.11)
+endif()
+```
 
 
 {% hint style='info' %}
