@@ -11,10 +11,10 @@ You'll need to pick a minimum required version of CMake. This will affect the CM
 | Ubuntu 14.04 LTS | 2.8.12 | Don't use the default on this system. |
 | Ubuntu 16.04 LTS | 3.5.1 | |
 | Ubuntu 17.10 | 3.9.1 | |
-| Ubuntu 18.04 LTS | 3.10.2 | |
+| Ubuntu 18.04 LTS | 3.10.2 | An LTS with a pretty decent minimum version! |
 | Python PyPI  | 3.10 | Just `pip install cmake` on many systems. Add `--user` for local installs. |
-| Homebrew on macOS | 3.11 | On macOS with Homebrew, this is only a few minutes behind cmake.org. |
-| Chocolaty on Windows | 3.11 | Also up to date. The normal cmake.org installers are common on Windows, as well. |
+| Homebrew on macOS | latest | On macOS with Homebrew, this is only a few minutes behind cmake.org. |
+| Chocolaty on Windows | latest | Also up to date. The normal cmake.org installers are common on Windows, as well. |
 | TravisCI | 3.9 | The December 2017 update added a recent version of clang and CMake! Finally! |
 
 ## CMake Antipatterns
@@ -23,7 +23,7 @@ The next two lists are heavily based on the excellent gist [Effective Modern CMa
 
 * **Do not use global functions**: This includes `link_directories`, `include_libraries`, and similar.
 * **Don't add unneeded PUBLIC requirements**: You should avoid forcing something on users that is not required (`-Wall`). Make these PRIVATE instead.
-* **Don't GLOB files**: Make or another tool will not know if you add files without rerunning CMake.
+* **Don't GLOB files**: Make or another tool will not know if you add files without rerunning CMake. Note that CMake 3.12 adds a `CONFIGURE_DEPENDS` flag that makes this far better if you need to use it.
 * **Link to built files directly**: Always link to targets if available.
 * **Never skip PUBLIC/PRIVATE when linking**: This causes all future linking to be keyword-less. 
 

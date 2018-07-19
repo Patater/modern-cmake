@@ -138,18 +138,27 @@ to IMPORTED libraries (the internal `Find*.cmake` scripts should become much cle
 * Source file properties have been expanded
 * `FetchContent` module now allows downloads to happen at configure time (Wow)
 
-## CMake 3.12 : In progress
+## [CMake 3.12] : Version ranges and CONFIGURE_DEPENDS
 
-Potential, possible new features:
+Very powerful release, containing lots of smaller long-requested features. One of the smaller
+but immediately noticeable changes is the addition of version ranges;
+you can now set both the minimum and maximum known CMake version easily. You can also set
+`CONFIGURE_DEPENDS` on a `GLOB`ed set of files, and the build system will check those files and
+rerun if needed! You can use the general `PackageName_ROOT` 
+for all `find_package` searches. Lots of additions to strings and lists, module updates,
+shiny new Python find module (2 and 3 versions too), and many more.
 
-* Support for OpenMP on macOS
-* C++20 support
 * Support for `cmake_minimum_required` ranges (backward compatible)
+* Support for `-j,--parallel` in `--build` mode (passed on to build tool)
 * Support for `$<SHELL:` shell strings (not deduplicated)
 * New FindPython module
-* `string(JOIN`
-* `file(TOUCH`
+* `string(JOIN` and `list(JOIN`, and `list(TRANSFORM`
+* `file(TOUCH` and `file(GLOB CONFIGURE_DEPENDS`
+* C++20 support
 * CUDA as a language improvements: CUDA < 7.5 supported
+* Support for OpenMP on macOS (command line only)
+* Several new properties and property initializers
+* CPack finally reads `CMAKE_PROJECT_VERSION` variables
 
 
 [Releases]: https://cmake.org/cmake/help/latest/release/index.html
@@ -165,4 +174,5 @@ Potential, possible new features:
 [CMake 3.9]: https://cmake.org/cmake/help/latest/release/3.9.html 
 [CMake 3.10]: https://cmake.org/cmake/help/latest/release/3.10.html 
 [CMake 3.11]: https://cmake.org/cmake/help/latest/release/3.11.html 
+[CMake 3.12]: https://cmake.org/cmake/help/latest/release/3.12.html 
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/
