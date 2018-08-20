@@ -10,7 +10,7 @@ if(OpenMP_CXX_FOUND)
 endif()
 ```
 
-This not only is cleaner than the old method, it will also correctly set the library link line differently from the compile line if needed. However, if you need to support older CMake, the following works on CMake 3.1+:
+This not only is cleaner than the old method, it will also correctly set the library link line differently from the compile line if needed. In CMake 3.12+, this will even support OpenMP on macOS (if the library is available, such as with `brew install libomp`). However, if you need to support older CMake, the following works on CMake 3.1+:
 
 
 ```cmake
