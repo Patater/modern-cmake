@@ -18,7 +18,7 @@ You can replace the make line with `cmake --build .` if you'd like, and it will 
 
 ## Picking a compiler
 
-Selecting a compiler must be done on the first run in an empty directory. It's not CMake syntax per-say, but you might not be familiar with it. To pick Clang:
+Selecting a compiler must be done on the first run in an empty directory. It's not CMake syntax per se, but you might not be familiar with it. To pick Clang:
 
 {% term %}
 ~/package/build $ CC=clang CXX=clang++ cmake ..
