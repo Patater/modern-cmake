@@ -2,18 +2,19 @@
 
 ROOT is a C++ Toolkit for High Energy Physics. It is huge. There are really a lot of ways to use it in CMake, though many/most of the examples you'll find are probably wrong. Here's my recommendation.
 
+Most importantly, there are lots of improvements in CMake in more recent versions of ROOT - try to use 6.14+!
 
 ## Finding ROOT
 
-ROOT supports config file discovery, so you can just do:
+ROOT 6.10+ supports config file discovery, so you can just do:
 
 [import:'find_package', lang:'cmake'](../../examples/root-simple/CMakeLists.txt)
 
-to attempt to find ROOT. If you don't have your paths set up, you can pass `-DROOT_DIR=$ROOTSYS/cmake` to find ROOT. (But, really, you should source `thisroot.sh`)
+to attempt to find ROOT. If you don't have your paths set up, you can pass `-DROOT_DIR=$ROOTSYS/cmake` to find ROOT. (But, really, you should source `thisroot.sh`).
 
 ## The too-simple way
 
-ROOT [provaides a utility](https://root.cern.ch/how/integrate-root-my-project-cmake) to set up a ROOT project, which you can activate using `include("${ROOT_USE_FILE}")`. This will automatically make ugly directory level and global variables for you. It will save you a little time setting up, and will waste massive amounts of time later if you try to do anything tricky. As long as you aren't making a library, it's probably fine for simple scripts. Includes and flags are set globally, but you'll still need to link to `${ROOT_LIBRARIES}` yourself, along with possibly `ROOT_EXE_LINKER_FLAGS` (You will have to `separate_arguments` first before linking or you will get an error if there are multiple flags, like on macOS).
+ROOT [provides a utility](https://root.cern.ch/how/integrate-root-my-project-cmake) to set up a ROOT project, which you can activate using `include("${ROOT_USE_FILE}")`. This will automatically make ugly directory level and global variables for you. It will save you a little time setting up, and will waste massive amounts of time later if you try to do anything tricky. As long as you aren't making a library, it's probably fine for simple scripts. Includes and flags are set globally, but you'll still need to link to `${ROOT_LIBRARIES}` yourself, along with possibly `ROOT_EXE_LINKER_FLAGS` (You will have to `separate_arguments` first before linking or you will get an error if there are multiple flags, like on macOS).
 
 Here's what it would look like:
 
@@ -21,7 +22,7 @@ Here's what it would look like:
 
 ## The right way (Targets)
 
-ROOT 6.12 and earlier do not add the include directory for imported targets. The latest git master has corrected this error. To fix this error for older ROOT versions, you'll need something like:
+ROOT 6.12 and earlier do not add the include directory for imported targets. ROOT 6.14+ has corrected this error. To fix this error for older ROOT versions, you'll need something like:
 
 [import:'setup_includes', lang:'cmake'](../../examples/root-simple/CMakeLists.txt)
 
