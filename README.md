@@ -80,5 +80,9 @@ There are some other places to find good information on the web. Here are some o
 * [It's time to do CMake Right](https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/): A nice set of best practices for Modern CMake projects.
 * [The Ultimate Guide to Modern CMake](https://rix0r.nl/blog/2015/08/13/cmake-guide/): A slightly dated post with similar intent.
 
+## Credits
+
+Modern CMake was written by [Henry Schreiner](https://iscinumpy.gitlab.io).
+
 [^1]: CMake 3.0 also removed several long deprecated features from very old versions of CMake and make one very tiny backwards incompatible change to syntax related to square brackets, so this is not entirely fair; there might be some very, very old CMake files that would stop working with 3. I've never seen one, though.
 
