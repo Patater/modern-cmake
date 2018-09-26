@@ -4,7 +4,7 @@ test_code:
   stage: test
   before_script:
     - mkdir -p $HOME/.local
-    - curl -s "https://cmake.org/files/v3.12/cmake-3.12.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C $HOME/.local
+    - curl -s "https://cmake.org/files/v3.12/cmake-3.12.2-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C $HOME/.local
     - export PATH=$HOME/.local/bin:$PATH
   script:
     - mkdir -p build
