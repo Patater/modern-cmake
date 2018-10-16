@@ -4,7 +4,7 @@ There are lots of compiler and linker settings. When you need to add something s
 
 The first and most common feature was C++ standards support, which got it's own chapter.
 
-## Platform independent code
+## Position independent code
 
 [This](https://cmake.org/cmake/help/latest/variable/CMAKE_POSITION_INDEPENDENT_CODE.html) is best known as the `-fPIC` flag. Much of the time, you don't need to do anything. CMake will include the flag for `SHARED` or `MODULE` libraries. If you do explicitly need it:
 
