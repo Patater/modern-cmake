@@ -160,6 +160,23 @@ shiny new Python find module (2 and 3 versions too), and many more.
 * Several new properties and property initializers
 * CPack finally reads `CMAKE_PROJECT_VERSION` variables
 
+## [CMake 3.13 rc1] : Linking control
+
+You can now make symbolic links on Windows! Lots of new functions that fill out the
+popular requests for CMake, such as `add_link_options`, `target_link_directories`, and
+`target_link_options`. You can now do quite a bit more modification to targets outside
+of the source directory, for better file separation. Generator expressions can be used in
+more places. And, `target_sources` *finally* handles relative paths properly.
+
+* New `ctest --progress` option for live output
+* `target_link_options` and `add_link_options` added
+* `target_link_directories` added
+* Symbolic link creation, `-E create_symlink`, supported on Windows
+* IPO supported on Windows
+* You can use `-S` and `-B` for source and build directories
+* `target_link_libraries` and `install` work outside the current target directory
+* `STATIC_LIBRARY_OPTIONS` property added
+* `target_sources` is now relative to the current source directory
 
 [Releases]: https://cmake.org/cmake/help/latest/release/index.html
 [CMake 3.0]: https://cmake.org/cmake/help/latest/release/3.0.html 
@@ -175,4 +192,5 @@ shiny new Python find module (2 and 3 versions too), and many more.
 [CMake 3.10]: https://cmake.org/cmake/help/latest/release/3.10.html 
 [CMake 3.11]: https://cmake.org/cmake/help/latest/release/3.11.html 
 [CMake 3.12]: https://cmake.org/cmake/help/latest/release/3.12.html 
+[CMake 3.13 rc1]: https://blog.kitware.com/cmake-3-13-0-rc1-is-ready-for-testing/ 
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/
