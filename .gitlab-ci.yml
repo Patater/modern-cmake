@@ -15,7 +15,7 @@ test_code:
     - cd ..
 
 pages:
-  image: node:carbon
+  image: node:10
   stage: deploy
   only:
     - master
@@ -24,7 +24,7 @@ pages:
       - node_modules/
   before_script:
     - npm install gitbook-cli -g #
-    - gitbook fetch latest
+    - gitbook fetch 3.2.3
     - gitbook install
   script:
     - gitbook build . public
