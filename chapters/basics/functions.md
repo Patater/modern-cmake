@@ -34,7 +34,7 @@ There are a variety of keywords as well, such as:
 
 «cmake:Generator-expressions> are really powerful, but a bit odd and specialized. Most CMake commands happen at configure time, include the if statements seen above. But what if you need logic to occur at build time or even install time? Generator expressions were added for this purpose.[^1] They are evaluated in target properties.
 
-The simplest generator expressions informational expressions, and are of the form `$<KEYWORD>`, and they evaluate to a piece of information relevant for the current configuration. The other form is `$<KEYWORD:value>`, where `KEYWORD` is a keyword that controls the evaluation, and value is the item to evaluate (an informational expression keyword is allowed here, too). If KEYWORD is a generator expression or variable that evaluates to 0 or 1, `value` is substituted
+The simplest generator expressions are informational expressions, and are of the form `$<KEYWORD>`; they evaluate to a piece of information relevant for the current configuration. The other form is `$<KEYWORD:value>`, where `KEYWORD` is a keyword that controls the evaluation, and value is the item to evaluate (an informational expression keyword is allowed here, too). If KEYWORD is a generator expression or variable that evaluates to 0 or 1, `value` is substituted
 if 1 and not if 0. You can nest generator expressions, and you can use variables to make reading nested variables bearable. Some
 expressions allow multiple values, separated by commas.[^2]
 
