@@ -12,10 +12,10 @@ You'll need to pick a minimum required version of CMake. This will affect the CM
 | Ubuntu 16.04 LTS | 3.5.1 | |
 | Ubuntu 17.10 | 3.9.1 | |
 | Ubuntu 18.04 LTS | 3.10.2 | An LTS with a pretty decent minimum version! |
-| Python PyPI  | 3.10 | Just `pip install cmake` on many systems. Add `--user` for local installs. |
+| [Python PyPI](https://pypi.org/project/cmake/)  | 3.12.0 | Just `pip install cmake` on many systems. Add `--user` for local installs. |
 | Homebrew on macOS | latest | On macOS with Homebrew, this is only a few minutes behind cmake.org. |
 | Chocolaty on Windows | latest | Also up to date. The normal cmake.org installers are common on Windows, as well. |
-| TravisCI | 3.9 | The December 2017 update added a recent version of clang and CMake! Finally! |
+| TravisCI Trusty | 3.9 | The December 2017 update added a recent version of clang and CMake! Finally! |
 
 ## CMake Antipatterns
 

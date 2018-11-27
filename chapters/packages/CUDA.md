@@ -89,7 +89,7 @@ endfunction()
 > ### Note that FindCUDA is deprecated, but for now, the following functions require FindCUDA:
 > 
 > * CUDA version checks / picking a version
-> * Architecture detection (Note: 3.12 will fix this at least partially)
+> * Architecture detection (Note: 3.12 fixes this partially)
 > * Linking to CUDA libraries from non-.cu files
 
 ## Method 2: FindCUDA
