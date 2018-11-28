@@ -16,6 +16,7 @@ You'll need to pick a minimum required version of CMake. This will affect the CM
 | Homebrew on macOS | latest | On macOS with Homebrew, this is only a few minutes behind cmake.org. |
 | Chocolaty on Windows | latest | Also up to date. The normal cmake.org installers are common on Windows, as well. |
 | TravisCI Trusty | 3.9 | The December 2017 update added a recent version of clang and CMake! Finally! |
+| TravisCI Xenial | 3.12.4 | Mid November 2018 this image became ready for widescale use. |
 
 ## CMake Antipatterns
 
