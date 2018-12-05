@@ -26,6 +26,9 @@ if(NOT BUILD_TESTS_DEFAULT)
     mark_as_advanced(BUILD_TESTS)
 endif()
 ```
+
+Note that `BUILD_TESTING` is a better way to check for testing being enabled if you use `include(CTest)`, since it is defined for you. This is just an example of `CMakeDependentOption`.
+
 ## «module:CMakePrintHelpers»
 
 

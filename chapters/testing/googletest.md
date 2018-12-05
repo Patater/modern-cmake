@@ -51,7 +51,7 @@ Then, to add a test, I'd recommend the following macro:
 macro(package_add_test TESTNAME)
     add_executable(${TESTNAME} ${ARGN})
     target_link_libraries(${TESTNAME} gtest gmock gtest_main)
-    add_test(${TESTNAME} ${TESTNAME})
+    add_test(${TESTNAME} COMMAND ${TESTNAME})
     set_target_properties(${TESTNAME} PROPERTIES FOLDER tests)
 endmacro()
 

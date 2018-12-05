@@ -5,6 +5,12 @@
 In your main CMakeLists.txt you need to add the following function call (not in a subfolder):
 
 ```cmake
+include(CTest)
+```
+
+Which will enable testing and set a `BUILD_TESTING` option so users can turn testing on and off (Along with [a few other things](https://gitlab.kitware.com/cmake/cmake/blob/master/Modules/CTest.cmake)). Or you can do this yourself: 
+
+```cmake
 enable_testing()
 ```
 
