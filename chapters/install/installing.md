@@ -3,7 +3,7 @@
 Install commands cause a file or target to be "installed" into the install tree when you `make install`. Your basic target install command looks like this:
 
 ```cmake
-install(TARGET MyLib
+install(TARGETS MyLib
         EXPORT MyLibTargets
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib
