@@ -61,7 +61,7 @@ Since we've made a `ConfigVersion` file, this is a good place to install it too.
 ```cmake
 configure_file(MyLibConfig.cmake.in MyLibConfig.cmake @ONLY)
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/MyLibConfig.cmake"
-              "${CMAKE_CURRENT_BINARY_DIR}/Minuit2ConfigVersion.cmake"
+              "${CMAKE_CURRENT_BINARY_DIR}/MyLibConfigVersion.cmake"
         DESTINATION lib/cmake/MyLib
         )
 ```
