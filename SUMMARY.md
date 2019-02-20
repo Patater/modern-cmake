@@ -41,3 +41,7 @@
         * [Dictionary Example](examples/root-dict/README.md)
     * [Minuit2](chapters/packages/Minuit2.md)
 
+
+<!--
+* [Download PDF](ref://modern-cmake.pdf)
+* [Browse the source](https://gitlab.com/CLIUtils/modern-cmake) -->

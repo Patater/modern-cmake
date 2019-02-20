@@ -23,11 +23,14 @@ pages:
     paths:
       - node_modules/
   before_script:
+    - apt update && apt install -y calibre calibre-bin
     - npm install gitbook-cli -g #
     - gitbook fetch 3.2.3
     - gitbook install
   script:
     - gitbook build . public
+    - gitbook pdf . modern-cmake.pdf
+    - cp modern-cmake.pdf public/modern-cmake.pdf
   artifacts:
     paths:
       - public
