@@ -155,7 +155,7 @@ shiny new Python find module (2 and 3 versions too), and many more.
 * `string(JOIN` and `list(JOIN`, and `list(TRANSFORM`
 * `file(TOUCH` and `file(GLOB CONFIGURE_DEPENDS`
 * C++20 support
-* CUDA as a language improvements: CUDA < 7.5 supported
+* CUDA as a language improvements: CUDA 7 and 7.5 now supported
 * Support for OpenMP on macOS (command line only)
 * Several new properties and property initializers
 * CPack finally reads `CMAKE_PROJECT_VERSION` variables

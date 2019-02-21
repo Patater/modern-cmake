@@ -39,7 +39,7 @@ Here, the generation happens after `some_target` is complete, and happens when y
 
 ## Included common utilities
 
-A useful tool in writing CMake builds that work cross-platform is `cmake -E <mode>` (seen in CMake files as `${CMAKE_COMMAND} -E`). This mode allows CMake to do a variety of things without calling system tools explicitly, like `copy`, `make_directory`, and `remove`. It is mostly used for the build time commands. Note that the very useful `create_symlink` mode only works on Unix systems. [See the docs](https://cmake.org/cmake/help/latest/manual/cmake.1.html#command-line-tool-mode).
+A useful tool in writing CMake builds that work cross-platform is `cmake -E <mode>` (seen in CMake files as `${CMAKE_COMMAND} -E`). This mode allows CMake to do a variety of things without calling system tools explicitly, like `copy`, `make_directory`, and `remove`. It is mostly used for the build time commands. Note that the very useful `create_symlink` mode used to be Unix only, but was added for Windows in CMake 3.13. [See the docs](https://cmake.org/cmake/help/latest/manual/cmake.1.html#command-line-tool-mode).
 
 [execute_process]: https://cmake.org/cmake/help/latest/command/execute_process.html
 

@@ -4,6 +4,8 @@ project(ModernCMakeExamples)
 
 enable_testing()
 
+add_subdirectory(simple-project)
+
 add_subdirectory(root-usefile)
 add_subdirectory(root-simple)
 add_subdirectory(root-simple-3.11)
