@@ -6,8 +6,8 @@ You'll need to pick a minimum required version of CMake. This will affect the CM
 
 | Distribution  | CMake version | Notes |
 |---------------|---------------|-------|
-| RHEL/CentOS 7 | 2.8.11        | Don't use the default on this system. Grab a new copy or use the EPEL repo. |
-| EPEL for RHEL/CentOS | 3.6.3    | Called `cmake3` |
+| [RHEL/CentOS 7](https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake) | 2.8.11        | Don't use the default on this system. Grab a new copy or use the EPEL repo. |
+| [EPEL for RHEL/CentOS](https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake3) | 3.13.4    | Called `cmake3` |
 | Ubuntu 14.04 LTS | 2.8.12 | Don't use the default on this system. |
 | Ubuntu 16.04 LTS | 3.5.1 | |
 | Ubuntu 18.04 LTS | 3.10.2 | An LTS with a pretty decent minimum version! |

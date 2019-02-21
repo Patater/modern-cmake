@@ -2,7 +2,7 @@
     "title": "Modern CMake",
     "description": "A guide to writing simple, powerful, and clean CMake 3.1+ builds.",
     "author": "Henry Schreiner",
-    "plugins": ["replace", "hints", "term", "include-codeblock", "ace", "otherlink"],
+    "plugins": ["replace", "hints", "term", "include-codeblock", "ace"],
     "pluginsConfig": {
          "include-codeblock": {
              "fixlang": true
