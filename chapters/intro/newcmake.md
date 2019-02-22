@@ -3,7 +3,7 @@
 
 This is an abbreviated version of the CMake changlog with just the highlights for authors. Names for each release are arbitrarily picked by the author.
 
-## [CMake 3.0] : Interface libraries
+## [CMake 3.0][] : Interface libraries
 
 There were a ton of additions to this version of CMake, primarily to fill out the target interface. Some bits of needed functionality were missed and implemented in CMake 3.1 instead.
 
@@ -14,7 +14,7 @@ There were a ton of additions to this version of CMake, primarily to fill out th
 * Bracket arguments and comments available (not widely used)
 * Lots of improvements
 
-## [CMake 3.1] : C++11 and compile features
+## [CMake 3.1][] : C++11 and compile features
 
 This is the first release of CMake to support C++11. Combined with fixes to the new features of CMake 3.0, this is currently a common minimum version of CMake for libraries that want to support old CMake builds.
 
@@ -23,14 +23,14 @@ This is the first release of CMake to support C++11. Combined with fixes to the 
 * Sources can be added later with `target_sources`
 * Better support for generator expressions and INTERFACE targets
 
-## [CMake 3.2] : UTF8
+## [CMake 3.2][] : UTF8
 
 This is a smaller release, with mostly small features and fixes. Internal changes, like better Windows and UTF8 support, were the focus.
 
 * `continue()` inside loops
 * File and directory locks added
 
-## [CMake 3.3] : if IN_LIST
+## [CMake 3.3][] : if IN_LIST
 
 This is notable for the useful `IN_LIST` option for if, but it also added better library search using `$PATH` (See CMake 3.6), dependencies for INTERFACE libraries, and several other useful improvements. The addition of a `COMPILE_LANGUAGE` generator expression would prove very useful in the future as more languages are added. Makefiles now produce better output in parallel.
 
@@ -38,7 +38,7 @@ This is notable for the useful `IN_LIST` option for if, but it also added better
 * `*_INCLUDE_WHAT_YOU_USE` property added
 * `COMPILE_LANGUAGE` generator expression (limited support in some generators)
 
-## [CMake 3.4] : Swift & CCache
+## [CMake 3.4][] : Swift & CCache
 
 This release adds lots of useful tools, support for the Swift language, and the usual improvements. It also started supporting compiler launchers, like CCache.
 
@@ -50,7 +50,7 @@ This release adds lots of useful tools, support for the Swift language, and the 
 * `TARGET_MESSAGES` allow makefiles to print messages after target is completed
 * Imported targets are beginning to show up in the official `Find*.cmake` files
 
-## [CMake 3.5] : ARM
+## [CMake 3.5][] : ARM
 
 This release expanded CMake to more platforms, and make warnings easier to control from the command line.
 
@@ -60,7 +60,7 @@ This release expanded CMake to more platforms, and make warnings easier to contr
 * ARMCC now supported, better support for iOS
 * XCode backslash fix
 
-## [CMake 3.6] : Clang-Tidy
+## [CMake 3.6][] : Clang-Tidy
 
 This release added Clang-Tidy support, along with more utilities and improvements. It also removed the search of `$PATH` on Unix systems due to problems, instead users should use `$CMAKE_PREFIX_PATH`.
 
@@ -72,7 +72,7 @@ This release added Clang-Tidy support, along with more utilities and improvement
 * External projects can now be shallow clones, and other improvements
 
 
-## [CMake 3.7] : Android & CMake Server 
+## [CMake 3.7][] : Android & CMake Server 
 
 You can now cross-compile to Android. Useful new if statement options really help clarify code. And the new server mode should (eventually?) improve integration with IDEs. Support for the VIM editor was also improved.
 
@@ -85,7 +85,7 @@ You can now cross-compile to Android. Useful new if statement options really hel
 * Added `--trace-source="filename"` to monitor certain files only
 
 
-## [CMake 3.8] : C# & CUDA
+## [CMake 3.8][] : C# & CUDA
 
 This adds CUDA as a language, as well as `cxx_std_11` as a compiler meta-feature. The new generator expression could be really useful if you can require CMake 3.8+! 
 
@@ -98,7 +98,7 @@ This adds CUDA as a language, as well as `cxx_std_11` as a compiler meta-feature
 * `*_CPPLINT` added
 * `$<IF:cond,true-value,false-value>` added (wow!)
 
-## [CMake 3.9] : IPO
+## [CMake 3.9][] : IPO
 
 Lots of fixes to CUDA support went into this release, including `PTX` support and MSVC generators. Interprocedural Optimizations are now supported properly.
 Even more modules provide imported targets, including MPI.
@@ -112,7 +112,7 @@ Even more modules provide imported targets, including MPI.
 * `FindDoxygen` drastically improved
 
 
-## [CMake 3.10] : CppCheck
+## [CMake 3.10][] : CppCheck
 
 CMake now is built with C++11 compilers. Lots of useful improvements help write cleaner code.
 
@@ -127,7 +127,7 @@ CMake now is built with C++11 compilers. Lots of useful improvements help write 
 * FindOpenMP improved
 * Dynamic test discovery for `GoogleTest`
 
-## [CMake 3.11] : Faster & IMPORTED INTERFACE
+## [CMake 3.11][] : Faster & IMPORTED INTERFACE
 
 This release is [supposed to be][fastercmake] much faster. You can also finally directly add INTERFACE targets
 to IMPORTED libraries (the internal `Find*.cmake` scripts should become much cleaner eventually).
@@ -138,7 +138,7 @@ to IMPORTED libraries (the internal `Find*.cmake` scripts should become much cle
 * Source file properties have been expanded
 * `FetchContent` module now allows downloads to happen at configure time (Wow)
 
-## [CMake 3.12] : Version ranges and CONFIGURE_DEPENDS
+## [CMake 3.12][] : Version ranges and CONFIGURE_DEPENDS
 
 Very powerful release, containing lots of smaller long-requested features. One of the smaller
 but immediately noticeable changes is the addition of version ranges;
@@ -160,7 +160,7 @@ shiny new Python find module (2 and 3 versions too), and many more.
 * Several new properties and property initializers
 * CPack finally reads `CMAKE_PROJECT_VERSION` variables
 
-## [CMake 3.13] : Linking control
+## [CMake 3.13][] : Linking control
 
 You can now make symbolic links on Windows! Lots of new functions that fill out the
 popular requests for CMake, such as `add_link_options`, `target_link_directories`, and
@@ -178,6 +178,16 @@ of the source directory, for better file separation. And, `target_sources` *fina
 * `target_sources` is now relative to the current source directory (CMP0076)
 * If you use Xcode, you now can experimentally set schema fields
 
+## [CMake 3.14][] : File utilities (in RC phase)
+
+This release has lots of small cleanups, including several utilities for files. Generator expressions work in a few more places, and list handling is better with empty variables. 
+Quite a few more find packages produce targets. The new Visual Studio 16 2019 generator is a bit different than older versions. Windows XP and Vista support has been dropped.
+
+* The FILE command gained `CREATE_LINK`, `READ_SYMLINK`, and `SIZE`
+* «command:get_filename_component» gained `LAST_EXT` and `NAME_WLE` to access just the *last* extension on a file, which would get `.zip` on a file such as `version.1.2.zip` (very handy!)
+* You can see if a variable is defined in the CACHE with `DEFINED CACHE{VAR}` in an «command:if» statement.
+* `BUILD_RPATH_USE_ORIGIN` and CMake version were added to improve handling of RPath in the build directory.
+
 [Releases]: https://cmake.org/cmake/help/latest/release/index.html
 [CMake 3.0]: https://cmake.org/cmake/help/latest/release/3.0.html 
 [CMake 3.1]: https://cmake.org/cmake/help/latest/release/3.1.html 
@@ -193,4 +203,5 @@ of the source directory, for better file separation. And, `target_sources` *fina
 [CMake 3.11]: https://cmake.org/cmake/help/latest/release/3.11.html 
 [CMake 3.12]: https://cmake.org/cmake/help/latest/release/3.12.html 
 [CMake 3.13]: https://cmake.org/cmake/help/latest/release/3.13.html
+[CMake 3.14]: https://cmake.org/cmake/help/3.14/release/3.14.html
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/
