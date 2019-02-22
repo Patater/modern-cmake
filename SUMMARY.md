@@ -11,6 +11,7 @@
     * [Communicating with your code](chapters/basics/comms.md)
     * [How to Structure Your Project](chapters/basics/structure.md)
     * [Running Other Programs](chapters/basics/programs.md)
+    * [A Simple Example](chapters/basics/example.md)
 * [Adding Features](chapters/features.md)
     * [C++11 and Beyond](chapters/features/cpp11.md)
     * [Small but common needs](chapters/features/small.md)
