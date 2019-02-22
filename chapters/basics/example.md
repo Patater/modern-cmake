@@ -5,4 +5,4 @@ and one application, MyExample,  with one source file.
 
 2[import:'main', lang:'cmake'](../../examples/simple-project/CMakeLists.txt)
 
-The complete example is available in examples folder in the Modern CMake git repository.
+The complete example is available in [examples folder](https://gitlab.com/CLIUtils/modern-cmake/tree/master/examples/simple-project).
