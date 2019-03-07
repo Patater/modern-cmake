@@ -6,7 +6,7 @@ The [FetchContent] module has excellent documentation that I won't try to repeat
 
 * Use `FetchContent_Declare(MyName` to get data or a package. You can set URLs, Git repositories, and more.
 * Use `FetchContent_GetProperties(MyName)` on the name you picked in the first step to get `MyName_*` variables.
-* Check `MyName_POPULATED`, and if not populated, use `FetchContent_Populate(MyName)` (and if a package, `add_subdirectory("${MyName_SOURCE_DIR}" "${MyName_SOURCE_DIR}")`) 
+* Check `MyName_POPULATED`, and if not populated, use `FetchContent_Populate(MyName)` (and if a package, `add_subdirectory("${MyName_SOURCE_DIR}" "${MyName_BINARY_DIR}")`)
 
 For example, to download Catch2:
 
