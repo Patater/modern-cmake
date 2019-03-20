@@ -19,7 +19,7 @@ usually have a very recent version of CMake.
 This is what new projects should do:
 
 ```cmake
-cmake_minimum_required(VERSION 3.1...3.13)
+cmake_minimum_required(VERSION 3.1...3.14)
 
 if(${CMAKE_VERSION} VERSION_LESS 3.12)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
@@ -33,10 +33,10 @@ WARNING: MSVC's CMake server mode [originally had a bug](https://github.com/fmtl
 ```cmake
 cmake_minimum_required(VERSION 3.1)
 
-if(${CMAKE_VERSION} VERSION_LESS 3.13)
+if(${CMAKE_VERSION} VERSION_LESS 3.14)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 else()
-    cmake_policy(VERSION 3.13)
+    cmake_policy(VERSION 3.14)
 endif()
 ```
 

@@ -179,7 +179,7 @@ of the source directory, for better file separation. And, `target_sources` *fina
 * `target_sources` is now relative to the current source directory (CMP0076)
 * If you use Xcode, you now can experimentally set schema fields
 
-## [CMake 3.14][] : File utilities (in RC phase)
+## [CMake 3.14][] : File utilities (AKA [CMake π](https://blog.kitware.com/kitware-gets-mathematical-with-cmake-π-on-pi-day/))
 
 This release has lots of small cleanups, including several utilities for files. Generator expressions work in a few more places, and list handling is better with empty variables. 
 Quite a few more find packages produce targets. The new Visual Studio 16 2019 generator is a bit different than older versions. Windows XP and Vista support has been dropped.
@@ -204,5 +204,5 @@ Quite a few more find packages produce targets. The new Visual Studio 16 2019 ge
 [CMake 3.11]: https://cmake.org/cmake/help/latest/release/3.11.html 
 [CMake 3.12]: https://cmake.org/cmake/help/latest/release/3.12.html 
 [CMake 3.13]: https://cmake.org/cmake/help/latest/release/3.13.html
-[CMake 3.14]: https://cmake.org/cmake/help/3.14/release/3.14.html
+[CMake 3.14]: https://cmake.org/cmake/help/latest/release/3.14.html
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/
