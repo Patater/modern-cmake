@@ -2,7 +2,7 @@
 
 ## Control flow
 
-CMake has an «command:`if`» statement, though over the years is has become rather complex. There are a series of all caps keywords you can use inside an if statement, and you can often refer to variables by either directly by name or using the `${}` syntax (the if statement historically predates variable expansion). An example if statement:
+CMake has an «command:`if`» statement, though over the years it has become rather complex. There are a series of all caps keywords you can use inside an if statement, and you can often refer to variables by either directly by name or using the `${}` syntax (the if statement historically predates variable expansion). An example if statement:
 
 ```cmake
 if(variable)
