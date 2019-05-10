@@ -1,23 +1,5 @@
 # Do's and Don'ts
 
-## CMake Version Choice
-
-You'll need to pick a minimum required version of CMake. This will affect the CMake policies, and you should only use the features available in that version. Here are some common build environments and the CMake version you'll find on them. Feel free to install CMake yourself, it's 1-2 lines and there's nothing "special" about the built in version. It's also very backward compatible.
-
-| Distribution  | CMake version | Notes |
-|---------------|---------------|-------|
-| [RHEL/CentOS 7](https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake) | 2.8.11        | Don't use the default on this system. Grab a new copy or use the EPEL repo. |
-| [EPEL for RHEL/CentOS](https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake3) | 3.13.4    | Called `cmake3` |
-| Ubuntu 14.04 LTS | 2.8.12 | Don't use the default on this system. |
-| Ubuntu 16.04 LTS | 3.5.1 | |
-| Ubuntu 18.04 LTS | 3.10.2 | An LTS with a pretty decent minimum version! |
-| Ubuntu 18.10 | 3.12.1| |
-| [Python PyPI](https://pypi.org/project/cmake/)  | 3.13.3 | Just `pip install cmake` on many systems. Add `--user` for local installs. |
-| [Homebrew on macOS](https://formulae.brew.sh/formula/cmake) | latest | On macOS with Homebrew, this is only a few minutes behind cmake.org. |
-| Chocolaty on Windows | latest | Also up to date. The normal cmake.org installers are common on Windows, as well. |
-| TravisCI Trusty | 3.9 | The December 2017 update added a recent version of clang and CMake! Finally! |
-| TravisCI Xenial | 3.12.4 | Mid November 2018 this image became ready for widescale use. |
-
 ## CMake Antipatterns
 
 The next two lists are heavily based on the excellent gist [Effective Modern CMake]. That list is much longer and more detailed, feel free to read it as well.
