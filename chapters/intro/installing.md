@@ -45,8 +45,8 @@ Here are some common build environments and the CMake version you'll find on the
 | [RHEL/CentOS 7](https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake) | 2.8.11        | Don't use the default on this system. Grab a new copy or use the EPEL repo. |
 | [EPEL for RHEL/CentOS](https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake3) | 3.13.4    | Called `cmake3` |
 | [Ubuntu 14.04 LTS: Trusty](https://launchpad.net/ubuntu/trusty/+source/cmake) | 2.8.12 | Don't use the default on this system. |
-| [Ubuntu 16.04 LTS: Xenial](https://launchpad.net/ubuntu/xenial/+source/cmake) LTS | 3.5.1 | |
-| [Ubuntu 18.04 LTS: Bionic](https://launchpad.net/ubuntu/bionic/+source/cmake) LTS | 3.10.2 | An LTS with a pretty decent minimum version! |
+| [Ubuntu 16.04 LTS: Xenial](https://launchpad.net/ubuntu/xenial/+source/cmake) | 3.5.1 | |
+| [Ubuntu 18.04 LTS: Bionic](https://launchpad.net/ubuntu/bionic/+source/cmake) | 3.10.2 | An LTS with a pretty decent minimum version! |
 | [Ubuntu 18.10: Cosmic](https://launchpad.net/ubuntu/cosmic/+source/cmake) | 3.12.1 | |
 | [Ubuntu 19.04: Disco](https://launchpad.net/ubuntu/disco/+source/cmake) | 3.13.4 | |
 | [Python PyPI](https://pypi.org/project/cmake/)  | 3.13.3 | Just `pip install cmake` on many systems. Add `--user` for local installs. |
