@@ -44,13 +44,16 @@ Here are some common build environments and the CMake version you'll find on the
 |---------------|---------------|-------|
 | [RHEL/CentOS 7](https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake) | 2.8.11        | Don't use the default on this system. Grab a new copy or use the EPEL repo. |
 | [EPEL for RHEL/CentOS](https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake3) | 3.13.4    | Called `cmake3` |
-| Ubuntu 14.04 LTS | 2.8.12 | Don't use the default on this system. |
-| Ubuntu 16.04 LTS | 3.5.1 | |
-| Ubuntu 18.04 LTS | 3.10.2 | An LTS with a pretty decent minimum version! |
-| Ubuntu 18.10 | 3.12.1| |
+| [Ubuntu 14.04 LTS: Trusty](https://launchpad.net/ubuntu/trusty/+source/cmake) | 2.8.12 | Don't use the default on this system. |
+| [Ubuntu 16.04 LTS: Xenial](https://launchpad.net/ubuntu/xenial/+source/cmake) LTS | 3.5.1 | |
+| [Ubuntu 18.04 LTS: Bionic](https://launchpad.net/ubuntu/bionic/+source/cmake) LTS | 3.10.2 | An LTS with a pretty decent minimum version! |
+| [Ubuntu 18.10: Cosmic](https://launchpad.net/ubuntu/cosmic/+source/cmake) | 3.12.1 | |
+| [Ubuntu 19.04: Disco](https://launchpad.net/ubuntu/disco/+source/cmake) | 3.13.4 | |
 | [Python PyPI](https://pypi.org/project/cmake/)  | 3.13.3 | Just `pip install cmake` on many systems. Add `--user` for local installs. |
+| [Anaconda](https://anaconda.org/anaconda/cmake) | 3.14.0 | For use with Conda |
+| [Conda-Forge](https://github.com/conda-forge/cmake-feedstock) | latest | For use with Conda |
 | [Homebrew on macOS](https://formulae.brew.sh/formula/cmake) | latest | On macOS with Homebrew, this is only a few minutes behind cmake.org. |
-| Chocolaty on Windows | latest | Also up to date. The normal cmake.org installers are common on Windows, as well. |
+| [Chocolaty on Windows](https://chocolatey.org/packages/cmake) | latest | Also up to date. The normal cmake.org installers are common on Windows, as well. |
 | TravisCI Trusty | 3.9 | The December 2017 update added a recent version of clang and CMake! Finally! |
 | TravisCI Xenial | 3.12.4 | Mid November 2018 this image became ready for widescale use. |
 
