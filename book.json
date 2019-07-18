@@ -11,6 +11,7 @@
              "substitutes": [
                  {"pattern": "«cmake:([^`^»]+)»", "flags": "g", "substitute": "[$1](https://cmake.org/cmake/help/latest/manual/cmake-$1.7.html)"},
                  {"pattern": "«command:`?([^`^»]+)`?»", "flags": "g", "substitute": "[`$1`](https://cmake.org/cmake/help/latest/command/$1.html)"},
+                 {"pattern": "«envvar:`?([^`^»]+)`?»", "flags": "g", "substitute": "[`$1`](https://cmake.org/cmake/help/latest/envvar/$1.html)"},
                  {"pattern": "«module:([^`^»]+)»", "flags": "g", "substitute": "[$1](https://cmake.org/cmake/help/latest/module/$1.html)"},
                  {"pattern": "«policy:([^`^»]+)»", "flags": "g", "substitute": "[$1](https://cmake.org/cmake/help/latest/policy/$1.html)"},
                  {"pattern": "«variable:`?([^`^»]+)`?»", "flags": "g", "substitute": "[`$1`](https://cmake.org/cmake/help/latest//$1.html)"},
