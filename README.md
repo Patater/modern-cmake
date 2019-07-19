@@ -67,7 +67,7 @@ And so, you'll find OS's like CentOS7 with GCC 4.8, with almost-complete C++14 s
 You really should *at least* use a version of CMake that came out after your compiler, since it needs to know compiler flags, etc, for that version.
 And, since CMake will dumb itself down to the minimum required version in your CMake file, installing a new CMake, even system wide, is pretty safe.
 You should *at least* install it locally.
-It's easy (1-2 lines in many cases), and you'll find that 5 minutes of work will save you hundreds of lines and hours of CMakeLists.txt writing, and will be much easier to maintain in the long run.
+It's easy (1-2 lines in many cases), and you'll find that 5 minutes of work will save you hundreds of lines and hours of `CMakeLists.txt` writing, and will be much easier to maintain in the long run.
 
 This book tries to solve the problem of the poor examples and best practices that you'll find proliferating the web.
 
@@ -81,10 +81,11 @@ There are some other places to find good information on the web. Here are some o
 * [It's time to do CMake Right](https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/): A nice set of best practices for Modern CMake projects.
 * [The Ultimate Guide to Modern CMake](https://rix0r.nl/blog/2015/08/13/cmake-guide/): A slightly dated post with similar intent.
 * [More Modern CMake](https://youtu.be/y7ndUhdQuU8): A great presentation from Meeting C++ 2018 that recommends CMake 3.12+. This talk makes calls CMake 3.0+ "Modern CMake" and CMake 3.12+ "More Modern CMake".
+* [toeb/moderncmake](https://github.com/toeb/moderncmake): A nice presentation and examples about CMake 3.5+, with intro to syntax through project organization
 
 ## Credits
 
-Modern CMake was originally written by [Henry Schreiner](https://iscinumpy.gitlab.io). Other contibuters can be found [listed on GitLab](https://gitlab.com/CLIUtils/modern-cmake/graphs/master).
+Modern CMake was originally written by [Henry Schreiner](https://iscinumpy.gitlab.io). Other contributors can be found [listed on GitLab](https://gitlab.com/CLIUtils/modern-cmake/graphs/master).
 
 [^1]: CMake 3.0 also removed several long deprecated features from very old versions of CMake and make one very tiny backwards incompatible change to syntax related to square brackets, so this is not entirely fair; there might be some very, very old CMake files that would stop working with 3. I've never seen one, though.
 
