@@ -33,10 +33,10 @@ source_group("Source Files\\New Directory" REGULAR_EXPRESSION ".*\\.c[ucp]p?")
 You can explicitly list files with `FILES`, or use a `REGULAR_EXPRESSION`. This way you have complete control over the folder structure. However, if your on-disk layout is well designed, you might just want to mimic that. In CMake 3.8+, you can do so very easily with a new version of the «command:source_group» command:
 
 ```cmake
-source_group(TREE /full/path/to/start/at PREFIX "Header Files" FILES ${FILE_LIST})
+source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}/base/dir" PREFIX "Header Files" FILES ${FILE_LIST})
 ```
 
-For the `TREE` option, you should usually give a full path starting with something like `${CMAKE_CURRENT_SOURCE_DIR}/`(because the command interprets paths relative to the build directory).
+For the `TREE` option, you should usually give a full path starting with something like `${CMAKE_CURRENT_SOURCE_DIR}/` (because the command interprets paths relative to the build directory).
 The prefix tells you where it puts it into the IDE structure, and the `FILES` option takes a list of files.
 CMake will strip the `TREE` path from the `FILE_LIST` path, it will add `PREFIX`, and that will be the IDE folder structure.
 
@@ -45,7 +45,7 @@ CMake will strip the `TREE` path from the `FILE_LIST` path, it will add `PREFIX`
 
 ## Running with an IDE
 
-To use an IDE, either pass `-G"name of IDE" if CMake can produce that IDE's files (like Xcode, Visual Studio), or open the CMakeLists.txt file from your IDE if that IDE has built in support for CMake (CLion, QtCreator, many others).
+To use an IDE, either pass `-G"name of IDE"` if CMake can produce that IDE's files (like Xcode, Visual Studio), or open the CMakeLists.txt file from your IDE if that IDE has built in support for CMake (CLion, QtCreator, many others).
 
 
 [sorting]: http://blog.audio-tk.com/2015/09/01/sorting-source-files-and-projects-in-folders-with-cmake-and-visual-studioxcode/
