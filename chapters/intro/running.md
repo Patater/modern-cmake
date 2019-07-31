@@ -18,7 +18,7 @@ You can replace the make line with `cmake --build .` if you'd like, and it will 
 
 {% term %}
 ~/package $ cmake -S . -B build
-~/package $ cmake --build .
+~/package $ cmake --build build
 {% endterm %}
 
 Any *one* of these commands will install:
