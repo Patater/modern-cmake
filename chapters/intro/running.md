@@ -5,7 +5,7 @@ Before writing CMake, let's make sure you know how to run it to make things. Thi
 ## Building a project
 Unless otherwise noted, you should always make a build directory and build from there. You can technically do an in-source build, but you'll have to be careful not to overwrite files or add them to git, so just don't.
 
-Here's the CMake Build Procedure (TM):
+Here's the Classic CMake Build Procedure (TM):
 
 {% term %}
 ~/package $ mkdir build
@@ -14,7 +14,27 @@ Here's the CMake Build Procedure (TM):
 ~/package/build $ make
 {% endterm %}
 
-You can replace the make line with `cmake --build .` if you'd like, and it will call `make` or whatever build tool you are using. You can follow it by `make install` or `cmake --build . --target install` if you want to install it.
+You can replace the make line with `cmake --build .` if you'd like, and it will call `make` or whatever build tool you are using. If you are using a newer version of CMake (which you usually should be, except for checking compatibility with older CMake), you can instead do this:
+
+{% term %}
+~/package $ cmake -S . -B build
+~/package $ cmake --build .
+{% endterm %}
+
+Any *one* of these commands will install:
+
+{% term %}
+# From the build directory (pick one)
+~/package $ make install
+~/package $ cmake --build . --target install
+~/package $ cmake --install . # CMake 3.15+ only
+
+# From the source directory (pick one)
+~/package $ cmake --build build --target install
+~/package $ cmake --install build # CMake 3.15+ only
+{% endterm %}
+
+So set of methods should you use? As long as you *do not forget* to type the build directory as the argument, staying out of the build directory is shorter, and making source changes is easier from the source directory. You should try to get used to using `--build`, as that will free you from using only `make` to build. Note that working from the build directory is historically much more common, and some tools and commands (including CTest) still require running from the build directory.
 
 ## Picking a compiler
 
@@ -35,6 +55,7 @@ You can build with a variety of tools; `make` is usually the default. To see all
 {% endterm %}
 
 And you can pick a tool with `-G"My Tool"` (quotes only needed if spaces are in the tool name). You should pick a tool on your first CMake call in a directory, just like the compiler. Feel free to have several build directories, like `build/` and `buildXcode`.
+You can set the environment variable `CMAKE_GENERATOR` to control the default generator (CMake 3.15+).
 
 ## Setting options
 
@@ -58,7 +79,7 @@ These are common CMake options to most packages:
 
 * `-DCMAKE_BUILD_TYPE=` Pick from Release, RelWithDebInfo, Debug, or sometimes more.
 * `-DCMAKE_INSTALL_PREFIX=` The location to install to. System install on UNIX would often be `/usr/local` (the default), user directories are often `~/.local`, or you can pick a folder.
-* `-D BUILD_SHARED_LIBS=` You can set this `ON` or `OFF` to control the default for shared libraries (the author can pick one vs. the other explicitly instead of using the default, though)
+* `-DBUILD_SHARED_LIBS=` You can set this `ON` or `OFF` to control the default for shared libraries (the author can pick one vs. the other explicitly instead of using the default, though)
 
 ## Debugging your CMake files
 

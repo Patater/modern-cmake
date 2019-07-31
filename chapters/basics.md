@@ -56,7 +56,7 @@ project(MyProject VERSION 1.0
                   LANGUAGES CXX)
 ```
 
-Now we see even more syntax. Strings are quoted, whitespace doesn't matter, and the name of the project is the first argument (positional). All the keyword arguments here are optional. The version sets a bunch of variables, like `MyProject_VERSION` and `PROJECT_VERSION`. The languages are C, CXX, Fortran, and CUDA (CMake 3.7+). `C CXX` is the default. In CMake 3.9, `DESCRIPTION` was added to set a project description, as well. The documentation for «command:`project`» may be helpful.
+Now we see even more syntax. Strings are quoted, whitespace doesn't matter, and the name of the project is the first argument (positional). All the keyword arguments here are optional. The version sets a bunch of variables, like `MyProject_VERSION` and `PROJECT_VERSION`. The languages are `C`, `CXX`, `Fortran`, `ASM`, `CUDA` (CMake 3.8+), `CSharp` (3.8+), and `SWIFT` (CMake 3.15+ experimental). `C CXX` is the default. In CMake 3.9, `DESCRIPTION` was added to set a project description, as well. The documentation for «command:`project`» may be helpful.
 
 {% hint style='info' %}
 You can add [comments](https://cmake.org/cmake/help/latest/manual/cmake-language.7.html#comments) with the `#` character. CMake does have an inline syntax for comments too, but it is rarely needed, as whitespace doesn't matter.
