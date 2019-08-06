@@ -78,7 +78,7 @@ set_target_properties(TargetName PROPERTIES
                       CXX_STANDARD 11)
 ```
 
-The first form is more general, and can set multiple targets/files/tests at once, and has useful options. The second is a shortcut for setting several properties on one target. And you can get targets similarly:
+The first form is more general, and can set multiple targets/files/tests at once, and has useful options. The second is a shortcut for setting several properties on one target. And you can get properties similarly:
 
 ```cmake
 get_property(ResultVariable TARGET TargetName PROPERTY CXX_STANDARD)
