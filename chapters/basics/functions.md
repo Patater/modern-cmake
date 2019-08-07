@@ -32,7 +32,7 @@ There are a variety of keywords as well, such as:
 
 ## «cmake:Generator-expressions»
 
-«cmake:Generator-expressions> are really powerful, but a bit odd and specialized. Most CMake commands happen at configure time, include the if statements seen above. But what if you need logic to occur at build time or even install time? Generator expressions were added for this purpose.[^1] They are evaluated in target properties.
+«cmake:Generator-expressions» are really powerful, but a bit odd and specialized. Most CMake commands happen at configure time, include the if statements seen above. But what if you need logic to occur at build time or even install time? Generator expressions were added for this purpose.[^1] They are evaluated in target properties.
 
 The simplest generator expressions are informational expressions, and are of the form `$<KEYWORD>`; they evaluate to a piece of information relevant for the current configuration. The other form is `$<KEYWORD:value>`, where `KEYWORD` is a keyword that controls the evaluation, and value is the item to evaluate (an informational expression keyword is allowed here, too). If KEYWORD is a generator expression or variable that evaluates to 0 or 1, `value` is substituted
 if 1 and not if 0. You can nest generator expressions, and you can use variables to make reading nested variables bearable. Some
@@ -55,16 +55,13 @@ Other common uses for generator expressions:
 That last one is very common. You'll see something like this in almost every package that supports installing:
 
 ```cmake
- target_include_directories(
-     MyTarget
-     PUBLIC
-     $<BUILD_INTERFACE:"${CMAKE_CURRENT_SOURCE_DIR}/include">
-     $<INSTALL_INTERFACE:include>
-     )
+target_include_directories(
+    MyTarget
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
 ```
-
-[^1]: They act as if they are evaluated at build/install time, though actually they are evaluated for each build configuration.
-[^2]: The CMake docs splits expressions into Informational, Logical, and Output. 
 
 ## Macros and Functions
 
@@ -91,14 +88,13 @@ CMake has a named variable system that you've already seen in most of the build 
 
 ```cmake
 function(COMPLEX)
-cmake_parse_arguments(
-    COMPLEX_PREFIX
-    "SINGLE;ANOTHER"
-    "ONE_VALUE;ALSO_ONE_VALUE"
-    "MULTI_VALUES"
-    ${ARGN}
-)
-
+    cmake_parse_arguments(
+        COMPLEX_PREFIX
+        "SINGLE;ANOTHER"
+        "ONE_VALUE;ALSO_ONE_VALUE"
+        "MULTI_VALUES"
+        ${ARGN}
+    )
 endfunction()
 
 complex(SINGLE ONE_VALUE value MULTI_VALUES some other values)
@@ -116,3 +112,6 @@ COMPLEX_PREFIX_MULTI_VALUES = "some;other;values"
 
 If you look at the official page, you'll see a slightly different method using set to avoid explicitly writing the semicolons in the list; feel free to use the structure you like best. You can mix it with the positional arguments listed above; any remaining arguments (therefore optional positional arguments) are in `COMPLEX_PREFIX_UNPARSED_ARGUMENTS`.
 
+
+[^1]: They act as if they are evaluated at build/install time, though actually they are evaluated for each build configuration.
+[^2]: The CMake docs splits expressions into Informational, Logical, and Output. 
