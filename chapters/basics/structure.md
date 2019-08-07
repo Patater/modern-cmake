@@ -16,6 +16,7 @@ First, this is what your files should look like when you start if your project i
   - CMakeLists.txt
   - cmake
     - FindSomeLib.cmake
+    - something_else.cmake
   - include
     - project
       - lib.hpp
@@ -26,9 +27,10 @@ First, this is what your files should look like when you start if your project i
     - CMakeLists.txt
     - app.cpp
   - tests
+    - CMakeLists.txt
     - testlib.cpp
   - docs
-    - Doxyfile.in
+    - CMakeLists.txt
   - extern
     - googletest
   - scripts
@@ -58,3 +60,6 @@ if(EXISTS "${LOC_PATH}")
     message(FATAL_ERROR "You cannot build in a source directory (or any directory with a CMakeLists.txt file). Please make a build subdirectory. Feel free to remove CMakeCache.txt and CMakeFiles.")
 endif()
 ```
+
+See the [extended code example here](https://gitlab.com/CLIUtils/modern-cmake/tree/master/examples/extended-project).
+
