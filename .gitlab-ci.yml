@@ -1,18 +1,17 @@
 
 test_code:
-  image: rootproject/root-ubuntu16:6.12
+  image: rootproject/root:latest
   stage: test
   before_script:
+    - yum install -y make cmake boost-devel git
+# will install latest CMake, even though Fedora has a recent one
     - mkdir -p $HOME/.local
     - curl -s "https://cmake.org/files/v3.15/cmake-3.15.1-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C $HOME/.local
     - export PATH=$HOME/.local/bin:$PATH
   script:
-    - mkdir -p build
-    - cd build
-    - cmake ../examples
-    - VERBOSE=1 cmake --build .
-    - ctest
-    - cd ..
+    - cmake -S examples -B build
+    - cmake --build build -v
+    - cmake --build build -t test
 
 pages:
   image: node:10

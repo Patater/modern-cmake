@@ -49,13 +49,16 @@ Here are some common build environments and the CMake version you'll find on the
 | [Ubuntu 18.04 LTS: Bionic](https://launchpad.net/ubuntu/bionic/+source/cmake) | 3.10.2 | An LTS with a pretty decent minimum version! |
 | [Ubuntu 18.10: Cosmic](https://launchpad.net/ubuntu/cosmic/+source/cmake) | 3.12.1 | |
 | [Ubuntu 19.04: Disco](https://launchpad.net/ubuntu/disco/+source/cmake) | 3.13.4 | |
+| [AlpineLinux 3.10](https://pkgs.alpinelinux.org/packages?name=cmake&branch=v3.10)| 3.14.5 | Useful in Docker |
 | [Python PyPI](https://pypi.org/project/cmake/)  | 3.13.3 | Just `pip install cmake` on many systems. Add `--user` for local installs. |
 | [Anaconda](https://anaconda.org/anaconda/cmake) | 3.14.0 | For use with Conda |
-| [Conda-Forge](https://github.com/conda-forge/cmake-feedstock) | 3.14.5 | For use with Conda |
+| [Conda-Forge](https://github.com/conda-forge/cmake-feedstock) | 3.15.1 | For use with Conda |
 | [Homebrew on macOS](https://formulae.brew.sh/formula/cmake) | 3.15.1 | On macOS with Homebrew, this is only a few minutesa behind cmake.org. |
 | [Chocolaty on Windows](https://chocolatey.org/packages/cmake) | 3.14.6 | Also up to date. The normal cmake.org installers are common on Windows, as well. |
 | TravisCI Trusty | 3.9 | The December 2017 update added a recent version of clang and CMake! Finally! |
 | TravisCI Xenial | 3.12.4 | Mid November 2018 this image became ready for widescale use. |
+
+Also see [pkgs.org/download/cmake](https://pkgs.org/download/cmake).
 
 ## Pip
 
