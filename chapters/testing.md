@@ -5,14 +5,30 @@
 In your main CMakeLists.txt you need to add the following function call (not in a subfolder):
 
 ```cmake
-include(CTest)
+if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+    include(CTest)
+endif()
 ```
 
-Which will enable testing and set a `BUILD_TESTING` option so users can turn testing on and off (Along with [a few other things](https://gitlab.kitware.com/cmake/cmake/blob/master/Modules/CTest.cmake)). Or you can do this yourself: 
+Which will enable testing and set a `BUILD_TESTING` option so users can turn testing on and off (Along with [a few other things](https://gitlab.kitware.com/cmake/cmake/blob/master/Modules/CTest.cmake)). Or you can do this yourself by directly calling `enable_testing()`.
+
+When you add your test folder, you should do something like this:
 
 ```cmake
-enable_testing()
+if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
+    add_subdirectory(tests)
+endif()
 ```
+
+The reason for this is that if someone else includes your package, and they use `BUILD_TESTING`, they probably do not want your tests to build. In the rare case that you really do want to enable testing on both packages, you can provide an override:
+
+```cmake
+if((CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME OR MYPROJECT_BUILD_TESTING) AND BUILD_TESTING)
+    add_subdirectory(tests)
+endif()
+```
+
+The main use case for the override above is actually in this book's own examples, as the master CMake project really does want to run all the subproject tests.
 
 You can register targets with:
 
@@ -49,3 +65,7 @@ add_test(
 ## Testing Frameworks
 
 Look at the subchapters for recipes for popular frameworks.
+
+* [GoogleTest](testing/googletest.md): A popular option from Google. Development can be a bit slow.
+* [Catch2](testing/catch.md): A modern, PyTest-like framework with clever macros.
+* [DocTest](https://github.com/onqtam/doctest): A replacement for Catch2 that is supposed to compile much faster and be cleaner. See Catch2 chapter and replace with DocTest.

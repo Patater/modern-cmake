@@ -22,6 +22,7 @@ include_directories(ROOT_BUG)
 root_generate_dictionary(G__DictExample DictExample.h LINKDEF DictLinkDef.h)
 
 add_library(DictExample SHARED DictExample.cxx DictExample.h G__DictExample.cxx)
+target_include_directories(DictExample PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 target_link_libraries(DictExample PUBLIC ROOT::Core Threads::Threads)
 
 ## [main]

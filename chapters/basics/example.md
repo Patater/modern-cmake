@@ -6,3 +6,5 @@ and one application, MyExample,  with one source file.
 [import:'main', lang:'cmake'](../../examples/simple-project/CMakeLists.txt)
 
 The complete example is available in [examples folder](https://gitlab.com/CLIUtils/modern-cmake/tree/master/examples/simple-project).
+
+A larger, multi-file example is [also available](https://gitlab.com/CLIUtils/modern-cmake/tree/master/examples/extended-project).

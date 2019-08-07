@@ -192,13 +192,14 @@ Quite a few more find packages produce targets. The new Visual Studio 16 2019 ge
 
 ## [CMake 3.15][] : CLI upgrade
 
-This release has many smaller polishing changes, include several of improvements to the CMake command line, such as control over the default generator through environment variables (so now it's easy to change the default generator to Ninja). Multiple targets and `--install` are supported in `--build` mode. CMake finally supports multiple levels of logging. Generator expressions gained a few handy tools. The still very new FindPython module continues to improve, and FindBoost is now more inline with Boost 1.70's new CONFIG
+This release has many smaller polishing changes, include several of improvements to the CMake command line, such as control over the default generator through environment variables (so now it's easy to change the default generator to Ninja). Multiple targets are supported in `--build` mode, and `--install` mode added. CMake finally supports multiple levels of logging. Generator expressions gained a few handy tools. The still very new FindPython module continues to improve, and FindBoost is now more inline with Boost 1.70's new CONFIG
 module. `export(PACKAGE)` has drastically changed; it now no longer touches `$HOME/.cmake` by default (if CMake Minimum version is 3.15 or higher), and requires an extra step if a user wants to use it. This is generally less surprising.
 
 
 * «envvar:CMAKE_GENERATOR» environment variable added to control default generator
 * Multiple target support in build mode, `cmake . --build --target a b`
-* Install support, `cmake . --install`
+* Shortcut `-t` for `--target`
+* Install support, `cmake . --install`, does not invoke the build system
 * Support for `--loglevel` and `NOTICE`, `VERBOSE`, `DEBUG`, and `TRACE` for `message`
 * The «command:list» command gained `PREPEND`, `POP_FRONT`, and `POP_BACK`
 * «command:execute_process» gained `COMMAND_ECHO` option («variable:CMAKE_EXECUTE_PROCESS_COMMAND_ECHO») allows you to automatically echo commands before running them
