@@ -10,5 +10,4 @@ add_subdirectory(extended-project)
 
 add_subdirectory(root-usefile)
 add_subdirectory(root-simple)
-add_subdirectory(root-simple-3.11)
 add_subdirectory(root-dict)

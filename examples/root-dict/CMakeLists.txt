@@ -1,6 +1,6 @@
 
 ## [main]
-cmake_minimum_required(VERSION 3.4)
+cmake_minimum_required(VERSION 3.4...3.15)
 
 project(RootDictExample LANGUAGES CXX)
 
@@ -9,21 +9,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_PLATFORM_INDEPENDENT_CODE ON)
 
-find_package(Threads)
-
 find_package(ROOT CONFIG REQUIRED)
 include("${ROOT_DIR}/modules/RootNewMacros.cmake")
 
-# We will set the flags ourselves
-set_target_properties(ROOT::Core PROPERTIES
-    INTERFACE_INCLUDE_DIRECTORIES "${ROOT_INCLUDE_DIRS}")
-
-include_directories(ROOT_BUG)
 root_generate_dictionary(G__DictExample DictExample.h LINKDEF DictLinkDef.h)
 
 add_library(DictExample SHARED DictExample.cxx DictExample.h G__DictExample.cxx)
 target_include_directories(DictExample PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
-target_link_libraries(DictExample PUBLIC ROOT::Core Threads::Threads)
+target_link_libraries(DictExample PUBLIC ROOT::Core)
 
 ## [main]
 
