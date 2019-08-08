@@ -6,6 +6,7 @@ project(RootUseFileExample LANGUAGES CXX)
 
 find_package(ROOT 6.16 CONFIG REQUIRED)
 
+## [core]
 # Sets up global settings
 include("${ROOT_USE_FILE}")
 
@@ -17,6 +18,7 @@ separate_arguments(ROOT_EXE_LINKER_FLAGS)
 
 add_executable(RootUseFileExample SimpleExample.cxx)
 target_link_libraries(RootUseFileExample PUBLIC ${ROOT_LIBRARIES} ${ROOT_EXE_LINKER_FLAGS})
+## [core]
 
 ## [main]
 

@@ -19,17 +19,37 @@ ROOT [provides a utility](https://root.cern.ch/how/integrate-root-my-project-cma
 
 Here's what it would look like:
 
-[import:'main', lang:'cmake'](../../examples/root-usefile/CMakeLists.txt)
+[import:'core', lang:'cmake'](../../examples/root-usefile/CMakeLists.txt)
 
 ## The right way (Targets)
 
-ROOT 6.12 and earlier do not add the include directory for imported targets. ROOT 6.14+ has corrected this error, and required target properties have been getting better.
+ROOT 6.12 and earlier do not add the include directory for imported targets. ROOT 6.14+ has corrected this error, and required target properties have been getting better. This method is rapidly becoming easier to use (see the example at the end of this page for the older ROOT details).
 
 To link, just pick the libraries you want to use:
 
 [import:'add_and_link', lang:'cmake'](../../examples/root-simple/CMakeLists.txt)
 
-If you'd like to see the default list, run `root-config --libs` on the command line.
+If you'd like to see the default list, run `root-config --libs` on the command line. In Homebrew ROOT 6.18 this would be:
+
+* `ROOT::Core`
+* `ROOT::Gpad`
+* `ROOT::Graf3d`
+* `ROOT::Graf`
+* `ROOT::Hist`
+* `ROOT::Imt`
+* `ROOT::MathCore`
+* `ROOT::Matrix`
+* `ROOT::MultiProc`
+* `ROOT::Net`
+* `ROOT::Physics`
+* `ROOT::Postscript`
+* `ROOT::RIO`
+* `ROOT::ROOTDataFrame`
+* `ROOT::ROOTVecOps`
+* `ROOT::Rint`
+* `ROOT::Thread`
+* `ROOT::TreePlayer`
+* `ROOT::Tree`
 
 ## Components
 
