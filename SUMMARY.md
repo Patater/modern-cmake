@@ -38,7 +38,6 @@
     * [ROOT](chapters/packages/ROOT.md)
         * [UseFile Example](examples/root-usefile/README.md)
         * [Simple Example](examples/root-simple/README.md)
-        * [Simple Example CMake 3.11+](examples/root-simple-3.11/README.md)
         * [Dictionary Example](examples/root-dict/README.md)
     * [Minuit2](chapters/packages/Minuit2.md)
 
