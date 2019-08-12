@@ -38,6 +38,7 @@ So set of methods should you use? As long as you *do not forget* to type the bui
 
 Just to clarify, you can point CMake at either the source directory *from the build directory*, or at an *existing* build directory from anywhere.
 
+If you use `cmake --build` instead of directly calling the underlying build system, you can use `-v` for verbose builds (CMake 3.14+), `-j N` for parallel builds on N cores (CMake 3.12+), and `--target` (any version of CMake) or `-t` (CMake 3.15+) to pick a target. Otherwise, these commands vary between build systems, such as `VERBOSE=1 make` and `ninja -v`.
 
 ## Picking a compiler
 
