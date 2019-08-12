@@ -184,6 +184,7 @@ of the source directory, for better file separation. And, `target_sources` *fina
 This release has lots of small cleanups, including several utilities for files. Generator expressions work in a few more places, and list handling is better with empty variables. 
 Quite a few more find packages produce targets. The new Visual Studio 16 2019 generator is a bit different than older versions. Windows XP and Vista support has been dropped.
 
+* The cmake `--build` command gained `-v/--verbose`, to use verbose builds if your build tool supports it
 * The FILE command gained `CREATE_LINK`, `READ_SYMLINK`, and `SIZE`
 * «command:get_filename_component» gained `LAST_EXT` and `NAME_WLE` to access just the *last* extension on a file, which would get `.zip` on a file such as `version.1.2.zip` (very handy!)
 * You can see if a variable is defined in the CACHE with `DEFINED CACHE{VAR}` in an «command:if» statement.
