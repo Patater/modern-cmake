@@ -73,6 +73,11 @@ This book tries to solve the problem of the poor examples and best practices tha
 
 ## Other sources
 
+Other material from the original author of this book:
+
+* [CMake Workshop](https://github.com/henryiii/cmake_workshop)
+* [Interactive Modern CMake talk](https://gitlab.com/CLIUtils/modern-cmake-interactive-talk)
+
 There are some other places to find good information on the web. Here are some of them:
 
 * [The official help](https://cmake.org/cmake/help/latest/): Really amazing documentation. Nicely organized, great search, and you can toggle versions at the top. It just doesn't have a great "best practices tutorial", which is what this book tries to fill in.
