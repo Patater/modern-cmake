@@ -25,9 +25,9 @@ Any *one* of these commands will install:
 
 {% term %}
 # From the build directory (pick one)
-~/package $ make install
-~/package $ cmake --build . --target install
-~/package $ cmake --install . # CMake 3.15+ only
+~/package/build $ make install
+~/package/build $ cmake --build . --target install
+~/package/build $ cmake --install . # CMake 3.15+ only
 
 # From the source directory (pick one)
 ~/package $ cmake --build build --target install
