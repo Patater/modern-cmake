@@ -207,6 +207,15 @@ module. `export(PACKAGE)` has drastically changed; it now no longer touches `$HO
 * Several Ninja improvements, include SWIFT language support
 * Compiler and list improvements to generator expressions
 
+## [CMake 3.16][] : IN DEVELOPMENT
+
+* Support for precompiling headers, with `target_precompile_headers`
+* Support for "Unity" or "Jumbo" builds (merging source files) with `CMAKE_UNITY_BUILD`
+* CTest: Can now skip based on regex, expand lists
+* Several new features to control RPath.
+* Generator expressions work in more places, like build and install paths
+* Find locations can now be explicitly controlled through new variables
+
 
 [Releases]: https://cmake.org/cmake/help/latest/release/index.html
 [CMake 3.0]: https://cmake.org/cmake/help/latest/release/3.0.html 
@@ -225,4 +234,5 @@ module. `export(PACKAGE)` has drastically changed; it now no longer touches `$HO
 [CMake 3.13]: https://cmake.org/cmake/help/latest/release/3.13.html
 [CMake 3.14]: https://cmake.org/cmake/help/latest/release/3.14.html
 [CMake 3.15]: https://cmake.org/cmake/help/latest/release/3.15.html
+[CMake 3.16]: https://cmake.org/cmake/help/git-master/release/index.html
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/
