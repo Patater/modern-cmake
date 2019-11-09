@@ -18,7 +18,7 @@ FetchContent_Declare(
 )
 
 # CMake 3.14+
-FetchContent_MakeAvailable(catch2)
+FetchContent_MakeAvailable(catch)
 ```
 
 If you can't use CMake 3.14+, the classic way to prepare code was:
