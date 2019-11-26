@@ -4,7 +4,7 @@
 Your CMake version should be newer than your compiler. It should be newer than the libraries you are using (especially Boost). New versions work better for everyone.
 {% endhint %}
 
-If you have a built in copy of CMake, it isn't special or customized for your system. You can easily install a new one instead, either on the system level or the user level. Feel free to instruct your users here if they complain about a CMake requirement being set too high. Especially if they want < 3.1 support. Maybe even if they want CMake < 3.15 support...
+If you have a built in copy of CMake, it isn't special or customized for your system. You can easily install a new one instead, either on the system level or the user level. Feel free to instruct your users here if they complain about a CMake requirement being set too high. Especially if they want < 3.1 support. Maybe even if they want CMake < 3.16 support...
 
 #### Quick list (more info on each method below)
 
@@ -32,14 +32,14 @@ You can [download CMake from KitWare][download]. This is how you will probably g
 On Linux, there are several options. Kitware provides a [Debian/Ubunutu apt repository][apt], as well as [snap packages][snap]. There are universal Linux binaries provided, but you'll need to pick an install location. If you already use `~/.local` for user-space packages, the following single line command[^1] will get CMake for you [^2]:
 
 {% term %}
-~ $ wget -qO- "https://cmake.org/files/v3.15/cmake-3.15.4-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C ~/.local
+~ $ wget -qO- "https://cmake.org/files/v3.16/cmake-3.16.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C ~/.local
 {% endterm %}
 
 If you just want a local folder with CMake only:
 
 {% term %}
-~ $ mkdir -p cmake-3.15 && wget -qO- "https://cmake.org/files/v3.15/cmake-3.15.4-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake-3.15
-~ $ export PATH=`pwd`/cmake-3.15/bin:$PATH
+~ $ mkdir -p cmake-3.16 && wget -qO- "https://cmake.org/files/v3.16/cmake-3.16.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake-3.16
+~ $ export PATH=`pwd`/cmake-3.16/bin:$PATH
 {% endterm %}
 
 You'll obviously want to append to the PATH every time you start a new terminal, or add it to your `.bashrc` or to an [LMod] system.
@@ -47,7 +47,7 @@ You'll obviously want to append to the PATH every time you start a new terminal,
 And, if you want a system install, install to `/usr/local`; this is an excellent choice in a Docker container, for example on GitLab CI. Do not try it on a non-containerized system.
 
 {% term %}
-docker $ wget -qO- "https://cmake.org/files/v3.15/cmake-3.15.4-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C /usr/local
+docker $ wget -qO- "https://cmake.org/files/v3.16/cmake-3.16.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C /usr/local
 {% endterm %}
 
 
@@ -62,12 +62,14 @@ Here are some common build environments and the CMake version you'll find on the
 | Distribution  | CMake version | Notes |
 |---------------|---------------|-------|
 | [RHEL/CentOS 7](https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake) | 2.8.11        | Don't use the default on this system. Grab a new copy or use the EPEL repo. |
+| [RHEL/CentOS 8](https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake) | 3.11.4        | Not too bad. |
 | [EPEL for RHEL/CentOS](https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake3) | 3.13.4    | Called `cmake3` |
 | [Ubuntu 14.04 LTS: Trusty](https://launchpad.net/ubuntu/trusty/+source/cmake) | 2.8.12 | Don't use the default on this system. |
 | [Ubuntu 16.04 LTS: Xenial](https://launchpad.net/ubuntu/xenial/+source/cmake) | 3.5.1 | |
 | [Ubuntu 18.04 LTS: Bionic](https://launchpad.net/ubuntu/bionic/+source/cmake) | 3.10.2 | An LTS with a pretty decent minimum version! |
 | [Ubuntu 18.10: Cosmic](https://launchpad.net/ubuntu/cosmic/+source/cmake) | 3.12.1 | |
 | [Ubuntu 19.04: Disco](https://launchpad.net/ubuntu/disco/+source/cmake) | 3.13.4 | |
+| [Ubuntu 19.10: Eoan](https://launchpad.net/ubuntu/eoan/+source/cmake) | 3.13.4 | Oddly identical to Disco. |
 | [AlpineLinux 3.10](https://pkgs.alpinelinux.org/packages?name=cmake&branch=v3.10)| 3.14.5 | Useful in Docker |
 | [Python PyPI][PyPI]  | 3.15.3 | Just `pip install cmake` on many systems. Add `--user` for local installs. (ManyLinux1 (old pip or OS) gets CMake 3.13.3)|
 | [Anaconda][] | 3.14.0 | For use with Conda |

@@ -207,10 +207,15 @@ module. `export(PACKAGE)` has drastically changed; it now no longer touches `$HO
 * Several Ninja improvements, include SWIFT language support
 * Compiler and list improvements to generator expressions
 
-## [CMake 3.16][] : IN DEVELOPMENT
+## [CMake 3.16][] : Unity builds
 
+A new unity build mode was added, allowing source files to be merged into a single build file. Support for
+precompiled headers (possibly preparing for C++20 modules, perhaps?) was added. Lots of other smaller
+fixes were implemented, especially to newer features, such as to FindPython, FindDoxygen, and others.
+
+* Added support for Objective C and Objective C++ languages
 * Support for precompiling headers, with `target_precompile_headers`
-* Support for "Unity" or "Jumbo" builds (merging source files) with `CMAKE_UNITY_BUILD`
+* Support for "Unity" or "Jumbo" builds (merging source files) with «variable:CMAKE_UNITY_BUILD»
 * CTest: Can now skip based on regex, expand lists
 * Several new features to control RPath.
 * Generator expressions work in more places, like build and install paths
@@ -234,5 +239,5 @@ module. `export(PACKAGE)` has drastically changed; it now no longer touches `$HO
 [CMake 3.13]: https://cmake.org/cmake/help/latest/release/3.13.html
 [CMake 3.14]: https://cmake.org/cmake/help/latest/release/3.14.html
 [CMake 3.15]: https://cmake.org/cmake/help/latest/release/3.15.html
-[CMake 3.16]: https://cmake.org/cmake/help/git-master/release/index.html
+[CMake 3.16]: https://cmake.org/cmake/help/latest/release/3.16.html
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/
