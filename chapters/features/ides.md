@@ -10,7 +10,7 @@ Some IDEs, like Xcode, support folders. You have to manually enable the `USE_FOL
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 ```
 
-Then, you can add targets to folders when after you create them:
+Then, you can add targets to folders after you create them:
 
 ```cmake
 set_property(TARGET MyFile PROPERTY FOLDER "Scripts")
