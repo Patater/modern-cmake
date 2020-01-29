@@ -4,7 +4,7 @@ People love to hate build systems.
 Just watch the talks from CppCon17 to see examples of developers making the state of build systems the brunt of jokes.
 This raises the question: Why?
 Certainly there are no shortage of problems when building.
-But I think that, in 2018, we have a very good solution to quite a few of those problems.
+But I think that, in 2020, we have a very good solution to quite a few of those problems.
 It's CMake. Not CMake 2.8 though; that was released before C++11 even existed!
 Nor the horrible examples out there for CMake (even those posted on KitWare's own tutorials list).
 I'm talking about Modern CMake. CMake 3.1+, maybe even CMake 3.16+!
@@ -86,7 +86,7 @@ There are some other places to find good information on the web. Here are some o
 * [It's time to do CMake Right](https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/): A nice set of best practices for Modern CMake projects.
 * [The Ultimate Guide to Modern CMake](https://rix0r.nl/blog/2015/08/13/cmake-guide/): A slightly dated post with similar intent.
 * [More Modern CMake](https://youtu.be/y7ndUhdQuU8): A great presentation from Meeting C++ 2018 that recommends CMake 3.12+. This talk makes calls CMake 3.0+ "Modern CMake" and CMake 3.12+ "More Modern CMake".
-* [Oh No! More Modern CMake](https://www.youtube.com/watch?v=y9kSr5enrSk): The sequal to More Modern CMake.
+* [Oh No! More Modern CMake](https://www.youtube.com/watch?v=y9kSr5enrSk): The sequel to More Modern CMake.
 * [toeb/moderncmake](https://github.com/toeb/moderncmake): A nice presentation and examples about CMake 3.5+, with intro to syntax through project organization
 
 ## Credits

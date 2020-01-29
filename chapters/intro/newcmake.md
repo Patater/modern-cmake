@@ -221,6 +221,17 @@ fixes were implemented, especially to newer features, such as to FindPython, Fin
 * Generator expressions work in more places, like build and install paths
 * Find locations can now be explicitly controlled through new variables
 
+## [CMake 3.17 (in progress)][CMake master] : More CUDA
+
+* `CUDA_RUNTIME_LIBRARY` can finally be set to Shared!
+* FindCUDAToolkit finally added
+* CUDA has meta features like `cuda_std_03`, etc.
+* ExternalProject can now disable recursive checkouts
+* FindPython better integration with Conda
+* DEPRECATION can be applied to targets
+* CMake gained a rm command
+* Several new environment variables
+* foreach can now do `ZIP_LISTS` (multiple lists at a time)
 
 [Releases]: https://cmake.org/cmake/help/latest/release/index.html
 [CMake 3.0]: https://cmake.org/cmake/help/latest/release/3.0.html 
@@ -240,4 +251,5 @@ fixes were implemented, especially to newer features, such as to FindPython, Fin
 [CMake 3.14]: https://cmake.org/cmake/help/latest/release/3.14.html
 [CMake 3.15]: https://cmake.org/cmake/help/latest/release/3.15.html
 [CMake 3.16]: https://cmake.org/cmake/help/latest/release/3.16.html
+[CMake master]: https://cmake.org/cmake/help/git-master/release/index.html
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/
