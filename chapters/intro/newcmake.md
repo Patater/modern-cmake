@@ -151,7 +151,7 @@ shiny new Python find module (2 and 3 versions too), and many more.
 
 * Support for `cmake_minimum_required` ranges (backward compatible)
 * Support for `-j,--parallel` in `--build` mode (passed on to build tool)
-* Support for `$<SHELL:` shell strings (not deduplicated)
+* Support for `SHELL:` strings in compile options (not deduplicated)
 * New FindPython module
 * `string(JOIN` and `list(JOIN`, and `list(TRANSFORM`
 * `file(TOUCH` and `file(GLOB CONFIGURE_DEPENDS`

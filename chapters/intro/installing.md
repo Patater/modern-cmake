@@ -73,8 +73,8 @@ Here are some common build environments and the CMake version you'll find on the
 | [AlpineLinux 3.11](https://pkgs.alpinelinux.org/packages?name=cmake&branch=v3.11)| 3.15.5 | Useful in Docker |
 | [Python PyPI][PyPI]  | 3.15.3 | Just `pip install cmake` on many systems. Add `--user` for local installs. (ManyLinux1 (old pip or OS) gets CMake 3.13.3)|
 | [Anaconda][] | 3.14.0 | For use with Conda |
-| [Conda-Forge][] | 3.16.2 | For use with Conda |
-| [Homebrew on macOS][homebrew] | 3.16.2 | On macOS with Homebrew, this is only a few minutes behind cmake.org. |
+| [Conda-Forge][] | 3.16.3 | For use with Conda |
+| [Homebrew on macOS][homebrew] | 3.16.3 | On macOS with Homebrew, this is only a few minutes behind cmake.org. |
 | [MacPorts on macOS][macports] | 3.16.3 | Useful if you use the less popular MacPorts. |
 | [Chocolaty on Windows][chocolaty] | 3.16.2 | Also up to date. The normal cmake.org installers are common on Windows, as well. |
 | [TravisCI Xenial](https://docs.travis-ci.com/user/reference/xenial/#compilers-and-build-toolchain) | 3.12.4 | Mid November 2018 this image became ready for widescale use. |
