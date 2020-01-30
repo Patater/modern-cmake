@@ -42,7 +42,7 @@ This checks to see if a flag is supported. For example:
 
 ```cmake
 include(CheckCXXCompilerFlag)
-check_cxx_compiler_flag(-someflag OUPUT_VARIABLE)
+check_cxx_compiler_flag(-someflag OUTPUT_VARIABLE)
 ```
 
 Note that `OUTPUT_VARIABLE` will also appear in the configuration printout, so choose a good name.
@@ -76,7 +76,7 @@ you can keep this from erroring on unknown compilers, but it will still leave al
 
 ## «command:`try_compile`»/«command:`try_run`»
 
-This is not exactly a module, but is crutial to many of the modules listed above. You can attept to compile (and possibly run) a bit of code at configure time. This can allow you to get information about the capabilities of your system. The basic syntax is:
+This is not exactly a module, but is crucial to many of the modules listed above. You can attempt to compile (and possibly run) a bit of code at configure time. This can allow you to get information about the capabilities of your system. The basic syntax is:
 
 ```cmake
 try_compile(
