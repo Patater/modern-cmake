@@ -1,6 +1,6 @@
 # Useful Modules
 
-There are a ton of useful modules in CMake's «cmake:module» collection; but some of them are more useful than others. Here are a few highlights.
+There are a ton of useful modules in CMake's «cmake:modules» collection; but some of them are more useful than others. Here are a few highlights.
 
 ## «module:CMakeDependentOption»
 
