@@ -15,6 +15,8 @@ Ordered by author preference:
     - [Anaconda][] / [Conda-Forge][]
 * Windows
     - [Chocolaty][]
+    - [Scoop][]
+    - [MSYS2][]
     - [Download binary][download] (official)
 * MacOS
     - [Homebrew][]
@@ -77,6 +79,8 @@ Here are some common build environments and the CMake version you'll find on the
 | [Homebrew on macOS][homebrew] | 3.16.3 | On macOS with Homebrew, this is only a few minutes behind cmake.org. |
 | [MacPorts on macOS][macports] | 3.16.3 | Useful if you use the less popular MacPorts. |
 | [Chocolaty on Windows][chocolaty] | 3.16.2 | Also up to date. The normal cmake.org installers are common on Windows, as well. |
+| [Scoop on Windows][scoop] | 3.16.5 | Also up to date. The normal cmake.org installers are common on Windows, as well. |
+| [MSYS2 on Windows][MSYS2] | 3.16.5-1 | Also up to date. Available for both i386 & x86_64. |
 | [TravisCI Xenial](https://docs.travis-ci.com/user/reference/xenial/#compilers-and-build-toolchain) | 3.12.4 | Mid November 2018 this image became ready for widescale use. |
 | [TravisCI Bionic](https://docs.travis-ci.com/user/reference/bionic/#compilers-and-build-toolchain) | 3.12.4 | Same as Xenial at the moment. |
 | [Azure DevOps 18.04](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops#use-a-microsoft-hosted-agent) | 3.12.4 | |
@@ -110,6 +114,8 @@ Personally, on Linux, I put versions of CMake in folders, like `/opt/cmake312` o
 [snap]:        https://snapcraft.io/cmake
 [PyPI]:        https://pypi.org/project/cmake/
 [chocolaty]:   https://chocolatey.org/packages/cmake
+[scoop]:       https://github.com/ScoopInstaller/Main/blob/master/bucket/cmake.json
+[MSYS2]:       https://packages.msys2.org/base/mingw-w64-cmake
 [anaconda]:    https://anaconda.org/anaconda/cmake
 [conda-forge]: https://github.com/conda-forge/cmake-feedstock
 [download]:    https://cmake.org/download/
