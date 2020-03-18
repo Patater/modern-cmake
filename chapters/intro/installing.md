@@ -14,7 +14,7 @@ Ordered by author preference:
     - [Pip][PyPI] (official, sometimes delayed slightly)
     - [Anaconda][] / [Conda-Forge][]
 * Windows
-    - [Chocolaty][]
+    - [Chocolatey][]
     - [Scoop][]
     - [MSYS2][]
     - [Download binary][download] (official)
@@ -29,7 +29,7 @@ Ordered by author preference:
 
 ## Official package
 
-You can [download CMake from KitWare][download]. This is how you will probably get CMake if you are on Windows. It's not a bad way to get it on macOS either, but using `brew install cmake` is much nicer if you use [Homebrew](https://brew.sh) (and you should). You can also get it on most other package managers, such as [Chocolaty](https://chocolatey.org) for Windows or [MacPorts](https://www.macports.org) for macOS.
+You can [download CMake from KitWare][download]. This is how you will probably get CMake if you are on Windows. It's not a bad way to get it on macOS either, but using `brew install cmake` is much nicer if you use [Homebrew](https://brew.sh) (and you should). You can also get it on most other package managers, such as [Chocolatey](https://chocolatey.org) for Windows or [MacPorts](https://www.macports.org) for macOS.
 
 On Linux, there are several options. Kitware provides a [Debian/Ubunutu apt repository][apt], as well as [snap packages][snap]. There are universal Linux binaries provided, but you'll need to pick an install location. If you already use `~/.local` for user-space packages, the following single line command[^1] will get CMake for you [^2]:
 
@@ -78,7 +78,7 @@ Here are some common build environments and the CMake version you'll find on the
 | [Conda-Forge][] | 3.16.3 | For use with Conda |
 | [Homebrew on macOS][homebrew] | 3.16.3 | On macOS with Homebrew, this is only a few minutes behind cmake.org. |
 | [MacPorts on macOS][macports] | 3.16.3 | Useful if you use the less popular MacPorts. |
-| [Chocolaty on Windows][chocolaty] | 3.16.2 | Also up to date. The normal cmake.org installers are common on Windows, as well. |
+| [Chocolatey on Windows][chocolatey] | 3.16.2 | Also up to date. The normal cmake.org installers are common on Windows, as well. |
 | [Scoop on Windows][scoop] | 3.16.5 | Also up to date. The normal cmake.org installers are common on Windows, as well. |
 | [MSYS2 on Windows][MSYS2] | 3.16.5-1 | Also up to date. Available for both i386 & x86_64. |
 | [TravisCI Xenial](https://docs.travis-ci.com/user/reference/xenial/#compilers-and-build-toolchain) | 3.12.4 | Mid November 2018 this image became ready for widescale use. |
@@ -113,7 +113,7 @@ Personally, on Linux, I put versions of CMake in folders, like `/opt/cmake312` o
 [apt]:         https://apt.kitware.com/
 [snap]:        https://snapcraft.io/cmake
 [PyPI]:        https://pypi.org/project/cmake/
-[chocolaty]:   https://chocolatey.org/packages/cmake
+[chocolatey]:  https://chocolatey.org/packages/cmake
 [scoop]:       https://github.com/ScoopInstaller/Main/blob/master/bucket/cmake.json
 [MSYS2]:       https://packages.msys2.org/base/mingw-w64-cmake
 [anaconda]:    https://anaconda.org/anaconda/cmake
