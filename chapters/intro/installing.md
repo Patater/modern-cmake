@@ -4,7 +4,7 @@
 Your CMake version should be newer than your compiler. It should be newer than the libraries you are using (especially Boost). New versions work better for everyone.
 {% endhint %}
 
-If you have a built in copy of CMake, it isn't special or customized for your system. You can easily install a new one instead, either on the system level or the user level. Feel free to instruct your users here if they complain about a CMake requirement being set too high. Especially if they want < 3.1 support. Maybe even if they want CMake < 3.16 support...
+If you have a built in copy of CMake, it isn't special or customized for your system. You can easily install a new one instead, either on the system level or the user level. Feel free to instruct your users here if they complain about a CMake requirement being set too high. Especially if they want < 3.1 support. Maybe even if they want CMake < 3.17 support...
 
 #### Quick list (more info on each method below)
 
@@ -34,14 +34,14 @@ You can [download CMake from KitWare][download]. This is how you will probably g
 On Linux, there are several options. Kitware provides a [Debian/Ubunutu apt repository][apt], as well as [snap packages][snap]. There are universal Linux binaries provided, but you'll need to pick an install location. If you already use `~/.local` for user-space packages, the following single line command[^1] will get CMake for you [^2]:
 
 {% term %}
-~ $ wget -qO- "https://cmake.org/files/v3.16/cmake-3.16.3-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C ~/.local
+~ $ wget -qO- "https://cmake.org/files/v3.17/cmake-3.17.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C ~/.local
 {% endterm %}
 
 If you just want a local folder with CMake only:
 
 {% term %}
-~ $ mkdir -p cmake-3.16 && wget -qO- "https://cmake.org/files/v3.16/cmake-3.16.3-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake-3.16
-~ $ export PATH=`pwd`/cmake-3.16/bin:$PATH
+~ $ mkdir -p cmake-3.17 && wget -qO- "https://cmake.org/files/v3.17/cmake-3.17.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake-3.17
+~ $ export PATH=`pwd`/cmake-3.17/bin:$PATH
 {% endterm %}
 
 You'll obviously want to append to the PATH every time you start a new terminal, or add it to your `.bashrc` or to an [LMod] system.
@@ -49,7 +49,7 @@ You'll obviously want to append to the PATH every time you start a new terminal,
 And, if you want a system install, install to `/usr/local`; this is an excellent choice in a Docker container, for example on GitLab CI. Do not try it on a non-containerized system.
 
 {% term %}
-docker $ wget -qO- "https://cmake.org/files/v3.16/cmake-3.16.3-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C /usr/local
+docker $ wget -qO- "https://cmake.org/files/v3.17/cmake-3.17.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C /usr/local
 {% endterm %}
 
 
@@ -73,13 +73,13 @@ Here are some common build environments and the CMake version you'll find on the
 | [Ubuntu 19.04: Disco](https://launchpad.net/ubuntu/disco/+source/cmake) | 3.13.4 | |
 | [Ubuntu 19.10: Eoan](https://launchpad.net/ubuntu/eoan/+source/cmake) | 3.13.4 | Oddly identical to Disco. |
 | [AlpineLinux 3.11](https://pkgs.alpinelinux.org/packages?name=cmake&branch=v3.11)| 3.15.5 | Useful in Docker |
-| [Python PyPI][PyPI]  | 3.15.3 | Just `pip install cmake` on many systems. Add `--user` for local installs. (ManyLinux1 (old pip or OS) gets CMake 3.13.3)|
+| [Python PyPI][PyPI]  | 3.16.3 | Just `pip install cmake` on many systems. Add `--user` for local installs. (ManyLinux1 (old pip or OS) gets CMake 3.13.3)|
 | [Anaconda][] | 3.14.0 | For use with Conda |
-| [Conda-Forge][] | 3.16.3 | For use with Conda |
-| [Homebrew on macOS][homebrew] | 3.16.3 | On macOS with Homebrew, this is only a few minutes behind cmake.org. |
-| [MacPorts on macOS][macports] | 3.16.3 | Useful if you use the less popular MacPorts. |
-| [Chocolatey on Windows][chocolatey] | 3.16.2 | Also up to date. The normal cmake.org installers are common on Windows, as well. |
-| [Scoop on Windows][scoop] | 3.16.5 | Also up to date. The normal cmake.org installers are common on Windows, as well. |
+| [Conda-Forge][] | 3.16.4 | For use with Conda |
+| [Homebrew on macOS][homebrew] | 3.16.5 | On macOS with Homebrew, this is only a few minutes behind cmake.org. |
+| [MacPorts on macOS][macports] | 3.16.5 | Useful if you use the less popular MacPorts. |
+| [Chocolatey on Windows][chocolatey] | 3.16.5 | Also up to date. The normal cmake.org installers are common on Windows, as well. |
+| [Scoop on Windows][scoop] | 3.17.0 | Also up to date. The normal cmake.org installers are common on Windows, as well. |
 | [MSYS2 on Windows][MSYS2] | 3.16.5-1 | Also up to date. Available for both i386 & x86_64. |
 | [TravisCI Xenial](https://docs.travis-ci.com/user/reference/xenial/#compilers-and-build-toolchain) | 3.12.4 | Mid November 2018 this image became ready for widescale use. |
 | [TravisCI Bionic](https://docs.travis-ci.com/user/reference/bionic/#compilers-and-build-toolchain) | 3.12.4 | Same as Xenial at the moment. |
