@@ -61,30 +61,79 @@ You can also build CMake on any system, it's pretty easy, but binaries are faste
 
 Here are some common build environments and the CMake version you'll find on them. Feel free to install CMake yourself, it's 1-2 lines and there's nothing "special" about the built in version. It's also very backward compatible.
 
+### Windows
+
+[![Chocolatey package](https://repology.org/badge/version-for-repo/chocolatey/cmake.svg)][chocolatey]
+[![MSYS2 mingw package](https://repology.org/badge/version-for-repo/msys2_mingw/cmake.svg)][MSYS2]
+[![MSYS2 msys2 package](https://repology.org/badge/version-for-repo/msys2_msys2/cmake.svg)][MSYS2]
+
+Also [Scoop][scoop] is generally up to date. The normal installers from CMake.org are common on Windows, too.
+
+### MacOS
+
+[![Homebrew package](https://repology.org/badge/version-for-repo/homebrew/cmake.svg)][homebrew]
+[![Homebrew Casks package](https://repology.org/badge/version-for-repo/homebrew_casks/cmake.svg)][homebrew-cask]
+[![MacPorts package](https://repology.org/badge/version-for-repo/macports/cmake.svg)][macports]
+
+Homebrew is quite a bit more popular nowadays on macOS, at least according to Google Trends.
+
+### Linux
+
+#### RHEL/CentOS
+
+[![CentOS 7 package](https://repology.org/badge/version-for-repo/centos_7/cmake.svg)][centos]
+[![CentOS 8 package](https://repology.org/badge/version-for-repo/centos_8/cmake.svg)][centos]
+[![EPEL 7 package](https://repology.org/badge/version-for-repo/epel_7/cmake.svg)][centos]
+
+The default on 8 is not too bad, but you should not use the default on 7. Use the EPEL package instead.
+
+#### Ubuntu
+
+[![Ubuntu 14.04 package](https://repology.org/badge/version-for-repo/ubuntu_14_04/cmake.svg)](https://launchpad.net/ubuntu/trusty/+source/cmake)
+[![Ubuntu 16.04 package](https://repology.org/badge/version-for-repo/ubuntu_16_04/cmake.svg)](https://launchpad.net/ubuntu/xenial/+source/cmake)
+[![Ubuntu 18.04 package](https://repology.org/badge/version-for-repo/ubuntu_18_04/cmake.svg)](https://launchpad.net/ubuntu/bionic/+source/cmake)
+[![Ubuntu 19.04 package](https://repology.org/badge/version-for-repo/ubuntu_19_04/cmake.svg)](https://launchpad.net/ubuntu/disco/+source/cmake)
+[![Ubuntu 19.10 package](https://repology.org/badge/version-for-repo/ubuntu_19_10/cmake.svg)](https://launchpad.net/ubuntu/eoan/+source/cmake)
+
+You should only use the default CMake on 18.04+; it's an LTS release with a pretty decent minimum version!
+
+#### Other
+
+[![Alpine Linux 3.11 package](https://repology.org/badge/version-for-repo/alpine_3_11/cmake.svg)](https://pkgs.alpinelinux.org/packages?name=cmake&branch=v3.11)
+[![Arch package](https://repology.org/badge/version-for-repo/arch/cmake.svg)][repology]
+[![Debian Stable package](https://repology.org/badge/version-for-repo/debian_stable/cmake.svg)][repology]
+[![Debian Testing package](https://repology.org/badge/version-for-repo/debian_testing/cmake.svg)][repology]
+[![Fedora 32 package](https://repology.org/badge/version-for-repo/fedora_32/cmake.svg)][repology]
+[![FreeBSD port](https://repology.org/badge/version-for-repo/freebsd/cmake.svg)][repology]
+[![OpenBSD port](https://repology.org/badge/version-for-repo/openbsd/cmake.svg)][repology]
+[![Gentoo package](https://repology.org/badge/version-for-repo/gentoo/cmake.svg)][repology]
+[![openSUSE Tumbleweed package](https://repology.org/badge/version-for-repo/opensuse_tumbleweed/cmake.svg)][repology]
+[![Linuxbrew package](https://repology.org/badge/version-for-repo/linuxbrew/cmake.svg)][repology]
+
+
+### General tools
+
+[![ConanCenter package](https://repology.org/badge/version-for-repo/conancenter/cmake.svg)][repology]
+[![PyPI](https://img.shields.io/pypi/v/cmake)][PyPI]
+[![Conda-forge](https://img.shields.io/conda/vn/conda-forge/cmake.svg)][Conda-Forge]
+[![Anaconda](https://anaconda.org/anaconda/cmake/badges/version.svg?style=flat)][Anaconda]
+
+Just `pip install cmake` on many systems. Add `--user` if you have to.  ManyLinux1 (old pip or OS) gets CMake 3.13.3.
+
+
+### CI 
+
 | Distribution  | CMake version | Notes |
 |---------------|---------------|-------|
-| [RHEL/CentOS 7](https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake) | 2.8.11        | Don't use the default on this system. Grab a new copy or use the EPEL repo. |
-| [RHEL/CentOS 8](https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake) | 3.11.4        | Not too bad. |
-| [EPEL for RHEL/CentOS](https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake3) | 3.14.2    | Called `cmake3` |
-| [Ubuntu 14.04 LTS: Trusty](https://launchpad.net/ubuntu/trusty/+source/cmake) | 2.8.12 | Don't use the default on this system. |
-| [Ubuntu 16.04 LTS: Xenial](https://launchpad.net/ubuntu/xenial/+source/cmake) | 3.5.1 | |
-| [Ubuntu 18.04 LTS: Bionic](https://launchpad.net/ubuntu/bionic/+source/cmake) | 3.10.2 | An LTS with a pretty decent minimum version! |
-| [Ubuntu 18.10: Cosmic](https://launchpad.net/ubuntu/cosmic/+source/cmake) | 3.12.1 | |
-| [Ubuntu 19.04: Disco](https://launchpad.net/ubuntu/disco/+source/cmake) | 3.13.4 | |
-| [Ubuntu 19.10: Eoan](https://launchpad.net/ubuntu/eoan/+source/cmake) | 3.13.4 | Oddly identical to Disco. |
-| [AlpineLinux 3.11](https://pkgs.alpinelinux.org/packages?name=cmake&branch=v3.11)| 3.15.5 | Useful in Docker |
-| [Python PyPI][PyPI]  | 3.16.3 | Just `pip install cmake` on many systems. Add `--user` for local installs. (ManyLinux1 (old pip or OS) gets CMake 3.13.3)|
-| [Anaconda][] | 3.14.0 | For use with Conda |
-| [Conda-Forge][] | 3.16.4 | For use with Conda |
-| [Homebrew on macOS][homebrew] | 3.16.5 | On macOS with Homebrew, this is only a few minutes behind cmake.org. |
-| [MacPorts on macOS][macports] | 3.16.5 | Useful if you use the less popular MacPorts. |
-| [Chocolatey on Windows][chocolatey] | 3.16.5 | Also up to date. The normal cmake.org installers are common on Windows, as well. |
-| [Scoop on Windows][scoop] | 3.17.0 | Also up to date. The normal cmake.org installers are common on Windows, as well. |
-| [MSYS2 on Windows][MSYS2] | 3.16.5-1 | Also up to date. Available for both i386 & x86_64. |
 | [TravisCI Xenial](https://docs.travis-ci.com/user/reference/xenial/#compilers-and-build-toolchain) | 3.12.4 | Mid November 2018 this image became ready for widescale use. |
 | [TravisCI Bionic](https://docs.travis-ci.com/user/reference/bionic/#compilers-and-build-toolchain) | 3.12.4 | Same as Xenial at the moment. |
 | [Azure DevOps 18.04](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops#use-a-microsoft-hosted-agent) | 3.12.4 | |
 | [GitHub Actions 18.04](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/software-installed-on-github-hosted-runners#ubuntu-1804-lts) | 3.12.4 | Mostly in sync with Azure DevOps |
+
+
+### Full list
+
+[![Full listing](https://repology.org/badge/vertical-allrepos/cmake.svg?columns=3)][repology]
 
 
 Also see [pkgs.org/download/cmake](https://pkgs.org/download/cmake).
@@ -109,15 +158,18 @@ Personally, on Linux, I put versions of CMake in folders, like `/opt/cmake312` o
 [^1]: I assume this is obvious, but you are downloading and running code, which exposes you to a man in the middle attack. If you are in a critical environment, you should download the file and check the checksum. (And, no, simply doing this in two steps does not make you any safer, only a checksum is safer).
 [^2]: If you don't have a `.local` in your home directory, it's easy to start. Just make the folder, then add `export PATH="$HOME/.local/bin:$PATH"` to your `.bashrc` or `.bash_profile` or `.profile` file in your home directory. Now you can install any packages you build to `-DCMAKE_INSTALL_PREFIX=~/.local` instead of `/usr/local`!
 
-[LMod]:        http://lmod.readthedocs.io/en/latest/
-[apt]:         https://apt.kitware.com/
-[snap]:        https://snapcraft.io/cmake
-[PyPI]:        https://pypi.org/project/cmake/
-[chocolatey]:  https://chocolatey.org/packages/cmake
-[scoop]:       https://github.com/ScoopInstaller/Main/blob/master/bucket/cmake.json
-[MSYS2]:       https://packages.msys2.org/base/mingw-w64-cmake
-[anaconda]:    https://anaconda.org/anaconda/cmake
-[conda-forge]: https://github.com/conda-forge/cmake-feedstock
-[download]:    https://cmake.org/download/
-[homebrew]:    https://formulae.brew.sh/formula/cmake
-[macports]:    https://ports.macports.org/port/cmake/summary
+[repology]:      https://repology.org/project/cmake/versions
+[LMod]:          http://lmod.readthedocs.io/en/latest/
+[apt]:           https://apt.kitware.com/
+[snap]:          https://snapcraft.io/cmake
+[PyPI]:          https://pypi.org/project/cmake/
+[chocolatey]:    https://chocolatey.org/packages/cmake
+[scoop]:         https://github.com/ScoopInstaller/Main/blob/master/bucket/cmake.json
+[MSYS2]:         https://packages.msys2.org/base/mingw-w64-cmake
+[anaconda]:      https://anaconda.org/anaconda/cmake
+[conda-forge]:   https://github.com/conda-forge/cmake-feedstock
+[download]:      https://cmake.org/download/
+[homebrew]:      https://formulae.brew.sh/formula/cmake
+[homebrew-cask]: https://formulae.brew.sh/cask/cmake
+[macports]:      https://ports.macports.org/port/cmake/summary
+[centos]:        https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake
