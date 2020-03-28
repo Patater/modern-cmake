@@ -43,7 +43,7 @@ Why?
 Support.
 Every IDE supports CMake (or CMake supports that IDE).
 More packages use CMake than any other system.
-So, if you use a library that is designed to be included in your code, you have a choice: Make your own build system, or use one of of the provided ones, and that will almost always include CMake.
+So, if you use a library that is designed to be included in your code, you have a choice: Make your own build system, or use one of the provided ones, and that will almost always include CMake.
 And that will quickly be the common denominator if you include multiple projects.
 And, if you need a library that's preinstalled, the chances of it having a find CMake script or config CMake script are excellent.
 
@@ -61,8 +61,8 @@ And it followed 2.
 And it was a hard, ugly, transition that is still ongoing in some places, even today.
 
 I believe that CMake 3 had the bad luck to follow Python 3.[^1]
-Even though every version of CMake is insanely backward compatible, the 3 series was treated as if it was something new.
-And so, you'll find OS's like CentOS7 with GCC 4.8, with almost-complete C++14 support, and CMake 2.8, which came out before C++11.
+Even though every version of CMake is insanely backward compatible, the 3 series was treated as if it were something new.
+And so, you'll find OSs like CentOS7 with GCC 4.8, with almost-complete C++14 support, and CMake 2.8, which came out before C++11.
 
 You really should *at least* use a version of CMake that came out after your compiler, since it needs to know compiler flags, etc, for that version.
 And, since CMake will dumb itself down to the minimum required version in your CMake file, installing a new CMake, even system wide, is pretty safe.
