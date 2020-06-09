@@ -10,7 +10,7 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
 endif()
 ```
 
-Which will enable testing and set a `BUILD_TESTING` option so users can turn testing on and off (Along with [a few other things](https://gitlab.kitware.com/cmake/cmake/blob/master/Modules/CTest.cmake)). Or you can do this yourself by directly calling `enable_testing()`.
+Which will enable testing and set a `BUILD_TESTING` option so users can turn testing on and off (along with [a few other things](https://gitlab.kitware.com/cmake/cmake/blob/master/Modules/CTest.cmake)). Or you can do this yourself by directly calling `enable_testing()`.
 
 When you add your test folder, you should do something like this:
 
