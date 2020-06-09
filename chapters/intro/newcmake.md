@@ -7,6 +7,7 @@ This is an abbreviated version of the CMake changlog with just the highlights fo
 
 There were a ton of additions to this version of CMake, primarily to fill out the target interface. Some bits of needed functionality were missed and implemented in CMake 3.1 instead.
 
+* Initially released [June 10, 2014](https://blog.kitware.com/cmake-3-0-0-available-for-download/)
 * New documentation
 * INTERFACE libraries
 * Project VERSION support
@@ -18,6 +19,7 @@ There were a ton of additions to this version of CMake, primarily to fill out th
 
 This is the first release of CMake to support C++11. Combined with fixes to the new features of CMake 3.0, this is currently a common minimum version of CMake for libraries that want to support old CMake builds.
 
+* Initially released [December 17, 2014](https://blog.kitware.com/cmake-3-1-0-released/)
 * C++11 Support
 * Compile features support
 * Sources can be added later with `target_sources`
@@ -27,6 +29,7 @@ This is the first release of CMake to support C++11. Combined with fixes to the 
 
 This is a smaller release, with mostly small features and fixes. Internal changes, like better Windows and UTF8 support, were the focus.
 
+* Initially released [March 11, 2015](https://blog.kitware.com/cmake-3-2-1-released/)
 * `continue()` inside loops
 * File and directory locks added
 
@@ -34,6 +37,7 @@ This is a smaller release, with mostly small features and fixes. Internal change
 
 This is notable for the useful `IN_LIST` option for if, but it also added better library search using `$PATH` (See CMake 3.6), dependencies for INTERFACE libraries, and several other useful improvements. The addition of a `COMPILE_LANGUAGE` generator expression would prove very useful in the future as more languages are added. Makefiles now produce better output in parallel.
 
+* Initially released [July 23, 2015](https://blog.kitware.com/cmake-3-3-0-released/)
 * `IN_LIST` added to `if`
 * `*_INCLUDE_WHAT_YOU_USE` property added
 * `COMPILE_LANGUAGE` generator expression (limited support in some generators)
@@ -42,6 +46,7 @@ This is notable for the useful `IN_LIST` option for if, but it also added better
 
 This release adds lots of useful tools, support for the Swift language, and the usual improvements. It also started supporting compiler launchers, like CCache.
 
+* Initially released [November 12, 2015](https://blog.kitware.com/cmake-3-4-0-released/)
 * Added `Swift` language
 * Added `BASE_DIR` to `get_filename_component`
 * `if(TEST ...)` added
@@ -54,6 +59,7 @@ This release adds lots of useful tools, support for the Swift language, and the 
 
 This release expanded CMake to more platforms, and make warnings easier to control from the command line.
 
+* Initially released [March 8, 2016](https://blog.kitware.com/cmake-3-5-0-available-for-download/)
 * Multiple input files supported for several of the `cmake -E` commands.
 * `cmake_parse_arguments` now builtin
 * Boost, GTest, and more now support imported targets
@@ -64,6 +70,7 @@ This release expanded CMake to more platforms, and make warnings easier to contr
 
 This release added Clang-Tidy support, along with more utilities and improvements. It also removed the search of `$PATH` on Unix systems due to problems, instead users should use `$CMAKE_PREFIX_PATH`.
 
+* Initially released [July 7, 2016](https://blog.kitware.com/cmake-3-6-0-available-for-download/)
 * `EXCLUDE_FROM_ALL` for install
 * `list(FILTER` added
 * `CMAKE_*_STANDARD_INCLUDE_DIRECTORIES` and `CMAKE_*_STANDARD_LIBRARIES` added for toolchains
@@ -76,6 +83,7 @@ This release added Clang-Tidy support, along with more utilities and improvement
 
 You can now cross-compile to Android. Useful new if statement options really help clarify code. And the new server mode was supposed to improve integration with IDEs (but is being replaced by a different system in CMake 3.14+). Support for the VIM editor was also improved.
 
+* Initially released [November 11, 2016](https://blog.kitware.com/cmake-3-7-0-available-for-download/)
 * `PARSE_ARGV` mode for `cmake_parse_arguments`
 * Better 32-bit support on 64-bit machines
 * Lots of useful new if comparisons, like `VERSION_GREATER_EQUAL` (really, why did it take this long?)
@@ -89,6 +97,7 @@ You can now cross-compile to Android. Useful new if statement options really hel
 
 This adds CUDA as a language, as well as `cxx_std_11` as a compiler meta-feature. The new generator expression could be really useful if you can require CMake 3.8+! 
 
+* Initially released [April 10, 2017](https://blog.kitware.com/cmake-3-8-0-available-for-download/)
 * Native support for C# as a language
 * Native support for CUDA as a language
 * Meta features cxx_std_11 (and 14, 17) added
@@ -104,6 +113,7 @@ This adds CUDA as a language, as well as `cxx_std_11` as a compiler meta-feature
 Lots of fixes to CUDA support went into this release, including `PTX` support and MSVC generators. Interprocedural Optimizations are now supported properly.
 Even more modules provide imported targets, including MPI.
 
+* Initially released [July 18, 2017](https://blog.kitware.com/cmake-3-9-0-available-for-download/)
 * CUDA supported for Windows
 * Better object library support in several situations
 * `DESCRIPTION` added to `project`
@@ -117,6 +127,7 @@ Even more modules provide imported targets, including MPI.
 
 CMake now is built with C++11 compilers. Lots of useful improvements help write cleaner code.
 
+* Initially released [November 20, 2017](https://blog.kitware.com/cmake-3-10-0-available-for-download/)
 * Support for flang Fortran compiler
 * Compiler launcher added to CUDA
 * Indented `#cmakedefines` now supported for `configure_file`
@@ -133,6 +144,7 @@ CMake now is built with C++11 compilers. Lots of useful improvements help write 
 This release is [supposed to be][fastercmake] much faster. You can also finally directly add INTERFACE targets
 to IMPORTED libraries (the internal `Find*.cmake` scripts should become much cleaner eventually).
 
+* Initially released [March 28, 2018](https://blog.kitware.com/cmake-3-11-0-available-for-download/)
 * Fortran supports compiler launchers
 * Xcode and Visual Studio support `COMPILE_LANGUAGE` generator expressions finally
 * You can now add INTERFACE targets directly to IMPORTED INTERFACE libraries (Wow!)
@@ -149,6 +161,7 @@ rerun if needed! You can use the general `PackageName_ROOT`
 for all `find_package` searches. Lots of additions to strings and lists, module updates,
 shiny new Python find module (2 and 3 versions too), and many more.
 
+* Initially released [July 17, 2018](https://blog.kitware.com/cmake-3-12-0-available-for-download/)
 * Support for `cmake_minimum_required` ranges (backward compatible)
 * Support for `-j,--parallel` in `--build` mode (passed on to build tool)
 * Support for `SHELL:` strings in compile options (not deduplicated)
@@ -168,6 +181,7 @@ popular requests for CMake, such as `add_link_options`, `target_link_directories
 `target_link_options`. You can now do quite a bit more modification to targets outside
 of the source directory, for better file separation. And, `target_sources` *finally* handles relative paths properly (policy 76).
 
+* Initially released [November 20, 2018](https://blog.kitware.com/cmake-3-13-0-available-for-download/)
 * New `ctest --progress` option for live output
 * `target_link_options` and `add_link_options` added
 * `target_link_directories` added
@@ -184,6 +198,7 @@ of the source directory, for better file separation. And, `target_sources` *fina
 This release has lots of small cleanups, including several utilities for files. Generator expressions work in a few more places, and list handling is better with empty variables. 
 Quite a few more find packages produce targets. The new Visual Studio 16 2019 generator is a bit different than older versions. Windows XP and Vista support has been dropped.
 
+* Initially released [March 14, 2019](https://blog.kitware.com/cmake-3-14-0-available-for-download/)
 * The cmake `--build` command gained `-v/--verbose`, to use verbose builds if your build tool supports it
 * The FILE command gained `CREATE_LINK`, `READ_SYMLINK`, and `SIZE`
 * «command:get_filename_component» gained `LAST_EXT` and `NAME_WLE` to access just the *last* extension on a file, which would get `.zip` on a file such as `version.1.2.zip` (very handy!)
@@ -196,7 +211,7 @@ Quite a few more find packages produce targets. The new Visual Studio 16 2019 ge
 This release has many smaller polishing changes, include several of improvements to the CMake command line, such as control over the default generator through environment variables (so now it's easy to change the default generator to Ninja). Multiple targets are supported in `--build` mode, and `--install` mode added. CMake finally supports multiple levels of logging. Generator expressions gained a few handy tools. The still very new FindPython module continues to improve, and FindBoost is now more inline with Boost 1.70's new CONFIG
 module. `export(PACKAGE)` has drastically changed; it now no longer touches `$HOME/.cmake` by default (if CMake Minimum version is 3.15 or higher), and requires an extra step if a user wants to use it. This is generally less surprising.
 
-
+* Initially released [July 17, 2019](https://blog.kitware.com/cmake-3-15-0-available-for-download/)
 * «envvar:CMAKE_GENERATOR» environment variable added to control default generator
 * Multiple target support in build mode, `cmake . --build --target a b`
 * Shortcut `-t` for `--target`
@@ -213,6 +228,7 @@ A new unity build mode was added, allowing source files to be merged into a sing
 precompiled headers (possibly preparing for C++20 modules, perhaps?) was added. Lots of other smaller
 fixes were implemented, especially to newer features, such as to FindPython, FindDoxygen, and others.
 
+* Initially released [November 26, 2019](https://blog.kitware.com/cmake-3-16-0-available-for-download/)
 * Added support for Objective C and Objective C++ languages
 * Support for precompiling headers, with `target_precompile_headers`
 * Support for "Unity" or "Jumbo" builds (merging source files) with «variable:CMAKE_UNITY_BUILD»
@@ -228,6 +244,7 @@ toolkit without enabling the CUDA language! CUDA now is a bit more configurable,
 such as linking to shared libraries. Quite a bit more polish in the expected areas, 
 as well, like FindPython. Finally, you can now iterate over multiple lists at a time.
 
+* Initially released [March 20, 2020](https://blog.kitware.com/cmake-3-17-0-available-for-download/)
 * `CUDA_RUNTIME_LIBRARY` can finally be set to Shared!
 * FindCUDAToolkit finally added
 * `cmake -E rm` replaces older remove commands
