@@ -9,8 +9,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_PLATFORM_INDEPENDENT_CODE ON)
 
-find_package(ROOT CONFIG REQUIRED)
-include("${ROOT_DIR}/modules/RootNewMacros.cmake")
+find_package(ROOT 6.20 CONFIG REQUIRED)
+# If you want to support <6.20, add this line:
+# include("${ROOT_DIR}/modules/RootNewMacros.cmake")
+# However, it was moved and included by default in 6.201
 
 root_generate_dictionary(G__DictExample DictExample.h LINKDEF DictLinkDef.h)
 
