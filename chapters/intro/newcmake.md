@@ -97,7 +97,7 @@ This adds CUDA as a language, as well as `cxx_std_11` as a compiler meta-feature
 * `COMPILE_FLAGS` now supports generator expression
 * `*_CPPLINT` added
 * `$<IF:cond,true-value,false-value>` added (wow!)
-* `source_group(TREE` added (finally allowing IDE's to reflect the project folder structure!)
+* `source_group(TREE` added (finally allowing IDEs to reflect the project folder structure!)
 
 ## [CMake 3.9][] : IPO
 
