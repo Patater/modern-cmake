@@ -21,7 +21,7 @@ endif()
 
 ## Running a command at build time
 
-Build time commands are a bit tricker. The main complication comes from the target system; when do you want your command to run? Does it produce an output that another target needs? With this in mind, here is an example that calls a Python script to generate a header file:
+Build time commands are a bit trickier. The main complication comes from the target system; when do you want your command to run? Does it produce an output that another target needs? With this in mind, here is an example that calls a Python script to generate a header file:
 
 ```cmake
 find_package(PythonInterp REQUIRED)
