@@ -257,6 +257,31 @@ as well, like FindPython. Finally, you can now iterate over multiple lists at a 
 * Several new environment variables
 * foreach can now do `ZIP_LISTS` (multiple lists at a time)
 
+## [CMake 3.18][] : CUDA with Clang
+
+CUDA now supports Clang (without separable compilation). A new
+`CUDA_ARCHITECTURES` property was implemented to better support targeting CUDA
+hardware. A new `cmake_language` command supports calling cmake commands and
+expressions from strings. Lots of other meta changes that could make new
+designs available; calling functions by variable, evaluating arbitrary CMake by
+string, and configure files directly from strings. Many other nice tiny
+features and papercut fixes are sprinkled throughout, a small selection is below.
+
+* `cmake` can `cat` files together now now
+* New profiling mode for `cmake`
+* `cmake_language` with `CALL` and `EVAL`
+* `export` requires `APPEND` if used multiple times (in CMake language level 3.18+)
+* You can archive directly from `file()`
+* `file(CONFIGURE` is a nicer from of `configure_file` if you already have a string to produce
+* Other `find_*` commands gain `find_package`'s `REQUIRED` flag
+* `NATURAL` sorting in `list(SORT` added
+* More options for handling properties with DIRECTORY scope
+* `CUDA_ARCHITECTURES` was added
+* New `LINK_LANGUAGE` generator expressions (`DEVICE`/`HOST` versions too)
+* Source can be a subdirectory for `FetchContent`
+
+
+
 [Releases]: https://cmake.org/cmake/help/latest/release/index.html
 [CMake 3.0]: https://cmake.org/cmake/help/latest/release/3.0.html 
 [CMake 3.1]: https://cmake.org/cmake/help/latest/release/3.1.html 
@@ -276,5 +301,6 @@ as well, like FindPython. Finally, you can now iterate over multiple lists at a 
 [CMake 3.15]: https://cmake.org/cmake/help/latest/release/3.15.html
 [CMake 3.16]: https://cmake.org/cmake/help/latest/release/3.16.html
 [CMake 3.17]: https://cmake.org/cmake/help/latest/release/3.17.html
+[CMake 3.18]: https://cmake.org/cmake/help/latest/release/3.18.html
 [CMake master]: https://cmake.org/cmake/help/git-master/release/index.html
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/

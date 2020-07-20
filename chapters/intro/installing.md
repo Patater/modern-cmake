@@ -4,7 +4,7 @@
 Your CMake version should be newer than your compiler. It should be newer than the libraries you are using (especially Boost). New versions work better for everyone.
 {% endhint %}
 
-If you have a built in copy of CMake, it isn't special or customized for your system. You can easily install a new one instead, either on the system level or the user level. Feel free to instruct your users here if they complain about a CMake requirement being set too high. Especially if they want < 3.1 support. Maybe even if they want CMake < 3.17 support...
+If you have a built in copy of CMake, it isn't special or customized for your system. You can easily install a new one instead, either on the system level or the user level. Feel free to instruct your users here if they complain about a CMake requirement being set too high. Especially if they want < 3.1 support. Maybe even if they want CMake < 3.18 support...
 
 #### Quick list (more info on each method below)
 
@@ -34,14 +34,14 @@ You can [download CMake from KitWare][download]. This is how you will probably g
 On Linux, there are several options. Kitware provides a [Debian/Ubunutu apt repository][apt], as well as [snap packages][snap]. There are universal Linux binaries provided, but you'll need to pick an install location. If you already use `~/.local` for user-space packages, the following single line command[^1] will get CMake for you [^2]:
 
 {% term %}
-~ $ wget -qO- "https://cmake.org/files/v3.17/cmake-3.17.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C ~/.local
+~ $ wget -qO- "https://cmake.org/files/v3.18/cmake-3.18.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C ~/.local
 {% endterm %}
 
 If you just want a local folder with CMake only:
 
 {% term %}
-~ $ mkdir -p cmake-3.17 && wget -qO- "https://cmake.org/files/v3.17/cmake-3.17.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake-3.17
-~ $ export PATH=`pwd`/cmake-3.17/bin:$PATH
+~ $ mkdir -p cmake-3.18 && wget -qO- "https://cmake.org/files/v3.18/cmake-3.18.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake-3.18
+~ $ export PATH=`pwd`/cmake-3.18/bin:$PATH
 {% endterm %}
 
 You'll obviously want to append to the PATH every time you start a new terminal, or add it to your `.bashrc` or to an [LMod] system.
@@ -49,7 +49,7 @@ You'll obviously want to append to the PATH every time you start a new terminal,
 And, if you want a system install, install to `/usr/local`; this is an excellent choice in a Docker container, for example on GitLab CI. Do not try it on a non-containerized system.
 
 {% term %}
-docker $ wget -qO- "https://cmake.org/files/v3.17/cmake-3.17.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C /usr/local
+docker $ wget -qO- "https://cmake.org/files/v3.18/cmake-3.18.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C /usr/local
 {% endterm %}
 
 
@@ -140,7 +140,7 @@ Also see [pkgs.org/download/cmake](https://pkgs.org/download/cmake).
 
 ## Pip
 
-[This][PyPI] is also provided as an official package, maintained by the authors of CMake at KitWare. It's a rather new method, and might fail on some systems (Alpine isn't supported last I checked, but that has CMake 3.8), but works really well when it works (like on Travis CI). If you have pip (Python's package installer), you can do:
+[This][PyPI] is also provided as an official package, maintained by the authors of CMake at KitWare. It's a rather new method, and might fail on some systems (Alpine isn't supported last I checked, but that has a recent CMake), but works really well when it works (like on Travis CI). If you have pip (Python's package installer), you can do:
 
 ```term
 gitbook $ pip install cmake
@@ -148,7 +148,7 @@ gitbook $ pip install cmake
 
 And as long as a binary exists for your system, you'll be up-and-running almost immediately. If a binary doesn't exist, it will try to use KitWare's `scikit-build` package to build, which currently can't be listed as a dependency in the packaging system, and might even require (an older) copy of CMake to build. So only use this system if binaries exist, which is most of the time.
 
-This has the benefit of respecting your current virtual environment, as well.
+This has the benefit of respecting your current virtual environment, as well. It really shines when placed in a `pyproject.toml` file, however - it will only be installed to build your package, and will not remain afterwords! Fantastic.
 
 {% hint style='info' %}
 Personally, on Linux, I put versions of CMake in folders, like `/opt/cmake312` or `~/opt/cmake312`, and then add them to [LMod]. See [`envmodule_setup`][envmodule_setup] for help setting up an LMod system on macOS or Linux. It takes a bit to learn, but is a great way to manage package and compiler versions.
