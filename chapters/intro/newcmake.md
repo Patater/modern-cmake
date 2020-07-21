@@ -267,6 +267,7 @@ designs available; calling functions by variable, evaluating arbitrary CMake by
 string, and configure files directly from strings. Many other nice tiny
 features and papercut fixes are sprinkled throughout, a small selection is below.
 
+* Initially released [July 15, 2020](https://blog.kitware.com/cmake-3-18-0-available-for-download/)
 * `cmake` can `cat` files together now now
 * New profiling mode for `cmake`
 * `cmake_language` with `CALL` and `EVAL`
@@ -279,7 +280,6 @@ features and papercut fixes are sprinkled throughout, a small selection is below
 * `CUDA_ARCHITECTURES` was added
 * New `LINK_LANGUAGE` generator expressions (`DEVICE`/`HOST` versions too)
 * Source can be a subdirectory for `FetchContent`
-
 
 
 [Releases]: https://cmake.org/cmake/help/latest/release/index.html
