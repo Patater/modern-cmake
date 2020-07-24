@@ -1,15 +1,11 @@
-# CUDA (in progress)
+# CUDA
 
-CUDA support is available in two flavors. The new method, introduced in CMake 3.8 (3.9 for Windows), will be what I focus on first. The old method will be covered afterwards, but as you'll see, it's uglier and harder to get right. I'd stick to requiring CMake 3.8 or 3.9 for CUDA (and CMake 3.11 for IDEs like Xcode and Visual Studio).
+CUDA support is available in two flavors. The new method, introduced in CMake 3.8 (3.9 for Windows), should be strongly preferred over the old, hacky method - I only mention the old method due to the high chances of an old package somewhere having it. Unlike the older languages, CUDA support has been rapidly evolving, and building CUDA is hard, so I would recommend you *require a very recent version* of CMake! CMake 3.17 and 3.18 have a lot of improvements directly targeting CUDA.
 
 A good resource for CUDA and Modern CMake is [this talk](http://on-demand.gputechconf.com/gtc/2017/presentation/S7438-robert-maynard-build-systems-combining-cuda-and-machine-learning.pdf) by CMake developer Robert Maynard at GTC 2017.
 
-## Method 1: CUDA as a First Class Language
 
-
-This method is quite new, and doesn't seem to have much documentation. There are several issues you need to watch out for when using it, but overall is should be a much nicer and cleaner way to use CUDA.
-
-### Adding the CUDA Language
+## Adding the CUDA Language
 
 There are two ways to enable CUDA support. If CUDA is not optional:
 
@@ -17,7 +13,8 @@ There are two ways to enable CUDA support. If CUDA is not optional:
 project(MY_PROJECT LANGUAGES CUDA CXX)
 ```
 
-You'll probably want `CXX` listed here also. And, if CUDA is optional, you'll want to put this in somewhere conditionally:
+You'll probably want `CXX` listed here also. And, if CUDA is optional, you'll
+want to put this in somewhere conditionally:
 
 ```cmake
 enable_language(CUDA)
@@ -30,11 +27,17 @@ include(CheckLanguage)
 check_language(CUDA)
 ```
 
-You can check the version of the NVCC toolkit with `CMAKE_CUDA_COMPILER_VERSION` (for now, only NVCC is supported, but just to be sure, check `CMAKE_CUDA_COMPILER_ID STREQUAL "NVIDIA"`).
+You can see if CUDA is present by checking `CMAKE_CUDA_COMPILER` (was missing
+until CMake 3.11).  
 
-### Variables for CUDA
+You can check variables like `CMAKE_CUDA_COMPILER_ID` (for nvcc, this is
+`"NVIDIA"`, Clang was added in CMake 3.18).  You can check the version with
+`CMAKE_CUDA_COMPILER_VERSION`.
 
-Many variables with `CXX` in the name have a CUDA version with `CUDA` instead. For example, to set the C++ standard required for CUDA,
+## Variables for CUDA
+
+Many variables with `CXX` in the name have a CUDA version with `CUDA` instead.
+For example, to set the C++ standard required for CUDA,
 
 ```
 if(NOT DEFINED CMAKE_CUDA_STANDARD)
@@ -43,10 +46,13 @@ if(NOT DEFINED CMAKE_CUDA_STANDARD)
 endif()
 ```
 
+If you are looking for CUDA's standard level, in CMake 3.17 a new collection of
+compiler features were added, like `cuda_std_11`. These have the same benefits that
+you are already used to from the `cxx` versions.
 
-### Adding a library
+### Adding a library / executable
 
-This is the easy part; as long as you use `.cu` for CUDA files, you can just add libraries like you normally would.
+This is the easy part; as long as you use `.cu` for CUDA files, you can just add libraries *exactly like you normally would*.
 
 You can also use separable compilation:
 
@@ -55,7 +61,15 @@ set_target_properties(mylib PROPERTIES
                             CUDA_SEPERABLE_COMPILATION ON)
 ```
 
-You can also direclty make a PTX file with the `CUDA_PTX_COMPILATION` property.
+You can also directly make a PTX file with the `CUDA_PTX_COMPILATION` property.
+
+### Targeting architectures 
+
+When you build CUDA code, you generally should be targeting an architecture. If you don't, you compile 'ptx', which provide the basic instructions but is compiled at runtime, making it potentially much slower to load.
+
+All cards have an architecture level, like "7.2". You have two choices; the first is the code level; this will report to the code being compiled a version, like "5.0", and it will take advantage of all the features up to 5.0 but not past (assuming well written code / standard libraries). Then there's a target architecture, which must be equal or greater to the code architecture. This needs to have the same major number as your target card, and be equal to or less than the target card. So 7.0 would be a common choice for our 7.2 card. Finally, you can also generate PTX; this will work on all future cards, but will compile just in time.
+
+In CMake 3.18, it became very easy to target architectures. If you have a version range that includes 3.18 or newer, you will be using `CMAKE_CUDA_ARCHITECTURES` variable and the `CUDA_ARCHITECTURES` property on targets. You can list values (without the `.`), like 50 for arch 5.0. If set to OFF, it will not pass architectures.
 
 ### Working with targets
 
@@ -86,13 +100,18 @@ endfunction()
 * `CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES`: Place for built-in Thrust, etc
 * `CMAKE_CUDA_COMPILER`: NVCC with location
 
-> ### Note that FindCUDA is deprecated, but for now, the following functions require FindCUDA:
+You can use
+[`FindCUDAToolkit`](https://cmake.org/cmake/help/git-stage/module/FindCUDAToolkit.html)
+to find a variety of useful targets and variables even without enabling the
+CUDA language.
+
+> ### Note that FindCUDA is deprecated, but for for versions of CMake < 3.18, the following functions required FindCUDA:
 > 
 > * CUDA version checks / picking a version
 > * Architecture detection (Note: 3.12 fixes this partially)
 > * Linking to CUDA libraries from non-.cu files
 
-## Method 2: FindCUDA
+## Classic FindCUDA [WARNING: DO NOT USE] (for reference only)
 
 If you want to support an older version of CMake, I recommend at least including the FindCUDA from CMake version 3.9 in your cmake folder (see the CLIUtils github organization for a [git repository](https://github.com/CLIUtils/cuda_support)). You'll want two features that were added: `CUDA_LINK_LIBRARIES_KEYWORD` and `cuda_select_nvcc_arch_flags`, along with the newer architectures and CUDA versions.
 
