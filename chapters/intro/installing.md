@@ -130,6 +130,7 @@ Just `pip install cmake` on many systems. Add `--user` if you have to.  ManyLinu
 | [Azure DevOps 18.04](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops#use-a-microsoft-hosted-agent) | 3.17.0 | |
 | [GitHub Actions 18.04](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/software-installed-on-github-hosted-runners#ubuntu-1804-lts) | 3.17.0 | Mostly in sync with Azure DevOps |
 
+If you are using GitHub Actions, also see the [jwlawson/actions-setup-cmake](https://github.com/marketplace/actions/actions-setup-cmake) action, which can install your selection of CMake, even in a docker action run.
 
 ### Full list
 
