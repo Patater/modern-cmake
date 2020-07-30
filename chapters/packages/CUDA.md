@@ -58,7 +58,7 @@ You can also use separable compilation:
 
 ```cmake
 set_target_properties(mylib PROPERTIES
-                            CUDA_SEPERABLE_COMPILATION ON)
+                            CUDA_SEPARABLE_COMPILATION ON)
 ```
 
 You can also directly make a PTX file with the `CUDA_PTX_COMPILATION` property.
