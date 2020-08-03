@@ -90,7 +90,7 @@ The final argument, listed after `LINKDEF`, must have a name that ends in `LinkD
 * `lib{NAME}.rootmap` (`G__` prefix removed): The rootmap file in plain text
 * `lib{NAME}_rdict.pcm` (`G__` prefix removed): A ROOT file
 
-The final two output files must sit next to the library output. This is done by checking `CMAKE_LIBRARY_OUTPUT_DIRECTORY` (it will not pick up local target settings). If you have a libdir set but you don't have (global) install locations set, you'll also need to set `ARG_NOINSTALL` to `TRUE`. 
+The final two output files must sit next to the library output. This is done by checking `CMAKE_LIBRARY_OUTPUT_DIRECTORY` (it will not pick up local target settings). If you have a libdir set but you don't have (global) install locations set, you'll also need to set `ARG_NOINSTALL` to `TRUE`.
 
 [linkdef-root]: https://root.cern.ch/selecting-dictionary-entries-linkdefh
 
@@ -132,4 +132,3 @@ set_property(TARGET ROOT::Flags_CXX APPEND PROPERTY
 
 # Make sure you link with ROOT::Flags_CXX too!
 ```
-

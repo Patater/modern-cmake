@@ -157,7 +157,7 @@ See if you can follow the following file. It makes a simple C++11 library and a 
 cmake_minimum_required(VERSION 3.8)
 
 project(Calculator LANGUAGES CXX)
-        
+
 add_library(calclib STATIC src/calclib.cpp include/calc/lib.hpp)
 target_include_directories(calclib PUBLIC include)
 target_compile_features(calclib PUBLIC cxx_std_11)
@@ -173,4 +173,3 @@ target_link_libraries(calc PUBLIC calclib)
 [^2]: You will sometimes see `FATAL_ERROR` here, that was needed to support nice failures when running this in CMake <2.6, which should not be a problem anymore.
 
 [^3]: The `::` syntax was originally intended for `INTERFACE IMPORTED` libraries, which were explicitly supposed to be libraries defined outside the current project. But, because of this, most of the `target_*` commands don't work on `IMPORTED` libraries, making them hard to set up yourself. So don't use the `IMPORTED` keyword for now, and use an `ALIAS` target instead; it will be fine until you start exporting targets. This limitation was fixed in CMake 3.11.
-

@@ -1,4 +1,3 @@
-
 ## [main]
 cmake_minimum_required(VERSION 3.1...3.16)
 
@@ -8,7 +7,6 @@ project(RootSimpleExample LANGUAGES CXX)
 ## [find_package]
 find_package(ROOT 6.16 CONFIG REQUIRED)
 ## [find_package]
-
 
 # Adding an executable program and linking to needed ROOT libraries
 ## [add_and_link]

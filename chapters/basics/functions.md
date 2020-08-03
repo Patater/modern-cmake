@@ -114,4 +114,4 @@ If you look at the official page, you'll see a slightly different method using s
 
 
 [^1]: They act as if they are evaluated at build/install time, though actually they are evaluated for each build configuration.
-[^2]: The CMake docs splits expressions into Informational, Logical, and Output. 
+[^2]: The CMake docs splits expressions into Informational, Logical, and Output.

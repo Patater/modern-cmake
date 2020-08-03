@@ -1,4 +1,3 @@
-
 ## [main]
 cmake_minimum_required(VERSION 3.1...3.16)
 
@@ -17,7 +16,8 @@ include("${ROOT_USE_FILE}")
 separate_arguments(ROOT_EXE_LINKER_FLAGS)
 
 add_executable(RootUseFileExample SimpleExample.cxx)
-target_link_libraries(RootUseFileExample PUBLIC ${ROOT_LIBRARIES} ${ROOT_EXE_LINKER_FLAGS})
+target_link_libraries(RootUseFileExample PUBLIC ${ROOT_LIBRARIES}
+                                                ${ROOT_EXE_LINKER_FLAGS})
 ## [core]
 
 ## [main]

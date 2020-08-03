@@ -51,4 +51,3 @@ project(My LANGUAGES CXX VERSION ${VERSION_STRING})
 ```
 
 Above, `file(STRINGS file_name variable_name REGEX regex)` picks lines that match a regex; and the same regex is used to then pick out the parentheses capture group with the version part. Replace is used with back substitution to output only that one group.
-

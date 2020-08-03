@@ -84,7 +84,7 @@ try_compile(
     bindir
   SOURCES
     source.cpp
-) 
+)
 ```
 
 There are lots of options you can add, like `COMPILE_DEFINITIONS`. In CMake 3.8+, this will honor the CMake C/C++/CUDA standard settings. If you use `try_run` instead, it will run the resulting program and give you the output in `RUN_OUTPUT_VARIABLE`.

@@ -1,4 +1,3 @@
-
 ## [main]
 
 # Almost all CMake files should start with this
@@ -9,7 +8,10 @@ cmake_minimum_required(VERSION 3.1...3.16)
 
 # This is your project statement. You should always list languages;
 # Listing the version is nice here since it sets lots of useful variables
-project(ModernCMakeExample VERSION 1.0 LANGUAGES CXX)
+project(
+  ModernCMakeExample
+  VERSION 1.0
+  LANGUAGES CXX)
 
 # If you set any CMAKE_ variables, that can go here.
 # (But usually don't do this, except maybe for C++ standard)
@@ -39,4 +41,3 @@ target_link_libraries(MyExample PRIVATE MyLibExample)
 # you'll probably want tests too
 enable_testing()
 add_test(NAME MyExample COMMAND MyExample)
-

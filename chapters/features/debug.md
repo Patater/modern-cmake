@@ -49,4 +49,3 @@ If you add `--trace-expand`, the variables will be expanded into their values.
 For single-configuration generators, you can build your code with `-DCMAKE_BUILD_TYPE=Debug` to get debugging flags. In multi-configuration generators, like many IDEs, you can pick the configuration in the IDE. There are distinct flags for this mode (variables ending in `_DEBUG` as opposed to `_RELEASE`), as well as a generator expression value `CONFIG:Debug` or `CONFIG:Release`.
 
 Once you make a debug build, you can run a debugger, such as gdb or lldb on it.
-

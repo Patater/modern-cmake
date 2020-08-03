@@ -62,4 +62,3 @@ endif()
 ```
 
 See the [extended code example here](https://gitlab.com/CLIUtils/modern-cmake/tree/master/examples/extended-project).
-

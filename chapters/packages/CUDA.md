@@ -28,7 +28,7 @@ check_language(CUDA)
 ```
 
 You can see if CUDA is present by checking `CMAKE_CUDA_COMPILER` (was missing
-until CMake 3.11).  
+until CMake 3.11).
 
 You can check variables like `CMAKE_CUDA_COMPILER_ID` (for nvcc, this is
 `"NVIDIA"`, Clang was added in CMake 3.18).  You can check the version with
@@ -63,7 +63,7 @@ set_target_properties(mylib PROPERTIES
 
 You can also directly make a PTX file with the `CUDA_PTX_COMPILATION` property.
 
-### Targeting architectures 
+### Targeting architectures
 
 When you build CUDA code, you generally should be targeting an architecture. If you don't, you compile 'ptx', which provide the basic instructions but is compiled at runtime, making it potentially much slower to load.
 
@@ -106,7 +106,7 @@ to find a variety of useful targets and variables even without enabling the
 CUDA language.
 
 > ### Note that FindCUDA is deprecated, but for for versions of CMake < 3.18, the following functions required FindCUDA:
-> 
+>
 > * CUDA version checks / picking a version
 > * Architecture detection (Note: 3.12 fixes this partially)
 > * Linking to CUDA libraries from non-.cu files
@@ -133,5 +133,3 @@ You'll also might want to allow a user to check for the arch flags of their curr
 ```cmake
 cuda_select_nvcc_arch_flags(ARCH_FLAGS) # optional argument for arch to add
 ```
-
-

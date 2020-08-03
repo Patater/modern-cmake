@@ -24,7 +24,7 @@ You can control how files show up in each folder with regular expressions or exp
 
 ## Folders for files
 
-You can also control how the folders inside targets appear. There are two ways, both using the «command:source_group» command. The traditional way is 
+You can also control how the folders inside targets appear. There are two ways, both using the «command:source_group» command. The traditional way is
 
 ```cmake
 source_group("Source Files\\New Directory" REGULAR_EXPRESSION ".*\\.c[ucp]p?")

@@ -79,7 +79,7 @@ This release added Clang-Tidy support, along with more utilities and improvement
 * External projects can now be shallow clones, and other improvements
 
 
-## [CMake 3.7][] : Android & CMake Server 
+## [CMake 3.7][] : Android & CMake Server
 
 You can now cross-compile to Android. Useful new if statement options really help clarify code. And the new server mode was supposed to improve integration with IDEs (but is being replaced by a different system in CMake 3.14+). Support for the VIM editor was also improved.
 
@@ -95,7 +95,7 @@ You can now cross-compile to Android. Useful new if statement options really hel
 
 ## [CMake 3.8][] : C# & CUDA
 
-This adds CUDA as a language, as well as `cxx_std_11` as a compiler meta-feature. The new generator expression could be really useful if you can require CMake 3.8+! 
+This adds CUDA as a language, as well as `cxx_std_11` as a compiler meta-feature. The new generator expression could be really useful if you can require CMake 3.8+!
 
 * Initially released [April 10, 2017](https://blog.kitware.com/cmake-3-8-0-available-for-download/)
 * Native support for C# as a language
@@ -157,7 +157,7 @@ Very powerful release, containing lots of smaller long-requested features. One o
 but immediately noticeable changes is the addition of version ranges;
 you can now set both the minimum and maximum known CMake version easily. You can also set
 `CONFIGURE_DEPENDS` on a `GLOB`ed set of files, and the build system will check those files and
-rerun if needed! You can use the general `PackageName_ROOT` 
+rerun if needed! You can use the general `PackageName_ROOT`
 for all `find_package` searches. Lots of additions to strings and lists, module updates,
 shiny new Python find module (2 and 3 versions too), and many more.
 
@@ -195,7 +195,7 @@ of the source directory, for better file separation. And, `target_sources` *fina
 
 ## [CMake 3.14][] : File utilities (AKA [CMake π](https://blog.kitware.com/kitware-gets-mathematical-with-cmake-π-on-pi-day/))
 
-This release has lots of small cleanups, including several utilities for files. Generator expressions work in a few more places, and list handling is better with empty variables. 
+This release has lots of small cleanups, including several utilities for files. Generator expressions work in a few more places, and list handling is better with empty variables.
 Quite a few more find packages produce targets. The new Visual Studio 16 2019 generator is a bit different than older versions. Windows XP and Vista support has been dropped.
 
 * Initially released [March 14, 2019](https://blog.kitware.com/cmake-3-14-0-available-for-download/)
@@ -241,7 +241,7 @@ fixes were implemented, especially to newer features, such as to FindPython, Fin
 
 A FindCUDAToolkit was finally added, which allows finding and using the CUDA
 toolkit without enabling the CUDA language! CUDA now is a bit more configurable,
-such as linking to shared libraries. Quite a bit more polish in the expected areas, 
+such as linking to shared libraries. Quite a bit more polish in the expected areas,
 as well, like FindPython. Finally, you can now iterate over multiple lists at a time.
 
 * Initially released [March 20, 2020](https://blog.kitware.com/cmake-3-17-0-available-for-download/)
@@ -283,19 +283,19 @@ features and papercut fixes are sprinkled throughout, a small selection is below
 
 
 [Releases]: https://cmake.org/cmake/help/latest/release/index.html
-[CMake 3.0]: https://cmake.org/cmake/help/latest/release/3.0.html 
-[CMake 3.1]: https://cmake.org/cmake/help/latest/release/3.1.html 
-[CMake 3.2]: https://cmake.org/cmake/help/latest/release/3.2.html 
-[CMake 3.3]: https://cmake.org/cmake/help/latest/release/3.3.html 
-[CMake 3.4]: https://cmake.org/cmake/help/latest/release/3.4.html 
-[CMake 3.5]: https://cmake.org/cmake/help/latest/release/3.5.html 
-[CMake 3.6]: https://cmake.org/cmake/help/latest/release/3.6.html 
-[CMake 3.7]: https://cmake.org/cmake/help/latest/release/3.7.html 
-[CMake 3.8]: https://cmake.org/cmake/help/latest/release/3.8.html 
-[CMake 3.9]: https://cmake.org/cmake/help/latest/release/3.9.html 
-[CMake 3.10]: https://cmake.org/cmake/help/latest/release/3.10.html 
-[CMake 3.11]: https://cmake.org/cmake/help/latest/release/3.11.html 
-[CMake 3.12]: https://cmake.org/cmake/help/latest/release/3.12.html 
+[CMake 3.0]: https://cmake.org/cmake/help/latest/release/3.0.html
+[CMake 3.1]: https://cmake.org/cmake/help/latest/release/3.1.html
+[CMake 3.2]: https://cmake.org/cmake/help/latest/release/3.2.html
+[CMake 3.3]: https://cmake.org/cmake/help/latest/release/3.3.html
+[CMake 3.4]: https://cmake.org/cmake/help/latest/release/3.4.html
+[CMake 3.5]: https://cmake.org/cmake/help/latest/release/3.5.html
+[CMake 3.6]: https://cmake.org/cmake/help/latest/release/3.6.html
+[CMake 3.7]: https://cmake.org/cmake/help/latest/release/3.7.html
+[CMake 3.8]: https://cmake.org/cmake/help/latest/release/3.8.html
+[CMake 3.9]: https://cmake.org/cmake/help/latest/release/3.9.html
+[CMake 3.10]: https://cmake.org/cmake/help/latest/release/3.10.html
+[CMake 3.11]: https://cmake.org/cmake/help/latest/release/3.11.html
+[CMake 3.12]: https://cmake.org/cmake/help/latest/release/3.12.html
 [CMake 3.13]: https://cmake.org/cmake/help/latest/release/3.13.html
 [CMake 3.14]: https://cmake.org/cmake/help/latest/release/3.14.html
 [CMake 3.15]: https://cmake.org/cmake/help/latest/release/3.15.html

@@ -120,7 +120,7 @@ You should only use the default CMake on 18.04+; it's an LTS release with a pret
 Just `pip install cmake` on many systems. Add `--user` if you have to.  ManyLinux1 (old pip or OS) gets CMake 3.13.3.
 
 
-### CI 
+### CI
 
 | Distribution  | CMake version | Notes |
 |---------------|---------------|-------|

@@ -49,4 +49,3 @@ endif()
 Now you have the CMake 3.14+ syntax in CMake 3.11+.
 
 [FetchContent]: https://cmake.org/cmake/help/latest/module/FetchContent.html
-

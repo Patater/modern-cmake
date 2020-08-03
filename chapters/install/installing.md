@@ -55,7 +55,7 @@ find_dependency(MYDEP REQUIRED)
 include("${CMAKE_CURRENT_LIST_DIR}/MyLibTargets.cmake")
 ```
 
-Now, you can use configure file (if you used a `.in` file) and then install the resulting file. 
+Now, you can use configure file (if you used a `.in` file) and then install the resulting file.
 Since we've made a `ConfigVersion` file, this is a good place to install it too.
 
 ```cmake

@@ -1,4 +1,3 @@
-
 ## [main]
 cmake_minimum_required(VERSION 3.4...3.16)
 
@@ -28,6 +27,7 @@ message(STATUS "Original definitions: ${ROOT_DEFINITIONS}")
 message(STATUS "Original exe flags: ${ROOT_EXE_LINKER_FLAGS}")
 
 enable_testing()
-add_test(NAME RootDictExample
-    WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
-    COMMAND "${ROOT_root_CMD}" -b -l -q "${CMAKE_CURRENT_SOURCE_DIR}/CheckLoad.C")
+add_test(
+  NAME RootDictExample
+  WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+  COMMAND "${ROOT_root_CMD}" -b -l -q "${CMAKE_CURRENT_SOURCE_DIR}/CheckLoad.C")
