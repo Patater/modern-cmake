@@ -4,7 +4,7 @@
 Your CMake version should be newer than your compiler. It should be newer than the libraries you are using (especially Boost). New versions work better for everyone.
 {% endhint %}
 
-If you have a built in copy of CMake, it isn't special or customized for your system. You can easily install a new one instead, either on the system level or the user level. Feel free to instruct your users here if they complain about a CMake requirement being set too high. Especially if they want < 3.1 support. Maybe even if they want CMake < 3.18 support...
+If you have a built in copy of CMake, it isn't special or customized for your system. You can easily install a new one instead, either on the system level or the user level. Feel free to instruct your users here if they complain about a CMake requirement being set too high. Especially if they want < 3.1 support. Maybe even if they want < 3.18 support...
 
 #### Quick list (more info on each method below)
 
@@ -44,7 +44,7 @@ If you just want a local folder with CMake only:
 ~ $ export PATH=`pwd`/cmake-3.18/bin:$PATH
 {% endterm %}
 
-You'll obviously want to append to the PATH every time you start a new terminal, or add it to your `.bashrc` or to an [LMod] system.
+You'll obviously want to append to the PATH every time you start a new terminal, or add it to your `.bashrc` or to an [LMod][] system.
 
 And, if you want a system install, install to `/usr/local`; this is an excellent choice in a Docker container, for example on GitLab CI. Do not try it on a non-containerized system.
 
@@ -81,25 +81,24 @@ Homebrew is quite a bit more popular nowadays on macOS, at least according to Go
 
 #### RHEL/CentOS
 
-[![CentOS 7 package](https://repology.org/badge/version-for-repo/centos_7/cmake.svg)][centos]
-[![CentOS 8 package](https://repology.org/badge/version-for-repo/centos_8/cmake.svg)][centos]
-[![EPEL 7 package](https://repology.org/badge/version-for-repo/epel_7/cmake.svg)][centos]
+[![CentOS 7 package](https://repology.org/badge/version-for-repo/centos_7/cmake.svg&minversion=3.10.0)][centos]
+[![CentOS 8 package](https://repology.org/badge/version-for-repo/centos_8/cmake.svg&minversion=3.10.0)][centos]
+[![EPEL 7 package](https://repology.org/badge/version-for-repo/epel_7/cmake.svg&minversion=3.10.0)][centos]
 
 The default on 8 is not too bad, but you should not use the default on 7. Use the EPEL package instead.
 
 #### Ubuntu
 
-[![Ubuntu 14.04 package](https://repology.org/badge/version-for-repo/ubuntu_14_04/cmake.svg)](https://launchpad.net/ubuntu/trusty/+source/cmake)
-[![Ubuntu 16.04 package](https://repology.org/badge/version-for-repo/ubuntu_16_04/cmake.svg)](https://launchpad.net/ubuntu/xenial/+source/cmake)
-[![Ubuntu 18.04 package](https://repology.org/badge/version-for-repo/ubuntu_18_04/cmake.svg)](https://launchpad.net/ubuntu/bionic/+source/cmake)
-[![Ubuntu 19.04 package](https://repology.org/badge/version-for-repo/ubuntu_19_04/cmake.svg)](https://launchpad.net/ubuntu/disco/+source/cmake)
-[![Ubuntu 19.10 package](https://repology.org/badge/version-for-repo/ubuntu_19_10/cmake.svg)](https://launchpad.net/ubuntu/eoan/+source/cmake)
+[![Ubuntu 14.04 package](https://repology.org/badge/version-for-repo/ubuntu_14_04/cmake.svg&minversion=3.10.0)](https://launchpad.net/ubuntu/trusty/+source/cmake)
+[![Ubuntu 16.04 package](https://repology.org/badge/version-for-repo/ubuntu_16_04/cmake.svg&minversion=3.10.0)](https://launchpad.net/ubuntu/xenial/+source/cmake)
+[![Ubuntu 18.04 package](https://repology.org/badge/version-for-repo/ubuntu_18_04/cmake.svg&minversion=3.10.0)](https://launchpad.net/ubuntu/bionic/+source/cmake)
+[![Ubuntu 20.04 package](https://repology.org/badge/version-for-repo/ubuntu_20_04/cmake.svg&minversion=3.10.0)](https://launchpad.net/ubuntu/focal/+source/cmake)
 
 You should only use the default CMake on 18.04+; it's an LTS release with a pretty decent minimum version!
 
 #### Other
 
-[![Alpine Linux 3.11 package](https://repology.org/badge/version-for-repo/alpine_3_11/cmake.svg)](https://pkgs.alpinelinux.org/packages?name=cmake&branch=v3.11)
+[![Alpine Linux 3.12 package](https://repology.org/badge/version-for-repo/alpine_3_12/cmake.svg)](https://pkgs.alpinelinux.org/packages?name=cmake&branch=v3.12)
 [![Arch package](https://repology.org/badge/version-for-repo/arch/cmake.svg)][repology]
 [![Debian Stable package](https://repology.org/badge/version-for-repo/debian_stable/cmake.svg)][repology]
 [![Debian Testing package](https://repology.org/badge/version-for-repo/debian_testing/cmake.svg)][repology]
@@ -134,7 +133,9 @@ If you are using GitHub Actions, also see the [jwlawson/actions-setup-cmake](htt
 
 ### Full list
 
-[![Full listing](https://repology.org/badge/vertical-allrepos/cmake.svg?columns=3)][repology]
+Versions less than 3.10 are marked by a deeper color of red.
+
+[![Full listing](https://repology.org/badge/vertical-allrepos/cmake.svg?columns=3&minversion=3.10.0)][repology]
 
 
 Also see [pkgs.org/download/cmake](https://pkgs.org/download/cmake).
@@ -152,7 +153,7 @@ And as long as a binary exists for your system, you'll be up-and-running almost 
 This has the benefit of respecting your current virtual environment, as well. It really shines when placed in a `pyproject.toml` file, however - it will only be installed to build your package, and will not remain afterwords! Fantastic.
 
 {% hint style='info' %}
-Personally, on Linux, I put versions of CMake in folders, like `/opt/cmake312` or `~/opt/cmake312`, and then add them to [LMod]. See [`envmodule_setup`][envmodule_setup] for help setting up an LMod system on macOS or Linux. It takes a bit to learn, but is a great way to manage package and compiler versions.
+Personally, on Linux, I put versions of CMake in folders, like `/opt/cmake312` or `~/opt/cmake312`, and then add them to [LMod][]. See [`envmodule_setup`][envmodule_setup] for help setting up an LMod system on macOS or Linux. It takes a bit to learn, but is a great way to manage package and compiler versions.
 [envmodule_setup]: https://github.com/CLIUtils/envmodule_setup
 {% endhint %}
 
