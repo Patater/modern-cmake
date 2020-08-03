@@ -81,18 +81,18 @@ Homebrew is quite a bit more popular nowadays on macOS, at least according to Go
 
 #### RHEL/CentOS
 
-[![CentOS 7 package](https://repology.org/badge/version-for-repo/centos_7/cmake.svg&minversion=3.10.0)][centos]
-[![CentOS 8 package](https://repology.org/badge/version-for-repo/centos_8/cmake.svg&minversion=3.10.0)][centos]
-[![EPEL 7 package](https://repology.org/badge/version-for-repo/epel_7/cmake.svg&minversion=3.10.0)][centos]
+[![CentOS 7 package](https://repology.org/badge/version-for-repo/centos_7/cmake.svg?minversion=3.10.0)][centos]
+[![CentOS 8 package](https://repology.org/badge/version-for-repo/centos_8/cmake.svg?minversion=3.10.0)][centos]
+[![EPEL 7 package](https://repology.org/badge/version-for-repo/epel_7/cmake.svg?minversion=3.10.0)][centos]
 
 The default on 8 is not too bad, but you should not use the default on 7. Use the EPEL package instead.
 
 #### Ubuntu
 
-[![Ubuntu 14.04 package](https://repology.org/badge/version-for-repo/ubuntu_14_04/cmake.svg&minversion=3.10.0)](https://launchpad.net/ubuntu/trusty/+source/cmake)
-[![Ubuntu 16.04 package](https://repology.org/badge/version-for-repo/ubuntu_16_04/cmake.svg&minversion=3.10.0)](https://launchpad.net/ubuntu/xenial/+source/cmake)
-[![Ubuntu 18.04 package](https://repology.org/badge/version-for-repo/ubuntu_18_04/cmake.svg&minversion=3.10.0)](https://launchpad.net/ubuntu/bionic/+source/cmake)
-[![Ubuntu 20.04 package](https://repology.org/badge/version-for-repo/ubuntu_20_04/cmake.svg&minversion=3.10.0)](https://launchpad.net/ubuntu/focal/+source/cmake)
+[![Ubuntu 14.04 package](https://repology.org/badge/version-for-repo/ubuntu_14_04/cmake.svg?minversion=3.10.0)](https://launchpad.net/ubuntu/trusty/+source/cmake)
+[![Ubuntu 16.04 package](https://repology.org/badge/version-for-repo/ubuntu_16_04/cmake.svg?minversion=3.10.0)](https://launchpad.net/ubuntu/xenial/+source/cmake)
+[![Ubuntu 18.04 package](https://repology.org/badge/version-for-repo/ubuntu_18_04/cmake.svg?minversion=3.10.0)](https://launchpad.net/ubuntu/bionic/+source/cmake)
+[![Ubuntu 20.04 package](https://repology.org/badge/version-for-repo/ubuntu_20_04/cmake.svg?minversion=3.10.0)](https://launchpad.net/ubuntu/focal/+source/cmake)
 
 You should only use the default CMake on 18.04+; it's an LTS release with a pretty decent minimum version!
 
