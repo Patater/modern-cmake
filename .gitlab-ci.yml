@@ -2,10 +2,10 @@ test_code:
   image: rootproject/root:latest
   stage: test
   before_script:
-    - yum install -y make cmake boost-devel git
-# will install latest CMake, even though Fedora has a recent one
+    - apt-get update && apt-get install -y make cmake libboost-dev git
+    # We will install latest CMake, even though Ubuntu has a recent one
     - mkdir -p $HOME/.local
-    - curl -s "https://cmake.org/files/v3.18/cmake-3.18.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C $HOME/.local
+    - curl -s "https://cmake.org/files/v3.18/cmake-3.18.1-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C $HOME/.local
     - export PATH=$HOME/.local/bin:$PATH
   script:
     - cmake -S examples -B build
