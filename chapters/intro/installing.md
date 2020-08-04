@@ -4,7 +4,7 @@
 Your CMake version should be newer than your compiler. It should be newer than the libraries you are using (especially Boost). New versions work better for everyone.
 {% endhint %}
 
-If you have a built in copy of CMake, it isn't special or customized for your system. You can easily install a new one instead, either on the system level or the user level. Feel free to instruct your users here if they complain about a CMake requirement being set too high. Especially if they want < 3.1 support. Maybe even if they want < 3.18 support...
+If you have a built in copy of CMake, it isn't special or customized for your system. You can easily install a new one instead, either on the system level or the user level. Feel free to instruct your users here if they complain about a CMake requirement being set too high. Especially if they want 3.1+ support. Maybe even if they want 3.18+ support...
 
 #### Quick list (more info on each method below)
 
@@ -117,7 +117,7 @@ You should only use the default CMake on 18.04+; it's an LTS release with a pret
 [![Conda-forge](https://img.shields.io/conda/vn/conda-forge/cmake.svg)][Conda-Forge]
 [![Anaconda](https://anaconda.org/anaconda/cmake/badges/version.svg?style=flat)][Anaconda]
 
-Just `pip install cmake` on many systems. Add `--user` if you have to.  ManyLinux1 (old pip or OS) gets CMake 3.13.3.
+Just `pip install cmake` on many systems. Add `--user` if you have to (modern pip does this for you if needed).
 
 
 ### CI
