@@ -1,9 +1,9 @@
 # Testing library
 FetchContent_Declare(
-  catch2
+  catch
   GIT_REPOSITORY https://github.com/catchorg/Catch2.git
   GIT_TAG v2.9.1)
-FetchContent_MakeAvailable(catch2)
+FetchContent_MakeAvailable(catch)
 # Adds Catch2::Catch2
 
 # Tests need to be added as executables first

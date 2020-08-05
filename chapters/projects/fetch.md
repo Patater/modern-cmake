@@ -14,7 +14,7 @@ For example, to download Catch2:
 FetchContent_Declare(
   catch
   GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-  GIT_TAG        v2.9.1
+  GIT_TAG        v2.13.0
 )
 
 # CMake 3.14+
@@ -47,5 +47,7 @@ endif()
 ```
 
 Now you have the CMake 3.14+ syntax in CMake 3.11+.
+
+See the example [here](https://gitlab.com/CLIUtils/modern-cmake/-/tree/master/examples/fetch).
 
 [FetchContent]: https://cmake.org/cmake/help/latest/module/FetchContent.html
