@@ -1,4 +1,7 @@
+# CMake ROOT dict example
+
 ## [main]
+
 cmake_minimum_required(VERSION 3.4...3.16)
 
 project(RootDictExample LANGUAGES CXX)
