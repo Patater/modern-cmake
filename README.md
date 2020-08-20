@@ -14,7 +14,7 @@ And CMake 3.11+ is supposed to be significantly faster, as well!
 
 {% hint style='working' %}
 This book is meant to be a living document. You can raise an issue or put in a merge request on [GitLab](https://gitlab.com/CLIUtils/modern-cmake).
-You can also [download a copy as a PDF](https://CLIUtils.gitlab.io/modern-cmake/modern-cmake.pdf).
+You can also [download a copy as a PDF](https://CLIUtils.gitlab.io/modern-cmake/modern-cmake.pdf). Be sure to check the [HSF CMake Workshop][], as well!
 {% endhint %}
 
 In short, here are the most likely questions in your mind if you are considering Modern CMake:
@@ -75,7 +75,7 @@ This book tries to solve the problem of the poor examples and best practices tha
 
 Other material from the original author of this book:
 
-* [CMake Workshop](https://github.com/henryiii/cmake_workshop)
+* [HSF CMake Workshop][]
 * [Interactive Modern CMake talk](https://gitlab.com/CLIUtils/modern-cmake-interactive-talk)
 
 There are some other places to find good information on the web. Here are some of them:
@@ -92,5 +92,7 @@ There are some other places to find good information on the web. Here are some o
 ## Credits
 
 Modern CMake was originally written by [Henry Schreiner](https://iscinumpy.gitlab.io). Other contributors can be found [listed on GitLab](https://gitlab.com/CLIUtils/modern-cmake/-/network/master).
+
+[HSF CMake Training]: https://hsf-training.github.io/hsf-training-cmake-webpage/01-intro/index.html
 
 [^1]: CMake 3.0 also removed several long deprecated features from very old versions of CMake and make one very tiny backwards incompatible change to syntax related to square brackets, so this is not entirely fair; there might be some very, very old CMake files that would stop working with 3. I've never seen one, though.
