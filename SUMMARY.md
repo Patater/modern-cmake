@@ -3,7 +3,7 @@
 * [An Introduction to Modern CMake](README.md)
     * [Installing CMake](chapters/intro/installing.md)
     * [Running CMake](chapters/intro/running.md)
-    * [Dos and Don'ts](chapters/intro/dodonot.md)
+    * [Do's and Don'ts](chapters/intro/dodonot.md)
     * [What's new in CMake](chapters/intro/newcmake.md)
 * [Introduction to the Basics](chapters/basics.md)
     * [Variables and the Cache](chapters/basics/variables.md)
