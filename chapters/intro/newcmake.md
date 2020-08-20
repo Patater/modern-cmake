@@ -268,7 +268,7 @@ string, and configure files directly from strings. Many other nice tiny
 features and papercut fixes are sprinkled throughout, a small selection is below.
 
 * Initially released [July 15, 2020](https://blog.kitware.com/cmake-3-18-0-available-for-download/)
-* `cmake` can `cat` files together now now
+* `cmake` can `cat` files together now
 * New profiling mode for `cmake`
 * `cmake_language` with `CALL` and `EVAL`
 * `export` requires `APPEND` if used multiple times (in CMake language level 3.18+)
