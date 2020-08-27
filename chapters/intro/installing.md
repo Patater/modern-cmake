@@ -34,13 +34,13 @@ You can [download CMake from KitWare][download]. This is how you will probably g
 On Linux, there are several options. Kitware provides a [Debian/Ubunutu apt repository][apt], as well as [snap packages][snap]. There are universal Linux binaries provided, but you'll need to pick an install location. If you already use `~/.local` for user-space packages, the following single line command[^1] will get CMake for you [^2]:
 
 {% term %}
-~ $ wget -qO- "https://cmake.org/files/v3.18/cmake-3.18.1-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C ~/.local
+~ $ wget -qO- "https://cmake.org/files/v3.18/cmake-3.18.2-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C ~/.local
 {% endterm %}
 
 If you just want a local folder with CMake only:
 
 {% term %}
-~ $ mkdir -p cmake-3.18 && wget -qO- "https://cmake.org/files/v3.18/cmake-3.18.1-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake-3.18
+~ $ mkdir -p cmake-3.18 && wget -qO- "https://cmake.org/files/v3.18/cmake-3.18.2-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake-3.18
 ~ $ export PATH=`pwd`/cmake-3.18/bin:$PATH
 {% endterm %}
 
@@ -49,7 +49,7 @@ You'll obviously want to append to the PATH every time you start a new terminal,
 And, if you want a system install, install to `/usr/local`; this is an excellent choice in a Docker container, for example on GitLab CI. Do not try it on a non-containerized system.
 
 {% term %}
-docker $ wget -qO- "https://cmake.org/files/v3.18/cmake-3.18.1-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C /usr/local
+docker $ wget -qO- "https://cmake.org/files/v3.18/cmake-3.18.2-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C /usr/local
 {% endterm %}
 
 
