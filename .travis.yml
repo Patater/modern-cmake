@@ -1,0 +1,31 @@
+language: cpp
+cache: ccache
+
+# Test using the latest Ubuntu LTS
+os: linux
+dist: focal
+
+# Get the latest version of CMake from the Kitware APT repository
+addons:
+  apt:
+    sources:
+      - sourceline: 'deb https://apt.kitware.com/ubuntu/ focal main'
+        key_url: 'https://apt.kitware.com/keys/kitware-archive-latest.asc'
+    packages:
+      - cmake
+      - libboost-dev
+      - ninja-build
+
+# Test with both clang and GCC
+compiler:
+ - clang
+ - gcc
+
+before_install:
+ - cd examples/extended-project
+
+script:
+  - cmake -S . -B cmake_build -GNinja -DCMAKE_INSTALL_PREFIX=./cmake_install
+  - cmake --build cmake_build
+  - cmake --build cmake_build --target test
+#  - cmake --build cmake_build --target install

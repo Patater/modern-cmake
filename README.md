@@ -1,3 +1,5 @@
+![](https://api.travis-ci.org/Patater/modern-cmake.svg)
+
 # An Introduction to Modern CMake
 
 People love to hate build systems.
